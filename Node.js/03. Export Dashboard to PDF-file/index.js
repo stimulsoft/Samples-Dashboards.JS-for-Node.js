@@ -14,7 +14,7 @@ console.log("Dashboard template loaded");
 var stream = Stimulsoft.Dashboard.Export.StiDashboardExportTools.exportToStream(report, new Stimulsoft.Dashboard.Export.Settings.StiPdfDashboardExportSettings());
 
 // Converting to buffer
-var buffer = new Buffer(stream.toArray(), "utf-8")
+var buffer = Buffer.from(stream.toArray())
 
 // File System module
 var fs = require('fs');

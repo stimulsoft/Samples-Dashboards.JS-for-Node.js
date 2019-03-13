@@ -1,0 +1,110 @@
+{
+  "ReportVersion": "2019.2.1",
+  "ReportGuid": "7f18070eee668456e003dbfa89c71ffa",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportFile": "DashboardUpdateJson.mrt",
+  "ReportCreated": "/Date(1551553346000+0300)/",
+  "ReportChanged": "/Date(1551553346000+0300)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "PreviewSettings": 268435455,
+  "Dictionary": {
+    "DataSources": {
+      "0": {
+        "Ident": "StiDataTableSource",
+        "Name": "Table1",
+        "Alias": "Table1",
+        "Key": "8a3ef109e14f3029dceb2d0e4904d95c",
+        "Columns": {
+          "0": {
+            "Name": "Column1",
+            "Index": -1,
+            "NameInSource": "Column1",
+            "Alias": "Column1",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "Column2",
+            "Index": -1,
+            "NameInSource": "Column2",
+            "Alias": "Column2",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "Demo.Table1"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiDashboard",
+      "Name": "Dashboard1",
+      "Guid": "ffe3d11c181924ed03b28209067da940",
+      "Brush": "solid:Transparent",
+      "Components": {
+        "0": {
+          "Ident": "StiChartElement",
+          "Name": "ChartElement1",
+          "Guid": "79e938149775071de496872336d7187b",
+          "ClientRectangle": "0,0,940,280",
+          "Border": ";;;;",
+          "Values": {
+            "0": {
+              "Ident": "3",
+              "Expression": "Sum(Table1.Column1)",
+              "Label": "Column1",
+              "SeriesType": "Line"
+            }
+          },
+          "Arguments": {
+            "0": {
+              "Ident": "1",
+              "Expression": "Table1.Column2",
+              "Label": "Column2"
+            }
+          },
+          "TopN": {
+            "Mode": null
+          },
+          "Title": {
+            "Text": "Chart"
+          },
+          "ArgumentFormat": {
+            "Ident": "StiGeneralFormatService"
+          },
+          "ValueFormat": {
+            "Ident": "StiGeneralFormatService"
+          },
+          "XAxis": {
+            "Labels": {
+              "TextAlignment": "Center, Right"
+            }
+          },
+          "YAxis": {
+            "Labels": {
+              "TextAlignment": "Center, Right"
+            }
+          },
+          "Area": {
+            "GridLinesHor": {
+              "Color": "Transparent",
+              "Visible": true
+            },
+            "GridLinesVert": {
+              "Color": "Transparent"
+            },
+            "InterlacingHor": {
+              "Color": "Transparent"
+            },
+            "InterlacingVert": {
+              "Color": "Transparent"
+            }
+          }
+        }
+      },
+      "Border": ";;2;;;;;solid:Black"
+    }
+  }
+}

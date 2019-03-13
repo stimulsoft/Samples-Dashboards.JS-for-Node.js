@@ -29,7 +29,7 @@ Export to Excel
 
 Converting to buffer
     
-    var buffer = new Buffer(stream.toArray(), "utf-8")
+    var buffer = Buffer.from(stream.toArray())
 
 Loading File System module:
 
