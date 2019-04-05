@@ -2,23 +2,27 @@
 var Stimulsoft = require('stimulsoft-dashboards-js');
 console.log("Stimulsoft Dashboards loaded");
 
+// Loading fonts
+Stimulsoft.Base.StiFontCollection.addOpentypeFontFile("Roboto-Black.ttf");
+console.log("Font loaded");
+
 // Creating new dashboard
 var report = Stimulsoft.Report.StiReport.createNewDashboard();
 console.log("New dashboard created");
 
 // Loading dashboard template
-report.loadFile("DashboardChristmas.mrt");
+report.loadFile("Dashboard.mrt");
 console.log("Dashboard template loaded");
 
-//Export to Excel
-var stream = Stimulsoft.Dashboard.Export.StiDashboardExportTools.exportToStream(report, new Stimulsoft.Dashboard.Export.Settings.StiExcelDashboardExportSettings());
+// Export to Excel
+report.exportDocumentAsync((pdfData) => {
+    // Converting Array into buffer
+    var buffer = Buffer.from(pdfData)
 
-//Converting to buffer    
-var buffer = Buffer.from(stream.toArray())
+    // File System module
+    var fs = require('fs');
 
-// File System module
-var fs = require('fs');
-
-//Saving to a file
-fs.writeFileSync('./DashboardChristmas.xlsx', buffer);
-console.log("Dashboard saved into Excel-file.");
+    //Saving to a file
+    fs.writeFileSync('./Dashboard.xlsx', buffer);
+    console.log("Dashboard saved into Excel-file.");
+}, Stimulsoft.Report.StiExportFormat.Excel2007);

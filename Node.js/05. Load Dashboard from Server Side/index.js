@@ -35,7 +35,7 @@ function accept(req, res) {
 		// Creating new dashboard
 		var report = Stimulsoft.Report.StiReport.createNewDashboard();
 		// Loading dashboard template
-		report.loadFile("dashboard/DashboardChristmas.mrt");
+		report.loadFile("dashboard/Dashboard.mrt");
 
 		// Saving dashboard to JSON string
 		var dashboardJson = report.saveToJsonString();

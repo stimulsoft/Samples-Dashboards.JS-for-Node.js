@@ -7,9 +7,9 @@ var report = Stimulsoft.Report.StiReport.createNewDashboard();
 console.log("New dashboard created");
 
 // Loading dashboard template
-report.loadFile("DashboardChristmas.mrt");
+report.loadFile("Dashboard.mrt");
 console.log("Dashboard template loaded");
 
 // Save dashboard to file
-report.saveFile("DashboardChristmas2.mrt");
+report.saveFile("Dashboard2.mrt");
 console.log("Rendered dashboard saved");
