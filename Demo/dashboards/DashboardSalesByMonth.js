@@ -1,16 +1,25 @@
 var DashboardSalesByMonth = {
-  "ReportVersion": "2019.2.1",
-  "ReportGuid": "7c4391f5ccd04f3b860e2f94c5ee3545",
+  "ReportVersion": "2019.3.1.0",
+  "ReportGuid": "88ea32fe5f39473da48a0a87ccb382c5",
   "ReportName": "DashboardSalesByMonth",
   "ReportAlias": "DashboardSalesByMonth",
-  "ReportFile": "DashboardSalesByMonth.mrt",
   "ReportAuthor": "Stimulsoft",
-  "ReportCreated": "/Date(-21600000+0300)/",
-  "ReportChanged": "/Date(-21600000+0300)/",
+  "ReportCreated": "/Date(1536066648000+0300)/",
+  "ReportChanged": "/Date(1556307344000+0300)/",
   "EngineVersion": "EngineV2",
   "CalculationMode": "Interpretation",
   "ReportUnit": "Inches",
-  "PreviewSettings": 268435455,
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\n\r\nnamespace Reports\r\n{\r\n    public class DashboardSalesByMonth_mrt : Stimulsoft.Report.StiReport\r\n    {\r\n        public DashboardSalesByMonth_mrt()        {\r\n            this.InitializeComponent();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
+  "ReferencedAssemblies": {
+    "0": "System.Dll",
+    "1": "System.Drawing.Dll",
+    "2": "System.Windows.Forms.Dll",
+    "3": "System.Data.Dll",
+    "4": "System.Xml.Dll",
+    "5": "Stimulsoft.Controls.Dll",
+    "6": "Stimulsoft.Base.Dll",
+    "7": "Stimulsoft.Report.Dll"
+  },
   "Dictionary": {
     "Resources": {
       "0": {
@@ -315,95 +324,6 @@ var DashboardSalesByMonth = {
           }
         },
         "NameInSource": "fastfood.TargetSales"
-      },
-      "4": {
-        "Ident": "StiDataTransformation",
-        "Name": "Data1",
-        "Alias": "Data1",
-        "Key": "a3fe914c28404e12b95cf98878bcdbef",
-        "Columns": {
-          "0": {
-            "Name": "Burger King",
-            "Index": -1,
-            "NameInSource": "Burger King",
-            "Alias": "Burger King",
-            "Type": "System.Double",
-            "Key": "c2a261cf0d6c4028b9dec9b38bfbacd5",
-            "Ident": "Transform",
-            "Expression": "Sum(SalesbyMonth.BurgerKing)",
-            "Mode": "Measure"
-          },
-          "1": {
-            "Name": "McDonald's",
-            "Index": -1,
-            "NameInSource": "McDonald's",
-            "Alias": "McDonald's",
-            "Type": "System.Double",
-            "Key": "9ab7331cac6b4b82868680c381aeb80a",
-            "Ident": "Transform",
-            "Expression": "Sum([SalesbyMonth.McDonald's])",
-            "Mode": "Measure"
-          },
-          "2": {
-            "Name": "MonthID",
-            "Index": -1,
-            "NameInSource": "MonthID",
-            "Alias": "MonthID",
-            "Type": "System.Double",
-            "Key": "5c3a96f6100c4dcea1656b1357ca5564",
-            "Ident": "Transform",
-            "Expression": "Sum(SalesbyMonth.MonthID)",
-            "Mode": "Measure"
-          },
-          "3": {
-            "Name": "MonthName",
-            "Index": -1,
-            "NameInSource": "MonthName",
-            "Alias": "MonthName",
-            "Type": "System.String",
-            "Key": "fc6716bd56d04c2bbe7842e55359b7c5",
-            "Ident": "Transform",
-            "Expression": "SalesbyMonth.MonthName"
-          },
-          "4": {
-            "Name": "State",
-            "Index": -1,
-            "NameInSource": "State",
-            "Alias": "State",
-            "Type": "System.String",
-            "Key": "a57af6c4db2a46c2a225bc5475ab4b78",
-            "Ident": "Transform",
-            "Expression": "SalesbyMonth.State"
-          },
-          "5": {
-            "Name": "StateID",
-            "Index": -1,
-            "NameInSource": "StateID",
-            "Alias": "StateID",
-            "Type": "System.Double",
-            "Key": "e1b5207256bc4fc9a69e829dbbfa41a7",
-            "Ident": "Transform",
-            "Expression": "Sum(SalesbyMonth.StateID)",
-            "Mode": "Measure"
-          },
-          "6": {
-            "Name": "Wendy's",
-            "Index": -1,
-            "NameInSource": "Wendy's",
-            "Alias": "Wendy's",
-            "Type": "System.Double",
-            "Key": "58d08706623341f09bac6f7a1fead122",
-            "Ident": "Transform",
-            "Expression": "Sum([SalesbyMonth.Wendy's])",
-            "Mode": "Measure"
-          }
-        },
-        "NameInSource": "Category",
-        "Sorts": {
-          "0": {
-            "Key": "5c3a96f6100c4dcea1656b1357ca5564"
-          }
-        }
       }
     },
     "Databases": {
@@ -421,7 +341,7 @@ var DashboardSalesByMonth = {
       "Name": "DashboardSalesByMonth",
       "Guid": "9a260b5993e04e208a303cd73f9ff5dc",
       "Alias": "Sales by Month",
-      "Brush": "solid:Transparent",
+      "Brush": "solid:",
       "Components": {
         "0": {
           "Ident": "StiRegionMapElement",
@@ -429,23 +349,31 @@ var DashboardSalesByMonth = {
           "Guid": "8ae5755bde3148feb58c03862ecde210",
           "ClientRectangle": "560,40,640,300",
           "Border": ";;;;",
+          "DashboardInteraction": {
+            "Ident": "RegionMap",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
           "Title": {
             "Text": "Select State to Show Sales Stats",
             "Font": "Arial Narrow;15.75;;",
             "HorAlignment": "Center"
           },
           "KeyMeter": {
-            "Ident": "24",
-            "Expression": "Data1.State"
+            "Ident": "KeyMapMeter",
+            "Expression": "SalesbyMonth.State",
+            "Label": "State"
           },
           "NameMeter": {
-            "Ident": "25",
-            "Expression": "Data1.State"
+            "Ident": "NameMapMeter",
+            "Expression": "SalesbyMonth.State",
+            "Label": "State"
           },
           "ValueMeter": {
-            "Ident": "26",
-            "Expression": "Data1.StateID",
-            "Label": "State ID"
+            "Ident": "ValueMapMeter",
+            "Expression": "Sum(SalesbyMonth.StateID)",
+            "Label": "StateID"
           },
           "DataFrom": "DataColumns",
           "MapType": "Heatmap",
@@ -466,32 +394,37 @@ var DashboardSalesByMonth = {
           },
           "Values": {
             "0": {
-              "Ident": "3",
-              "Expression": "Sum([Data1.McDonald's])"
+              "Ident": "ValueChartMeter",
+              "Expression": "Sum([SalesbyMonth.McDonald's])",
+              "Label": "McDonald's"
             },
             "1": {
-              "Ident": "3",
-              "Expression": "Sum([Data1.Wendy's])"
+              "Ident": "ValueChartMeter",
+              "Expression": "Sum([SalesbyMonth.Wendy's])",
+              "Label": "Wendy's"
             },
             "2": {
-              "Ident": "3",
-              "Expression": "Sum([Data1.Burger King])"
+              "Ident": "ValueChartMeter",
+              "Expression": "Sum(SalesbyMonth.BurgerKing)",
+              "Label": "Burger King"
             }
           },
           "Arguments": {
             "0": {
-              "Ident": "1",
-              "Expression": "Data1.MonthName",
-              "Label": "Month Name"
-            },
-            "1": {
-              "Ident": "1",
-              "Expression": "Data1.MonthID",
-              "Label": "Month ID"
+              "Ident": "ArgumentChartMeter",
+              "Expression": "SalesbyMonth.MonthName",
+              "Label": "MonthName"
             }
           },
           "TopN": {
-            "Mode": null
+            "Mode": "None"
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
           },
           "Title": {
             "Text": "Sales by Month",
@@ -502,20 +435,12 @@ var DashboardSalesByMonth = {
             "Ident": "StiGeneralFormatService"
           },
           "ValueFormat": {
-            "Ident": "StiNumberFormatService",
+            "Ident": "StiCurrencyFormatService",
+            "NegativePattern": 0,
             "DecimalDigits": 0,
             "GroupSeparator": ",",
-            "State": "DecimalDigits"
-          },
-          "XAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "YAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
+            "State": "DecimalDigits, Abbreviation",
+            "PositivePattern": 0
           },
           "Area": {
             "GridLinesHor": {
@@ -541,50 +466,66 @@ var DashboardSalesByMonth = {
           "Border": ";;;;",
           "Columns": {
             "0": {
-              "Ident": "35",
-              "Expression": "Data1.State",
-              "HorAlignment": "Center"
+              "Ident": "PivotColumn",
+              "Expression": "SalesbyMonth.State",
+              "Label": "State",
+              "HorAlignment": "Left",
+              "TopN": {
+                "Mode": "None"
+              }
             }
           },
           "Rows": {
             "0": {
-              "Ident": "36",
-              "Expression": "Data1.MonthName",
-              "Label": "Month Name"
+              "Ident": "PivotRow",
+              "Expression": "SalesbyMonth.MonthName",
+              "Label": "MonthName",
+              "TopN": {
+                "Mode": "None"
+              }
             }
           },
           "Summaries": {
             "0": {
-              "Ident": "37",
-              "Expression": "Sum([Data1.McDonald's])",
-              "HorAlignment": "Center",
+              "Ident": "PivotSummary",
+              "Expression": "Sum([SalesbyMonth.McDonald's])",
+              "Label": "McDonald's",
+              "HorAlignment": "Left",
               "TextFormat": {
-                "Ident": "StiNumberFormatService",
+                "Ident": "StiCurrencyFormatService",
+                "NegativePattern": 0,
                 "DecimalDigits": 0,
                 "GroupSeparator": ",",
-                "State": "DecimalDigits"
+                "State": "DecimalDigits, Abbreviation",
+                "PositivePattern": 0
               }
             },
             "1": {
-              "Ident": "37",
-              "Expression": "Sum([Data1.Wendy's])",
-              "HorAlignment": "Center",
+              "Ident": "PivotSummary",
+              "Expression": "Sum([SalesbyMonth.Wendy's])",
+              "Label": "Wendy's",
+              "HorAlignment": "Left",
               "TextFormat": {
-                "Ident": "StiNumberFormatService",
+                "Ident": "StiCurrencyFormatService",
+                "NegativePattern": 0,
                 "DecimalDigits": 0,
                 "GroupSeparator": ",",
-                "State": "DecimalDigits"
+                "State": "DecimalDigits, Abbreviation",
+                "PositivePattern": 0
               }
             },
             "2": {
-              "Ident": "37",
-              "Expression": "Sum([Data1.Burger King])",
-              "HorAlignment": "Center",
+              "Ident": "PivotSummary",
+              "Expression": "Sum(SalesbyMonth.BurgerKing)",
+              "Label": "Burger King",
+              "HorAlignment": "Left",
               "TextFormat": {
-                "Ident": "StiNumberFormatService",
+                "Ident": "StiCurrencyFormatService",
+                "NegativePattern": 0,
                 "DecimalDigits": 0,
                 "GroupSeparator": ",",
-                "State": "DecimalDigits"
+                "State": "DecimalDigits, Abbreviation",
+                "PositivePattern": 0
               }
             }
           },
@@ -599,8 +540,14 @@ var DashboardSalesByMonth = {
           "Name": "Text1",
           "Guid": "c611e2baddfe471383475f1cc6afa73c",
           "ClientRectangle": "0,0,1200,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
-          "Text": "<font face=\"Arial\" size=\"36\"><text-align=\"Center\">Sales by Month in States</text-align></font>",
+          "Text": "<font face=\"Arial\" size=\"36\"><text-align=\"Center\">Sales by Month in United States</text-align></font>",
           "Title": {
             "Text": "Text",
             "Visible": false

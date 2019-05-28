@@ -1,16 +1,24 @@
 var DashboardSalesPerfomance = {
-  "ReportVersion": "2019.2.1",
-  "ReportGuid": "f1007e8f0b804fc48d72b3d618e4f850",
+  "ReportVersion": "2019.3.1.0",
+  "ReportGuid": "6f96f991677c4cc28803882e79670416",
   "ReportName": "DashboardSalesPerfomance",
   "ReportAlias": "DashboardSalesPerfomance",
-  "ReportFile": "DashboardSalesPerfomance.mrt",
   "ReportAuthor": "Stimulsoft",
-  "ReportCreated": "/Date(-21600000+0300)/",
-  "ReportChanged": "/Date(-21600000+0300)/",
+  "ReportCreated": "/Date(1536133674000+0300)/",
+  "ReportChanged": "/Date(1556307433000+0300)/",
   "EngineVersion": "EngineV2",
-  "CalculationMode": "Interpretation",
   "ReportUnit": "Inches",
-  "PreviewSettings": 268435455,
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\n\r\nnamespace Reports\r\n{\r\n    public class DashboardSalesPerfomance : Stimulsoft.Report.StiReport\r\n    {\r\n        public DashboardSalesPerfomance()        {\r\n            this.InitializeComponent();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
+  "ReferencedAssemblies": {
+    "0": "System.Dll",
+    "1": "System.Drawing.Dll",
+    "2": "System.Windows.Forms.Dll",
+    "3": "System.Data.Dll",
+    "4": "System.Xml.Dll",
+    "5": "Stimulsoft.Controls.Dll",
+    "6": "Stimulsoft.Base.Dll",
+    "7": "Stimulsoft.Report.Dll"
+  },
   "Dictionary": {
     "Resources": {
       "0": {
@@ -336,7 +344,6 @@ var DashboardSalesPerfomance = {
         },
         "NameInSource": "Relation",
         "Alias": "States",
-        "IsCloud": null,
         "Key": "f2ed1f97199547939017f2ea87094c1c",
         "ParentSource": "RestaurantbyState",
         "ChildSource": "SalesbyMonth"
@@ -351,7 +358,6 @@ var DashboardSalesPerfomance = {
         },
         "NameInSource": "Relation2",
         "Alias": "States",
-        "IsCloud": null,
         "Key": "579145cb4ec4427e945e337f100cf0a8",
         "ParentSource": "RestaurantbyState",
         "ChildSource": "TargetSales"
@@ -366,7 +372,6 @@ var DashboardSalesPerfomance = {
         },
         "NameInSource": "Relation3",
         "Alias": "Products",
-        "IsCloud": null,
         "Key": "9f0eeae938f3433ba763306d309573bc",
         "ParentSource": "Products",
         "ChildSource": "TargetSales"
@@ -381,7 +386,6 @@ var DashboardSalesPerfomance = {
         },
         "NameInSource": "Relation4",
         "Alias": "Month",
-        "IsCloud": null,
         "Key": "4807ec4c7bb94a88be83b2c121754fab",
         "ParentSource": "SalesbyMonth",
         "ChildSource": "TargetSales"
@@ -396,7 +400,6 @@ var DashboardSalesPerfomance = {
         },
         "NameInSource": "Relation5",
         "Alias": "Name",
-        "IsCloud": null,
         "Active": true,
         "Key": "eb1e50caefac43acb8df468c45e2ac94",
         "ParentSource": "TargetSales",
@@ -410,7 +413,7 @@ var DashboardSalesPerfomance = {
       "Name": "Dashboard1",
       "Guid": "70419389d2504becb63dbc12709e9608",
       "Alias": "Sales Perfomance",
-      "Brush": "solid:Transparent",
+      "Brush": "solid:",
       "Components": {
         "0": {
           "Ident": "StiChartElement",
@@ -420,19 +423,19 @@ var DashboardSalesPerfomance = {
           "Border": ";;;;",
           "Values": {
             "0": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum([SalesbyMonth.McDonald's])",
               "Label": "McDonald's",
               "SeriesType": "StackedSplineArea"
             },
             "1": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum([SalesbyMonth.Wendy's])",
               "Label": "Wendy's",
               "SeriesType": "StackedSplineArea"
             },
             "2": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(SalesbyMonth.BurgerKing)",
               "Label": "Burger King",
               "SeriesType": "StackedSplineArea"
@@ -440,13 +443,20 @@ var DashboardSalesPerfomance = {
           },
           "Arguments": {
             "0": {
-              "Ident": "1",
+              "Ident": "ArgumentChartMeter",
               "Expression": "SalesbyMonth.MonthName",
               "Label": "Month Name"
             }
           },
           "TopN": {
-            "Mode": null
+            "Mode": "None"
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
           },
           "Title": {
             "Text": "Sales by Month",
@@ -458,19 +468,10 @@ var DashboardSalesPerfomance = {
           },
           "ValueFormat": {
             "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
             "DecimalDigits": 0,
             "GroupSeparator": ",",
-            "State": "DecimalDigits"
-          },
-          "XAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "YAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
+            "State": "DecimalDigits, Abbreviation"
           },
           "Area": {
             "GridLinesHor": {
@@ -496,27 +497,50 @@ var DashboardSalesPerfomance = {
           "Border": ";;;;",
           "Columns": {
             "0": {
-              "Ident": "31",
+              "Ident": "DimensionColumn",
               "Expression": "TargetSales.ProductsName",
-              "Label": "Product Name"
+              "Label": "Product Name",
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              }
             },
             "1": {
-              "Ident": "32",
+              "Ident": "IndicatorColumn",
               "Expression": "Sum(TargetSales.Sales - TargetSales.Target)",
               "Label": "Sales vs Target",
               "HorAlignment": "Right",
               "TextFormat": {
                 "Ident": "StiNumberFormatService",
-                "GroupSeparator": ","
+                "NegativePattern": 1,
+                "GroupSeparator": ",",
+                "State": "DecimalDigits, Abbreviation"
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               }
             },
             "2": {
-              "Ident": "30",
+              "Ident": "DataBarsColumn",
               "Expression": "Sum(TargetSales.Units - TargetSales.Units_Target)",
               "Label": "Units Sales vs Target",
               "TextFormat": {
                 "Ident": "StiNumberFormatService",
-                "GroupSeparator": ","
+                "NegativePattern": 1,
+                "DecimalDigits": 0,
+                "GroupSeparator": ",",
+                "State": "DecimalDigits, Abbreviation"
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               },
               "HorAlignment": "Right"
             }
@@ -527,6 +551,12 @@ var DashboardSalesPerfomance = {
             "Font": "Arial Narrow;15.75;;",
             "HorAlignment": "Center"
           },
+          "DashboardInteraction": {
+            "Ident": "Table",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
           "SizeMode": "Fit"
         },
         "2": {
@@ -536,18 +566,18 @@ var DashboardSalesPerfomance = {
           "ClientRectangle": "800,80,400,180",
           "Border": ";;;;",
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "Value": {
-            "Ident": "21",
+            "Ident": "ValueProgressMeter",
             "Expression": "Sum(TargetSales.Sales)"
           },
           "Target": {
-            "Ident": "20",
+            "Ident": "TargetProgressMeter",
             "Expression": "Sum(TargetSales.Target)"
           },
           "Series": {
-            "Ident": "19",
+            "Ident": "SeriesProgressMeter",
             "Expression": "TargetSales.CategoryName",
             "Label": "Category Name"
           },
@@ -557,13 +587,20 @@ var DashboardSalesPerfomance = {
             "HorAlignment": "Center"
           },
           "Font": ";13;Bold;",
-          "Mode": "DataBars"
+          "Mode": "DataBars",
+          "ColorEach": true
         },
         "3": {
           "Ident": "StiTextElement",
           "Name": "Text1",
           "Guid": "bb62cd663eef473ebcbe9727f0c48e6d",
           "ClientRectangle": "0,0,1200,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
           "Text": "<font face=\"Arial\" size=\"36\"><text-align=\"Center\">Sales Perfomance</text-align></font>",
           "Title": {
@@ -584,23 +621,23 @@ var DashboardSalesPerfomance = {
             }
           },
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "TextFormat": {
             "Ident": "StiCurrencyFormatService",
             "NegativePattern": 0,
             "DecimalDigits": 0,
             "GroupSeparator": ",",
-            "State": "DecimalDigits",
+            "State": "DecimalDigits, Abbreviation",
             "PositivePattern": 0
           },
           "Value": {
-            "Ident": "18",
+            "Ident": "ValueIndicatorMeter",
             "Expression": "Sum(TargetSales.Target/1.75)",
             "Label": "Target"
           },
           "Series": {
-            "Ident": "16",
+            "Ident": "SeriesIndicatorMeter",
             "Expression": "TargetSales.CategoryName",
             "Label": "Category Name"
           },
@@ -625,23 +662,23 @@ var DashboardSalesPerfomance = {
             }
           },
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "TextFormat": {
             "Ident": "StiCurrencyFormatService",
             "NegativePattern": 0,
             "DecimalDigits": 0,
             "GroupSeparator": ",",
-            "State": "DecimalDigits",
+            "State": "DecimalDigits, Abbreviation",
             "PositivePattern": 0
           },
           "Value": {
-            "Ident": "18",
+            "Ident": "ValueIndicatorMeter",
             "Expression": "Sum(TargetSales.Target)",
             "Label": "Target"
           },
           "Series": {
-            "Ident": "16",
+            "Ident": "SeriesIndicatorMeter",
             "Expression": "TargetSales.CategoryName",
             "Label": "Category Name"
           },
@@ -666,23 +703,23 @@ var DashboardSalesPerfomance = {
             }
           },
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "TextFormat": {
             "Ident": "StiCurrencyFormatService",
             "NegativePattern": 0,
             "DecimalDigits": 0,
             "GroupSeparator": ",",
-            "State": "DecimalDigits",
+            "State": "DecimalDigits, Abbreviation",
             "PositivePattern": 0
           },
           "Value": {
-            "Ident": "18",
+            "Ident": "ValueIndicatorMeter",
             "Expression": "Sum(TargetSales.Target)",
             "Label": "Target"
           },
           "Series": {
-            "Ident": "16",
+            "Ident": "SeriesIndicatorMeter",
             "Expression": "TargetSales.CategoryName",
             "Label": "Category Name"
           },
@@ -703,7 +740,7 @@ var DashboardSalesPerfomance = {
           "ShowAllValue": true,
           "SelectionMode": "Multi",
           "KeyMeter": {
-            "Ident": "43",
+            "Ident": "KeyComboBoxMeter",
             "Expression": "TargetSales.StateName",
             "Label": "State Name"
           }
@@ -717,12 +754,12 @@ var DashboardSalesPerfomance = {
           "ShowAllValue": true,
           "KeyMeters": {
             "0": {
-              "Ident": "41",
+              "Ident": "KeyTreeViewBoxMeter",
               "Expression": "TargetSales.CategoryName",
               "Label": "Category Name"
             },
             "1": {
-              "Ident": "41",
+              "Ident": "KeyTreeViewBoxMeter",
               "Expression": "TargetSales.ProductsName",
               "Label": "Products Name"
             }

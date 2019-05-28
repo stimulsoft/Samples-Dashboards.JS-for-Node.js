@@ -1,16 +1,24 @@
 var DashboardTicketsStatistics = {
-  "ReportVersion": "2019.2.1",
-  "ReportGuid": "70e96843138040d0b0a68975bf0241a5",
+  "ReportVersion": "2019.3.1.0",
+  "ReportGuid": "5b7156e4c9fb4b28995193846577fcea",
   "ReportName": "DashboardTicketsStatistics",
   "ReportAlias": "DashboardTicketsStatistics",
-  "ReportFile": "DashboardTicketsStatistics.mrt",
   "ReportAuthor": "Stimulsoft",
-  "ReportCreated": "/Date(-21600000+0300)/",
-  "ReportChanged": "/Date(-21600000+0300)/",
+  "ReportCreated": "/Date(1529251007000+0300)/",
+  "ReportChanged": "/Date(1556307607000+0300)/",
   "EngineVersion": "EngineV2",
-  "CalculationMode": "Interpretation",
   "ReportUnit": "Inches",
-  "PreviewSettings": 268435455,
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\n\r\nnamespace Reports\r\n{\r\n    public class DashboardTicketsStatistics : Stimulsoft.Report.StiReport\r\n    {\r\n        public DashboardTicketsStatistics()        {\r\n            this.InitializeComponent();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
+  "ReferencedAssemblies": {
+    "0": "System.Dll",
+    "1": "System.Drawing.Dll",
+    "2": "System.Windows.Forms.Dll",
+    "3": "System.Data.Dll",
+    "4": "System.Xml.Dll",
+    "5": "Stimulsoft.Controls.Dll",
+    "6": "Stimulsoft.Base.Dll",
+    "7": "Stimulsoft.Report.Dll"
+  },
   "Dictionary": {
     "Resources": {
       "0": {
@@ -25,6 +33,7 @@ var DashboardTicketsStatistics = {
         "Ident": "StiDataTableSource",
         "Name": "Tickets",
         "Alias": "Tickets",
+        "Key": "44c90ad332434aba8f85707ebe4b735e",
         "Columns": {
           "0": {
             "Name": "GroupID",
@@ -108,35 +117,42 @@ var DashboardTicketsStatistics = {
       "Name": "Dashboard1",
       "Guid": "934960a4484546f693fccbf89acdb5f4",
       "Alias": "Tickets Statistics",
-      "Brush": "solid:Transparent",
+      "Brush": "solid:",
       "Components": {
         "0": {
           "Ident": "StiChartElement",
           "Name": "Chart1",
           "Guid": "86f4747f2d424b328ee35a215d41eae0",
           "ClientRectangle": "480,320,720,280",
-          "Border": "15;211,212,213;;;",
+          "Border": "All;211,212,213;;;",
           "Values": {
             "0": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(Tickets.Resolved)",
               "SeriesType": "Bubble"
             }
           },
           "Arguments": {
             "0": {
-              "Ident": "1",
+              "Ident": "ArgumentChartMeter",
               "Expression": "Sum([Tickets.In Processing])"
             }
           },
           "Weights": {
             "0": {
-              "Ident": "9",
+              "Ident": "WeightChartMeter",
               "Expression": "Sum(Tickets.Tranferred)"
             }
           },
           "TopN": {
-            "Mode": null
+            "Mode": "None"
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
           },
           "Title": {
             "Text": "All Tickets in {MonthName(Today)}",
@@ -144,7 +160,7 @@ var DashboardTicketsStatistics = {
             "HorAlignment": "Center"
           },
           "Series": {
-            "Ident": "2",
+            "Ident": "SeriesChartMeter",
             "Expression": "Tickets.Name"
           },
           "ArgumentFormat": {
@@ -152,19 +168,10 @@ var DashboardTicketsStatistics = {
           },
           "ValueFormat": {
             "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
             "DecimalDigits": 0,
             "GroupSeparator": ",",
             "State": "DecimalDigits"
-          },
-          "XAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "YAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
           },
           "Area": {
             "GridLinesHor": {
@@ -187,54 +194,87 @@ var DashboardTicketsStatistics = {
           "Name": "Table1",
           "Guid": "7236ec1bcfdb40c3805063a42042b739",
           "ClientRectangle": "0,40,480,140",
-          "Border": "15;211,212,213;;;",
+          "Border": "All;211,212,213;;;",
           "Columns": {
             "0": {
-              "Ident": "31",
-              "Expression": "Tickets.Name"
+              "Ident": "DimensionColumn",
+              "Expression": "Tickets.Name",
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              }
             },
             "1": {
-              "Ident": "30",
+              "Ident": "DataBarsColumn",
               "Expression": "Sum(Tickets.Resolved)",
               "TextFormat": {
                 "Ident": "StiNumberFormatService",
+                "NegativePattern": 1,
                 "DecimalDigits": 0,
                 "GroupSeparator": ",",
                 "State": "DecimalDigits"
               },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              },
               "HorAlignment": "Right"
             },
             "2": {
-              "Ident": "33",
+              "Ident": "MeasureColumn",
               "Expression": "Sum(Tickets.Returned)",
               "HorAlignment": "Right",
               "TextFormat": {
                 "Ident": "StiNumberFormatService",
+                "NegativePattern": 1,
                 "DecimalDigits": 0,
                 "GroupSeparator": ",",
                 "State": "DecimalDigits"
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               }
             },
             "3": {
-              "Ident": "33",
+              "Ident": "MeasureColumn",
               "Expression": "Sum([Tickets.In Processing])",
               "HorAlignment": "Right",
               "TextFormat": {
                 "Ident": "StiNumberFormatService",
+                "NegativePattern": 1,
                 "DecimalDigits": 0,
                 "GroupSeparator": ",",
                 "State": "DecimalDigits"
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               }
             },
             "4": {
-              "Ident": "33",
+              "Ident": "MeasureColumn",
               "Expression": "Sum(Tickets.Total)",
               "HorAlignment": "Right",
               "TextFormat": {
                 "Ident": "StiNumberFormatService",
-                "DecimalDigits": 0,
+                "NegativePattern": 1,
                 "GroupSeparator": ",",
-                "State": "DecimalDigits"
+                "State": "DecimalDigits, Abbreviation"
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               }
             }
           },
@@ -244,6 +284,12 @@ var DashboardTicketsStatistics = {
             "Visible": false,
             "Font": "Segoe UI;15.75;;",
             "HorAlignment": "Center"
+          },
+          "DashboardInteraction": {
+            "Ident": "Table",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
           }
         },
         "2": {
@@ -251,20 +297,20 @@ var DashboardTicketsStatistics = {
           "Name": "Progress1",
           "Guid": "59a7eae38c45466685132dd30f2cb81b",
           "ClientRectangle": "0,180,480,140",
-          "Border": "15;211,212,213;;;",
+          "Border": "All;211,212,213;;;",
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "Value": {
-            "Ident": "21",
+            "Ident": "ValueProgressMeter",
             "Expression": "Sum(Tickets.Resolved)"
           },
           "Target": {
-            "Ident": "20",
+            "Ident": "TargetProgressMeter",
             "Expression": "Sum(Tickets.Total)"
           },
           "Series": {
-            "Ident": "19",
+            "Ident": "SeriesProgressMeter",
             "Expression": "Tickets.Name"
           },
           "Title": {
@@ -273,27 +319,28 @@ var DashboardTicketsStatistics = {
             "HorAlignment": "Center"
           },
           "Font": ";13;Bold;",
-          "Mode": "DataBars"
+          "Mode": "DataBars",
+          "ColorEach": true
         },
         "3": {
           "Ident": "StiProgressElement",
           "Name": "Progress2",
           "Guid": "e3bdf9b256984c72b7fe7b3cf37172af",
           "ClientRectangle": "0,320,480,140",
-          "Border": "15;211,212,213;;;",
+          "Border": "All;211,212,213;;;",
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "Value": {
-            "Ident": "21",
+            "Ident": "ValueProgressMeter",
             "Expression": "Sum(Tickets.Returned)"
           },
           "Target": {
-            "Ident": "20",
+            "Ident": "TargetProgressMeter",
             "Expression": "Sum(Tickets.Total)"
           },
           "Series": {
-            "Ident": "19",
+            "Ident": "SeriesProgressMeter",
             "Expression": "Tickets.Name"
           },
           "Title": {
@@ -302,27 +349,28 @@ var DashboardTicketsStatistics = {
             "HorAlignment": "Center"
           },
           "Font": ";13;Bold;",
-          "Mode": "DataBars"
+          "Mode": "DataBars",
+          "ColorEach": true
         },
         "4": {
           "Ident": "StiProgressElement",
           "Name": "Progress4",
           "Guid": "528dcbc5a71c4fbc9d776a955bdd0934",
           "ClientRectangle": "0,460,480,140",
-          "Border": "15;211,212,213;;;",
+          "Border": "All;211,212,213;;;",
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "Value": {
-            "Ident": "21",
+            "Ident": "ValueProgressMeter",
             "Expression": "Sum([Tickets.In Processing])"
           },
           "Target": {
-            "Ident": "20",
+            "Ident": "TargetProgressMeter",
             "Expression": "Sum(Tickets.Total)"
           },
           "Series": {
-            "Ident": "19",
+            "Ident": "SeriesProgressMeter",
             "Expression": "Tickets.Name"
           },
           "Title": {
@@ -331,7 +379,8 @@ var DashboardTicketsStatistics = {
             "HorAlignment": "Center"
           },
           "Font": ";13;Bold;",
-          "Mode": "DataBars"
+          "Mode": "DataBars",
+          "ColorEach": true
         },
         "5": {
           "Ident": "StiRegionMapElement",
@@ -339,6 +388,12 @@ var DashboardTicketsStatistics = {
           "Guid": "e184f82a31f648e09323c50703d69551",
           "ClientRectangle": "480,40,720,280",
           "Border": ";;;;",
+          "DashboardInteraction": {
+            "Ident": "RegionMap",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
           "Title": {
             "Text": "Tickets by State",
             "Visible": false,
@@ -346,15 +401,15 @@ var DashboardTicketsStatistics = {
             "HorAlignment": "Center"
           },
           "KeyMeter": {
-            "Ident": "24",
+            "Ident": "KeyMapMeter",
             "Expression": "Tickets.State"
           },
           "NameMeter": {
-            "Ident": "25",
+            "Ident": "NameMapMeter",
             "Expression": "Tickets.State"
           },
           "ValueMeter": {
-            "Ident": "26",
+            "Ident": "ValueMapMeter",
             "Expression": "Tickets.Total"
           },
           "DataFrom": "DataColumns",
@@ -368,6 +423,12 @@ var DashboardTicketsStatistics = {
           "Name": "Text1",
           "Guid": "c391f5bbcf0043b0b8eaf9fdfc1b33d8",
           "ClientRectangle": "0,0,1200,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
           "Text": "<font face=\"Arial\" size=\"36\"><text-align=\"Center\">Ticket Stats</text-align></font>",
           "Title": {

@@ -1,16 +1,25 @@
 var DashboardRestaurantAttendanceTracking = {
-  "ReportVersion": "2019.2.1",
-  "ReportGuid": "8260fa388d1d4edd9f1dd37e3763ccae",
+  "ReportVersion": "2019.3.1.0",
+  "ReportGuid": "143a0d33235a48bc81ffa158915c0715",
   "ReportName": "DashboardRestaurantAttendanceTracking",
   "ReportAlias": "DashboardRestaurantAttendanceTracking",
-  "ReportFile": "DashboardRestaurantAttendanceTracking.mrt",
   "ReportAuthor": "Stimulsoft",
-  "ReportCreated": "/Date(-21600000+0300)/",
-  "ReportChanged": "/Date(-21600000+0300)/",
+  "ReportCreated": "/Date(1536062353000+0300)/",
+  "ReportChanged": "/Date(1556307197000+0300)/",
   "EngineVersion": "EngineV2",
   "CalculationMode": "Interpretation",
   "ReportUnit": "Inches",
-  "PreviewSettings": 268435455,
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\n\r\nnamespace Reports\r\n{\r\n    public class DashboardRestaurantAttendanceTracking : Stimulsoft.Report.StiReport\r\n    {\r\n        public DashboardRestaurantAttendanceTracking()        {\r\n            this.InitializeComponent();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
+  "ReferencedAssemblies": {
+    "0": "System.Dll",
+    "1": "System.Drawing.Dll",
+    "2": "System.Windows.Forms.Dll",
+    "3": "System.Data.Dll",
+    "4": "System.Xml.Dll",
+    "5": "Stimulsoft.Controls.Dll",
+    "6": "Stimulsoft.Base.Dll",
+    "7": "Stimulsoft.Report.Dll"
+  },
   "Dictionary": {
     "Resources": {
       "0": {
@@ -345,7 +354,6 @@ var DashboardRestaurantAttendanceTracking = {
         },
         "NameInSource": "Relation",
         "Alias": "Name",
-        "IsCloud": null,
         "Key": "134a0d77ee804ea5899baa6a49a9f994",
         "ParentSource": "TargetSales",
         "ChildSource": "RestaurantbyState"
@@ -358,7 +366,7 @@ var DashboardRestaurantAttendanceTracking = {
       "Name": "DashboardRestaurantAttendanceTracking",
       "Guid": "b09d1256707743d6b407996669dd574f",
       "Alias": "Restaurant Attendance Tracking",
-      "Brush": "solid:Transparent",
+      "Brush": "solid:",
       "Components": {
         "0": {
           "Ident": "StiRegionMapElement",
@@ -366,6 +374,12 @@ var DashboardRestaurantAttendanceTracking = {
           "Guid": "98e866116bc74cca8ec83c5d2d0fdfd3",
           "ClientRectangle": "0,40,600,340",
           "Border": ";;;;",
+          "DashboardInteraction": {
+            "Ident": "RegionMap",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
           "Title": {
             "Text": "Population by State",
             "Visible": false,
@@ -373,15 +387,15 @@ var DashboardRestaurantAttendanceTracking = {
             "HorAlignment": "Center"
           },
           "KeyMeter": {
-            "Ident": "24",
+            "Ident": "KeyMapMeter",
             "Expression": "RestaurantbyState.State"
           },
           "NameMeter": {
-            "Ident": "25",
+            "Ident": "NameMapMeter",
             "Expression": "RestaurantbyState.State"
           },
           "ValueMeter": {
-            "Ident": "26",
+            "Ident": "ValueMapMeter",
             "Expression": "RestaurantbyState.Population"
           },
           "DataFrom": "DataColumns",
@@ -395,6 +409,12 @@ var DashboardRestaurantAttendanceTracking = {
           "Name": "Text2",
           "Guid": "13ab0026de36467593891458e9e7e8ce",
           "ClientRectangle": "720,40,240,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
           "Text": "<font face=\"Arial\" size=\"16\"><text-align=\"Center\">Restaurants by State</text-align></font>",
           "Title": {
@@ -408,6 +428,12 @@ var DashboardRestaurantAttendanceTracking = {
           "Name": "Text3",
           "Guid": "4c846c756e46461a9f95e17097887786",
           "ClientRectangle": "960,40,240,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
           "Text": "<font face=\"Arial\" size=\"16\"><text-align=\"Center\">Sales Volume</text-align></font>",
           "Title": {
@@ -421,6 +447,12 @@ var DashboardRestaurantAttendanceTracking = {
           "Name": "Text4",
           "Guid": "69ffd9e55fc2445684e2e777981dc65b",
           "ClientRectangle": "0,0,1200,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
           "Text": "<font face=\"Arial\" size=\"36\"><text-align=\"Center\">Restaurant Attendance Tracking</text-align></font>",
           "Title": {
@@ -436,54 +468,60 @@ var DashboardRestaurantAttendanceTracking = {
           "Border": ";;;;",
           "Columns": {
             "0": {
-              "Ident": "35",
+              "Ident": "PivotColumn",
               "Expression": "RestaurantbyState.State",
               "Label": "State",
-              "HorAlignment": "Center"
+              "HorAlignment": "Left",
+              "TopN": {
+                "Mode": "None"
+              }
             }
           },
           "Rows": {
             "0": {
-              "Ident": "36",
+              "Ident": "PivotRow",
               "Expression": "TargetSales.ProductsName",
-              "Label": "Product Name"
+              "Label": "Product Name",
+              "TopN": {
+                "Mode": "None"
+              }
             }
           },
           "Summaries": {
             "0": {
-              "Ident": "37",
+              "Ident": "PivotSummary",
               "Expression": "Sum([RestaurantbyState.SalesVolumeMcDonald's])",
               "Label": " Sales Volume McDonald's",
-              "HorAlignment": "Center",
+              "HorAlignment": "Left",
               "TextFormat": {
                 "Ident": "StiNumberFormatService",
-                "DecimalDigits": 0,
+                "NegativePattern": 1,
                 "GroupSeparator": ",",
-                "State": "DecimalDigits"
+                "State": "DecimalDigits, Abbreviation"
               }
             },
             "1": {
-              "Ident": "37",
+              "Ident": "PivotSummary",
               "Expression": "Sum([RestaurantbyState.SalesVolumeWendy's])",
               "Label": " Sales Volume Wendy's",
-              "HorAlignment": "Center",
+              "HorAlignment": "Left",
               "TextFormat": {
                 "Ident": "StiNumberFormatService",
-                "DecimalDigits": 0,
+                "NegativePattern": 1,
                 "GroupSeparator": ",",
-                "State": "DecimalDigits"
+                "State": "DecimalDigits, Abbreviation"
               }
             },
             "2": {
-              "Ident": "37",
+              "Ident": "PivotSummary",
               "Expression": "Sum(RestaurantbyState.SalesVolumeBurgerKing)",
               "Label": " Sales Volume Burger King",
-              "HorAlignment": "Center",
+              "HorAlignment": "Left",
               "TextFormat": {
                 "Ident": "StiNumberFormatService",
-                "DecimalDigits": 0,
+                "NegativePattern": 1,
                 "GroupSeparator": ",",
-                "State": "DecimalDigits"
+                "State": "DecimalDigits, Abbreviation"
               }
             }
           },
@@ -499,16 +537,16 @@ var DashboardRestaurantAttendanceTracking = {
           "ClientRectangle": "720,80,240,100",
           "Border": ";;;;",
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "TextFormat": {
             "Ident": "StiNumberFormatService",
-            "DecimalDigits": 0,
+            "NegativePattern": 1,
             "GroupSeparator": ",",
-            "State": "DecimalDigits"
+            "State": "DecimalDigits, Abbreviation"
           },
           "Value": {
-            "Ident": "18",
+            "Ident": "ValueIndicatorMeter",
             "Expression": "Sum([RestaurantbyState.McDonald's])",
             "Label": "McDonald's"
           },
@@ -526,16 +564,16 @@ var DashboardRestaurantAttendanceTracking = {
           "ClientRectangle": "720,180,240,100",
           "Border": ";;;;",
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "TextFormat": {
             "Ident": "StiNumberFormatService",
-            "DecimalDigits": 0,
+            "NegativePattern": 1,
             "GroupSeparator": ",",
-            "State": "DecimalDigits"
+            "State": "DecimalDigits, Abbreviation"
           },
           "Value": {
-            "Ident": "18",
+            "Ident": "ValueIndicatorMeter",
             "Expression": "Sum([RestaurantbyState.Wendy's(withFranchise)])",
             "Label": "Wendy's (with Franchise)"
           },
@@ -553,16 +591,16 @@ var DashboardRestaurantAttendanceTracking = {
           "ClientRectangle": "720,280,240,100",
           "Border": ";;;;",
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "TextFormat": {
             "Ident": "StiNumberFormatService",
-            "DecimalDigits": 0,
+            "NegativePattern": 1,
             "GroupSeparator": ",",
-            "State": "DecimalDigits"
+            "State": "DecimalDigits, Abbreviation"
           },
           "Value": {
-            "Ident": "18",
+            "Ident": "ValueIndicatorMeter",
             "Expression": "Sum(RestaurantbyState.BurgerKing)",
             "Label": "Burger King"
           },
@@ -580,15 +618,14 @@ var DashboardRestaurantAttendanceTracking = {
           "ClientRectangle": "960,180,240,100",
           "Border": ";;;;",
           "Value": {
-            "Ident": "15",
+            "Ident": "ValueGaugeMeter",
             "Expression": "Sum([RestaurantbyState.SalesVolumeWendy's])",
             "Label": " Sales Volume Wendy's"
           },
           "Title": {
             "Text": "Gauge",
             "Visible": false
-          },
-          "Font": ";13;;"
+          }
         },
         "9": {
           "Ident": "StiGaugeElement",
@@ -597,15 +634,14 @@ var DashboardRestaurantAttendanceTracking = {
           "ClientRectangle": "960,280,240,100",
           "Border": ";;;;",
           "Value": {
-            "Ident": "15",
+            "Ident": "ValueGaugeMeter",
             "Expression": "Sum(RestaurantbyState.SalesVolumeBurgerKing)",
             "Label": " Sales Volume Burger King"
           },
           "Title": {
             "Text": "Gauge",
             "Visible": false
-          },
-          "Font": ";13;;"
+          }
         },
         "10": {
           "Ident": "StiGaugeElement",
@@ -614,23 +650,28 @@ var DashboardRestaurantAttendanceTracking = {
           "ClientRectangle": "960,80,240,100",
           "Border": ";;;;",
           "Value": {
-            "Ident": "15",
+            "Ident": "ValueGaugeMeter",
             "Expression": "Sum([RestaurantbyState.SalesVolumeMcDonald's])",
             "Label": " Sales Volume McDonald's"
           },
           "Title": {
             "Text": "Gauge",
             "Visible": false
-          },
-          "Font": ";13;;"
+          }
         },
         "11": {
           "Ident": "StiTextElement",
           "Name": "Text1",
           "Guid": "008e7fc8ac6d4ea19fec593b6c2d0e5f",
           "ClientRectangle": "600,80,120,100",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
-          "Text": "<font face=\"Arial\" size=\"12\"><text-align=\"Center\">McDonald's<br />\r\n</text-align></font>",
+          "Text": "<font face=\"Arial\" size=\"12\"><text-align=\"Center\">McDonald's<br />\n</text-align></font>",
           "Title": {
             "Text": "Text",
             "Visible": false
@@ -641,8 +682,14 @@ var DashboardRestaurantAttendanceTracking = {
           "Name": "Text5",
           "Guid": "aa7cd2ea18ac4491aeb220a404c06f93",
           "ClientRectangle": "600,180,120,100",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
-          "Text": "<font face=\"Arial\" size=\"12\"><text-align=\"Center\">Wendy's<br />\r\n</text-align></font>",
+          "Text": "<font face=\"Arial\" size=\"12\"><text-align=\"Center\">Wendy's<br />\n</text-align></font>",
           "Title": {
             "Text": "Text",
             "Visible": false
@@ -653,8 +700,14 @@ var DashboardRestaurantAttendanceTracking = {
           "Name": "Text6",
           "Guid": "0828d51525764d52b1837b5a1d5f318f",
           "ClientRectangle": "600,280,120,100",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
-          "Text": "<font face=\"Arial\" size=\"12\"><text-align=\"Center\">Burger King<br />\r\n</text-align></font>",
+          "Text": "<font face=\"Arial\" size=\"12\"><text-align=\"Center\">Burger King<br />\n</text-align></font>",
           "Title": {
             "Text": "Text",
             "Visible": false
@@ -665,6 +718,12 @@ var DashboardRestaurantAttendanceTracking = {
           "Name": "Text7",
           "Guid": "b183c832e85346608f998f5c1bf08529",
           "ClientRectangle": "600,40,120,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
           "Text": "<font face=\"Arial\" size=\"16\"><text-align=\"Center\">Company</text-align></font>",
           "Title": {

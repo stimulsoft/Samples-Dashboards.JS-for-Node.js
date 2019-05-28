@@ -1,16 +1,25 @@
 var DashboardPopulationByState = {
-  "ReportVersion": "2019.2.1",
-  "ReportGuid": "afb0c7328e5941bd82f912423b19c806",
+  "ReportVersion": "2019.3.1.0",
+  "ReportGuid": "b1a87df572f144d4bfa28e6135d270cd",
   "ReportName": "DashboardPopulationByState",
   "ReportAlias": "DashboardPopulationByState",
-  "ReportFile": "DashboardPopulationByState.mrt",
   "ReportAuthor": "Stimulsoft",
-  "ReportCreated": "/Date(-21600000+0300)/",
-  "ReportChanged": "/Date(-21600000+0300)/",
+  "ReportCreated": "/Date(1535955486000+0300)/",
+  "ReportChanged": "/Date(1556307121000+0300)/",
   "EngineVersion": "EngineV2",
   "CalculationMode": "Interpretation",
   "ReportUnit": "Inches",
-  "PreviewSettings": 268435455,
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\n\r\nnamespace Reports\r\n{\r\n    public class DashboardPopulationByState : Stimulsoft.Report.StiReport\r\n    {\r\n        public DashboardPopulationByState()        {\r\n            this.InitializeComponent();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
+  "ReferencedAssemblies": {
+    "0": "System.Dll",
+    "1": "System.Drawing.Dll",
+    "2": "System.Windows.Forms.Dll",
+    "3": "System.Data.Dll",
+    "4": "System.Xml.Dll",
+    "5": "Stimulsoft.Controls.Dll",
+    "6": "Stimulsoft.Base.Dll",
+    "7": "Stimulsoft.Report.Dll"
+  },
   "Dictionary": {
     "Resources": {
       "0": {
@@ -25,6 +34,7 @@ var DashboardPopulationByState = {
         "Ident": "StiDataTableSource",
         "Name": "Cities",
         "Alias": "Cities",
+        "Key": "79d490492c15476db4eed6568cadb67d",
         "Columns": {
           "0": {
             "Name": "City_ID",
@@ -94,7 +104,7 @@ var DashboardPopulationByState = {
       "Name": "DashboardPopulationByState",
       "Guid": "79def813a4b14aaa8a82b708f15e1c76",
       "Alias": "Population by State",
-      "Brush": "solid:Transparent",
+      "Brush": "solid:",
       "Components": {
         "0": {
           "Ident": "StiRegionMapElement",
@@ -102,21 +112,27 @@ var DashboardPopulationByState = {
           "Guid": "fd8c2102513a41d3ad559cad05ce82df",
           "ClientRectangle": "0,40,600,320",
           "Border": ";;;;",
+          "DashboardInteraction": {
+            "Ident": "RegionMap",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
           "Title": {
             "Text": "Population Growth",
             "Font": "Arial Narrow;15.75;;",
             "HorAlignment": "Center"
           },
           "KeyMeter": {
-            "Ident": "24",
+            "Ident": "KeyMapMeter",
             "Expression": "Cities.States"
           },
           "NameMeter": {
-            "Ident": "25",
+            "Ident": "NameMapMeter",
             "Expression": "Cities.States"
           },
           "ValueMeter": {
-            "Ident": "26",
+            "Ident": "ValueMapMeter",
             "Expression": "Cities.Growth"
           },
           "DataFrom": "DataColumns",
@@ -133,34 +149,74 @@ var DashboardPopulationByState = {
           "Border": ";;;;",
           "Columns": {
             "0": {
-              "Ident": "31",
-              "Expression": "Cities.States"
+              "Ident": "DimensionColumn",
+              "Expression": "Cities.States",
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              }
             },
             "1": {
-              "Ident": "31",
-              "Expression": "Cities.City"
+              "Ident": "DimensionColumn",
+              "Expression": "Cities.City",
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              }
             },
             "2": {
-              "Ident": "33",
+              "Ident": "MeasureColumn",
               "Expression": "Sum([Cities.2016])",
               "HorAlignment": "Right",
               "TextFormat": {
                 "Ident": "StiNumberFormatService",
-                "GroupSeparator": ","
+                "NegativePattern": 1,
+                "GroupSeparator": ",",
+                "State": "DecimalDigits, Abbreviation"
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               }
             },
             "3": {
-              "Ident": "33",
+              "Ident": "MeasureColumn",
               "Expression": "Sum([Cities.2018])",
-              "HorAlignment": "Right"
+              "HorAlignment": "Right",
+              "TextFormat": {
+                "Ident": "StiNumberFormatService",
+                "NegativePattern": 1,
+                "GroupSeparator": ",",
+                "State": "DecimalDigits, Abbreviation"
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              }
             },
             "4": {
-              "Ident": "32",
+              "Ident": "IndicatorColumn",
               "Expression": "Sum(Cities.Growth)",
               "HorAlignment": "Right",
               "TextFormat": {
                 "Ident": "StiNumberFormatService",
-                "GroupSeparator": ","
+                "NegativePattern": 1,
+                "GroupSeparator": ",",
+                "State": "DecimalDigits, Abbreviation"
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               }
             }
           },
@@ -175,6 +231,12 @@ var DashboardPopulationByState = {
             "Font": "Arial Narrow;15.75;;",
             "HorAlignment": "Center"
           },
+          "DashboardInteraction": {
+            "Ident": "Table",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
           "SizeMode": "Fit"
         },
         "2": {
@@ -185,38 +247,44 @@ var DashboardPopulationByState = {
           "Border": ";;;;",
           "Columns": {
             "0": {
-              "Ident": "35",
+              "Ident": "PivotColumn",
               "Expression": "Cities.States",
-              "HorAlignment": "Center"
+              "HorAlignment": "Left",
+              "TopN": {
+                "Mode": "None"
+              }
             }
           },
           "Rows": {
             "0": {
-              "Ident": "36",
-              "Expression": "Cities.City"
+              "Ident": "PivotRow",
+              "Expression": "Cities.City",
+              "TopN": {
+                "Mode": "None"
+              }
             }
           },
           "Summaries": {
             "0": {
-              "Ident": "37",
+              "Ident": "PivotSummary",
               "Expression": "Sum([Cities.2016])",
-              "HorAlignment": "Center",
+              "HorAlignment": "Left",
               "TextFormat": {
                 "Ident": "StiNumberFormatService",
-                "DecimalDigits": 0,
+                "NegativePattern": 1,
                 "GroupSeparator": ",",
-                "State": "DecimalDigits"
+                "State": "DecimalDigits, Abbreviation"
               }
             },
             "1": {
-              "Ident": "37",
+              "Ident": "PivotSummary",
               "Expression": "Sum([Cities.2018])",
-              "HorAlignment": "Center",
+              "HorAlignment": "Left",
               "TextFormat": {
                 "Ident": "StiNumberFormatService",
-                "DecimalDigits": 0,
+                "NegativePattern": 1,
                 "GroupSeparator": ",",
-                "State": "DecimalDigits"
+                "State": "DecimalDigits, Abbreviation"
               }
             }
           },
@@ -234,24 +302,31 @@ var DashboardPopulationByState = {
           "Border": ";;;;",
           "Values": {
             "0": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum([Cities.2016])",
               "SeriesType": "StackedColumn"
             },
             "1": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum([Cities.2018])",
               "SeriesType": "StackedColumn"
             }
           },
           "Arguments": {
             "0": {
-              "Ident": "1",
+              "Ident": "ArgumentChartMeter",
               "Expression": "Cities.City"
             }
           },
           "TopN": {
-            "Mode": null
+            "Mode": "None"
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
           },
           "Title": {
             "Text": "Population Growth in 2016 and 2018",
@@ -263,19 +338,10 @@ var DashboardPopulationByState = {
           },
           "ValueFormat": {
             "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
             "DecimalDigits": 0,
             "GroupSeparator": ",",
-            "State": "DecimalDigits"
-          },
-          "XAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "YAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
+            "State": "DecimalDigits, Abbreviation"
           },
           "Area": {
             "GridLinesHor": {
@@ -298,6 +364,12 @@ var DashboardPopulationByState = {
           "Name": "Text1",
           "Guid": "3f7a700c20a44448851df5556bd4e7eb",
           "ClientRectangle": "0,0,1200,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
           "Text": "<font face=\"Arial\" size=\"36\"><text-align=\"Center\">Population by State</text-align></font>",
           "Title": {

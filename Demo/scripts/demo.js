@@ -71,7 +71,7 @@ function createDashboardButtons() {
         {
             category: "Miscellaneous Dashboards",
             dashboards: {
-                "DashboardOpec": "Opec",
+                "DashboardOpec": "Opec"
                 //"DashboardNascar": "Nascar"
             }
         },

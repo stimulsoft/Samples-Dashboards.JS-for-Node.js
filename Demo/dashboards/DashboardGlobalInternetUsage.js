@@ -1,16 +1,25 @@
 var DashboardGlobalInternetUsage = {
-  "ReportVersion": "2019.2.1",
-  "ReportGuid": "6165ad19f81c44058d57cf1cf3aa7d76",
+  "ReportVersion": "2019.3.1.0",
+  "ReportGuid": "d1ffd1449767488caf52b4c45b639840",
   "ReportName": "DashboardGlobalInternetUsage.mrt",
   "ReportAlias": "DashboardGlobalInternetUsage.mrt",
-  "ReportFile": "DashboardGlobalInternetUsage.mrt",
   "ReportAuthor": "Stimulsoft",
-  "ReportCreated": "/Date(-21600000+0300)/",
-  "ReportChanged": "/Date(-21600000+0300)/",
+  "ReportCreated": "/Date(1535714385000+0300)/",
+  "ReportChanged": "/Date(1556306949000+0300)/",
   "EngineVersion": "EngineV2",
   "CalculationMode": "Interpretation",
   "ReportUnit": "Inches",
-  "PreviewSettings": 268435455,
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\n\r\nnamespace Reports\r\n{\r\n    public class DashboardGlobalInternetUsage_mrt : Stimulsoft.Report.StiReport\r\n    {\r\n        public DashboardGlobalInternetUsage_mrt()        {\r\n            this.InitializeComponent();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
+  "ReferencedAssemblies": {
+    "0": "System.Dll",
+    "1": "System.Drawing.Dll",
+    "2": "System.Windows.Forms.Dll",
+    "3": "System.Data.Dll",
+    "4": "System.Xml.Dll",
+    "5": "Stimulsoft.Controls.Dll",
+    "6": "Stimulsoft.Base.Dll",
+    "7": "Stimulsoft.Report.Dll"
+  },
   "Dictionary": {
     "Resources": {
       "0": {
@@ -25,6 +34,7 @@ var DashboardGlobalInternetUsage = {
         "Ident": "StiDataTableSource",
         "Name": "GlobalInternetUsers",
         "Alias": "GlobalInternetUsers",
+        "Key": "8166223a6c5941059913537076590be0",
         "Columns": {
           "0": {
             "Name": "ContinentID",
@@ -94,7 +104,7 @@ var DashboardGlobalInternetUsage = {
       "Name": "DashboardGlobalInternetUsage",
       "Guid": "db35f8756c1b4b82b2cfd25ed41bb282",
       "Alias": "Global Internet Usage",
-      "Brush": "solid:Transparent",
+      "Brush": "solid:",
       "Components": {
         "0": {
           "Ident": "StiRegionMapElement",
@@ -102,6 +112,12 @@ var DashboardGlobalInternetUsage = {
           "Guid": "4645f501a5d64905bf694a8b7fd10096",
           "ClientRectangle": "440,40,760,340",
           "Border": ";;;;",
+          "DashboardInteraction": {
+            "Ident": "RegionMap",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
           "Title": {
             "Text": "Global Internet Usage",
             "Visible": false,
@@ -109,17 +125,17 @@ var DashboardGlobalInternetUsage = {
             "HorAlignment": "Center"
           },
           "KeyMeter": {
-            "Ident": "24",
+            "Ident": "KeyMapMeter",
             "Expression": "GlobalInternetUsers.Country_Name",
             "Label": "Country Name"
           },
           "NameMeter": {
-            "Ident": "25",
+            "Ident": "NameMapMeter",
             "Expression": "GlobalInternetUsers.Country_Name",
             "Label": "Country Name"
           },
           "ValueMeter": {
-            "Ident": "26",
+            "Ident": "ValueMapMeter",
             "Expression": "GlobalInternetUsers.InternetUsersinMillions",
             "Label": "InternetUsers in Millions"
           },
@@ -137,42 +153,48 @@ var DashboardGlobalInternetUsage = {
           "Border": ";;;;",
           "Columns": {
             "0": {
-              "Ident": "35",
+              "Ident": "PivotColumn",
               "Expression": "GlobalInternetUsers.Country_Name",
               "Label": "Country Name",
-              "HorAlignment": "Center"
+              "HorAlignment": "Left",
+              "TopN": {
+                "Mode": "None"
+              }
             }
           },
           "Rows": {
             "0": {
-              "Ident": "36",
+              "Ident": "PivotRow",
               "Expression": "GlobalInternetUsers.Continent_Name",
-              "Label": "Continent Name"
+              "Label": "Continent Name",
+              "TopN": {
+                "Mode": "None"
+              }
             }
           },
           "Summaries": {
             "0": {
-              "Ident": "37",
+              "Ident": "PivotSummary",
               "Expression": "Sum(GlobalInternetUsers.InternetUsersinMillions)",
               "Label": "InternetUsers in Millions",
-              "HorAlignment": "Center",
+              "HorAlignment": "Left",
               "TextFormat": {
                 "Ident": "StiNumberFormatService",
-                "DecimalDigits": 0,
+                "NegativePattern": 1,
                 "GroupSeparator": ",",
-                "State": "DecimalDigits"
+                "State": "DecimalDigits, Abbreviation"
               }
             },
             "1": {
-              "Ident": "37",
+              "Ident": "PivotSummary",
               "Expression": "Sum(GlobalInternetUsers.PopulationinMillions)",
               "Label": "Population in Millions",
-              "HorAlignment": "Center",
+              "HorAlignment": "Left",
               "TextFormat": {
                 "Ident": "StiNumberFormatService",
-                "DecimalDigits": 0,
+                "NegativePattern": 1,
                 "GroupSeparator": ",",
-                "State": "DecimalDigits"
+                "State": "DecimalDigits, Abbreviation"
               }
             }
           },
@@ -189,15 +211,15 @@ var DashboardGlobalInternetUsage = {
           "ClientRectangle": "0,400,440,200",
           "Border": ";;;;",
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "Value": {
-            "Ident": "21",
+            "Ident": "ValueProgressMeter",
             "Expression": "Sum(GlobalInternetUsers.InternetUsersinMillions)",
             "Label": "Internet Users in Millions"
           },
           "Target": {
-            "Ident": "20",
+            "Ident": "TargetProgressMeter",
             "Expression": "Sum(GlobalInternetUsers.PopulationinMillions)",
             "Label": "Population in Millions"
           },
@@ -206,13 +228,20 @@ var DashboardGlobalInternetUsage = {
             "Font": "Arial Narrow;15.75;;",
             "HorAlignment": "Center"
           },
-          "Font": ";13;;"
+          "Font": ";13;;",
+          "ColorEach": true
         },
         "3": {
           "Ident": "StiTextElement",
           "Name": "Text1",
           "Guid": "7e5367566a0b41738b5e974450b82a62",
           "ClientRectangle": "0,0,1200,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
           "Text": "<font face=\"Arial\" size=\"36\"><text-align=\"Center\">Global Internet Usage</text-align></font>",
           "Title": {
@@ -227,7 +256,7 @@ var DashboardGlobalInternetUsage = {
           "ClientRectangle": "0,220,440,180",
           "Border": ";;;;",
           "Value": {
-            "Ident": "15",
+            "Ident": "ValueGaugeMeter",
             "Expression": "Sum(GlobalInternetUsers.PopulationinMillions)",
             "Label": "PopulationinMillions"
           },
@@ -235,8 +264,7 @@ var DashboardGlobalInternetUsage = {
             "Text": "Population by Country",
             "Font": "Arial Narrow;15.75;;",
             "HorAlignment": "Center"
-          },
-          "Font": ";13;;"
+          }
         },
         "5": {
           "Ident": "StiTreeViewElement",
@@ -246,12 +274,12 @@ var DashboardGlobalInternetUsage = {
           "Border": ";;;;",
           "KeyMeters": {
             "0": {
-              "Ident": "40",
+              "Ident": "KeyTreeViewMeter",
               "Expression": "GlobalInternetUsers.Continent_Name",
               "Label": "Continent_Name"
             },
             "1": {
-              "Ident": "40",
+              "Ident": "KeyTreeViewMeter",
               "Expression": "GlobalInternetUsers.Country_Name",
               "Label": "Country_Name"
             }

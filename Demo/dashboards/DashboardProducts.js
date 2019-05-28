@@ -1,16 +1,24 @@
 var DashboardProducts = {
-  "ReportVersion": "2019.2.1",
-  "ReportGuid": "8272026e023a438bb53b3bb27f18172b",
+  "ReportVersion": "2019.3.1.0",
+  "ReportGuid": "93183e89222a40c2aeaeec2f42d07146",
   "ReportName": "DashboardProducts",
   "ReportAlias": "DashboardProducts",
-  "ReportFile": "DashboardProducts.mrt",
   "ReportAuthor": "Stimulsoft",
-  "ReportCreated": "/Date(-21600000+0300)/",
-  "ReportChanged": "/Date(-21600000+0300)/",
+  "ReportCreated": "/Date(1535838154000+0300)/",
+  "ReportChanged": "/Date(1556307143000+0300)/",
   "EngineVersion": "EngineV2",
-  "CalculationMode": "Interpretation",
   "ReportUnit": "Inches",
-  "PreviewSettings": 268435455,
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\n\r\nnamespace Reports\r\n{\r\n    public class DashboardProducts : Stimulsoft.Report.StiReport\r\n    {\r\n        public DashboardProducts()        {\r\n            this.InitializeComponent();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
+  "ReferencedAssemblies": {
+    "0": "System.Dll",
+    "1": "System.Drawing.Dll",
+    "2": "System.Windows.Forms.Dll",
+    "3": "System.Data.Dll",
+    "4": "System.Xml.Dll",
+    "5": "Stimulsoft.Controls.Dll",
+    "6": "Stimulsoft.Base.Dll",
+    "7": "Stimulsoft.Report.Dll"
+  },
   "Dictionary": {
     "Resources": {
       "0": {
@@ -25,6 +33,7 @@ var DashboardProducts = {
         "Ident": "StiDataTableSource",
         "Name": "Products",
         "Alias": "Products",
+        "Key": "3795b0604c424669984949e0604c1ca7",
         "Columns": {
           "0": {
             "Name": "ProductID",
@@ -103,6 +112,7 @@ var DashboardProducts = {
         "Ident": "StiDataTableSource",
         "Name": "Suppliers",
         "Alias": "Suppliers",
+        "Key": "6ff50245df84440e87be02e93dcc9037",
         "Columns": {
           "0": {
             "Name": "SupplierID",
@@ -211,7 +221,6 @@ var DashboardProducts = {
         },
         "NameInSource": "Relation",
         "Alias": "Suppliers",
-        "IsCloud": null,
         "Key": "176eb7f5de654423a0dafe5bd06b3c61",
         "ParentSource": "Suppliers",
         "ChildSource": "Products"
@@ -224,7 +233,7 @@ var DashboardProducts = {
       "Name": "Dashboard1",
       "Guid": "e5ad235375934777afb61f0dceae1b1c",
       "Alias": "Products",
-      "Brush": "solid:Transparent",
+      "Brush": "solid:",
       "Components": {
         "0": {
           "Ident": "StiRegionMapElement",
@@ -232,21 +241,27 @@ var DashboardProducts = {
           "Guid": "eccce8c5975747bc8e002d51b735a963",
           "ClientRectangle": "560,40,640,560",
           "Border": ";;;;",
+          "DashboardInteraction": {
+            "Ident": "RegionMap",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
           "Title": {
             "Text": "Units in Stock by Country",
             "Font": "Arial Narrow;15.75;;",
             "HorAlignment": "Center"
           },
           "KeyMeter": {
-            "Ident": "24",
+            "Ident": "KeyMapMeter",
             "Expression": "Suppliers.Country"
           },
           "NameMeter": {
-            "Ident": "25",
+            "Ident": "NameMapMeter",
             "Expression": "Suppliers.Country"
           },
           "ValueMeter": {
-            "Ident": "26",
+            "Ident": "ValueMapMeter",
             "Expression": "Products.UnitsInStock",
             "Label": "Units In Stock"
           },
@@ -262,6 +277,12 @@ var DashboardProducts = {
           "Name": "Text1",
           "Guid": "630b2ded23934003ab856bedfcb868d9",
           "ClientRectangle": "0,0,1200,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
           "Text": "<font face=\"Arial\" size=\"36\"><text-align=\"Center\">Products</text-align></font>",
           "Title": {
@@ -278,22 +299,21 @@ var DashboardProducts = {
           "Ranges": {
             "0": {
               "Color": "34,177,76",
-              "End": 33
+              "End": 33.0
             },
             "1": {
               "Color": "Yellow",
-              "Start": 33,
-              "End": 66
+              "Start": 33.0,
+              "End": 66.0
             },
             "2": {
               "Color": "237,28,36",
-              "Start": 66
+              "Start": 66.0
             }
           },
           "Type": "HalfCircular",
-          "RangeType": "Color",
           "Value": {
-            "Ident": "15",
+            "Ident": "ValueGaugeMeter",
             "Expression": "Sum(Products.UnitsInStock)",
             "Label": "Units In Stock"
           },
@@ -301,8 +321,7 @@ var DashboardProducts = {
             "Text": "Units In Stock",
             "Font": "Arial Narrow;15.75;;",
             "HorAlignment": "Center"
-          },
-          "Font": ";13;;"
+          }
         },
         "3": {
           "Ident": "StiGaugeElement",
@@ -312,22 +331,21 @@ var DashboardProducts = {
           "Border": ";;;;",
           "Ranges": {
             "0": {
-              "End": 33
+              "End": 33.0
             },
             "1": {
               "Color": "Yellow",
-              "Start": 33,
-              "End": 66
+              "Start": 33.0,
+              "End": 66.0
             },
             "2": {
               "Color": "Green",
-              "Start": 66
+              "Start": 66.0
             }
           },
           "Type": "HalfCircular",
-          "RangeType": "Color",
           "Value": {
-            "Ident": "15",
+            "Ident": "ValueGaugeMeter",
             "Expression": "Sum(Products.UnitsOnOrder)",
             "Label": "Units On Order"
           },
@@ -335,8 +353,7 @@ var DashboardProducts = {
             "Text": "Units on Order",
             "Font": "Arial Narrow;15.75;;",
             "HorAlignment": "Center"
-          },
-          "Font": ";13;;"
+          }
         },
         "4": {
           "Ident": "StiTreeViewElement",
@@ -349,7 +366,7 @@ var DashboardProducts = {
           "ShowAllValue": true,
           "KeyMeters": {
             "0": {
-              "Ident": "40",
+              "Ident": "KeyTreeViewMeter",
               "Expression": "Products.ProductName",
               "Label": "ProductName"
             }
@@ -366,16 +383,17 @@ var DashboardProducts = {
           "ClientRectangle": "0,240,560,120",
           "Border": ";;;;",
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "TextFormat": {
             "Ident": "StiCurrencyFormatService",
             "NegativePattern": 0,
             "GroupSeparator": ",",
+            "State": "Abbreviation",
             "PositivePattern": 0
           },
           "Value": {
-            "Ident": "18",
+            "Ident": "ValueIndicatorMeter",
             "Expression": "Sum((Products.UnitPrice*Products.UnitsInStock)-(Products.UnitPrice*Products.UnitsOnOrder))",
             "Label": "UnitPrice"
           },
@@ -397,12 +415,12 @@ var DashboardProducts = {
           "ShowAllValue": true,
           "KeyMeters": {
             "0": {
-              "Ident": "40",
+              "Ident": "KeyTreeViewMeter",
               "Expression": "Suppliers.Country",
               "Label": "Country"
             },
             "1": {
-              "Ident": "40",
+              "Ident": "KeyTreeViewMeter",
               "Expression": "Suppliers.CompanyName",
               "Label": "CompanyName"
             }

@@ -1,16 +1,25 @@
 var DashboardExchangeTenders = {
-  "ReportVersion": "2019.2.1",
-  "ReportGuid": "d37f85310ca746dba2bedb269cdc0c67",
+  "ReportVersion": "2019.3.1.0",
+  "ReportGuid": "a95be4e48f5640249bec3d2ade7ab92b",
   "ReportName": "DashboardExchangeTenders",
   "ReportAlias": "DashboardExchangeTenders",
-  "ReportFile": "DashboardExchangeTenders.mrt",
-  "ReportCreated": "/Date(-21600000+0300)/",
-  "ReportChanged": "/Date(-21600000+0300)/",
+  "ReportCreated": "/Date(1535959791000+0300)/",
+  "ReportChanged": "/Date(1556306877000+0300)/",
   "EngineVersion": "EngineV2",
   "CalculationMode": "Interpretation",
   "ReportUnit": "Inches",
   "Culture": "en-US",
-  "PreviewSettings": 268435455,
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\n\r\nnamespace Reports\r\n{\r\n    public class DashboardExchangeTenders : Stimulsoft.Report.StiReport\r\n    {\r\n        public DashboardExchangeTenders()        {\r\n            this.InitializeComponent();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
+  "ReferencedAssemblies": {
+    "0": "System.Dll",
+    "1": "System.Drawing.Dll",
+    "2": "System.Windows.Forms.Dll",
+    "3": "System.Data.Dll",
+    "4": "System.Xml.Dll",
+    "5": "Stimulsoft.Controls.Dll",
+    "6": "Stimulsoft.Base.Dll",
+    "7": "Stimulsoft.Report.Dll"
+  },
   "Dictionary": {
     "Resources": {
       "0": {
@@ -25,6 +34,7 @@ var DashboardExchangeTenders = {
         "Ident": "StiDataTableSource",
         "Name": "Apple",
         "Alias": "Apple",
+        "Key": "6f52128d352549f8850be182aaf0b229",
         "Columns": {
           "0": {
             "Name": "Date",
@@ -75,6 +85,7 @@ var DashboardExchangeTenders = {
         "Ident": "StiDataTableSource",
         "Name": "Boeing",
         "Alias": "Boeing",
+        "Key": "7fa05d5b462c45e888060212cc98cff3",
         "Columns": {
           "0": {
             "Name": "Date",
@@ -125,6 +136,7 @@ var DashboardExchangeTenders = {
         "Ident": "StiDataTableSource",
         "Name": "Dell",
         "Alias": "Dell",
+        "Key": "823527529d324bb2a7a41582b1765555",
         "Columns": {
           "0": {
             "Name": "Date",
@@ -175,6 +187,7 @@ var DashboardExchangeTenders = {
         "Ident": "StiDataTableSource",
         "Name": "IBM",
         "Alias": "IBM",
+        "Key": "56883c539e3247ab83a8ece44d2985d4",
         "Columns": {
           "0": {
             "Name": "Date",
@@ -225,6 +238,7 @@ var DashboardExchangeTenders = {
         "Ident": "StiDataTableSource",
         "Name": "Microsoft",
         "Alias": "Microsoft",
+        "Key": "288e7da3a465496d83a8f0e082023bb6",
         "Columns": {
           "0": {
             "Name": "Date",
@@ -287,7 +301,7 @@ var DashboardExchangeTenders = {
       "Name": "Dashboard1",
       "Guid": "79def813a4b14aaa8a82b708f15e1c76",
       "Alias": "Apple",
-      "Brush": "solid:Transparent",
+      "Brush": "solid:",
       "Components": {
         "0": {
           "Ident": "StiChartElement",
@@ -297,38 +311,45 @@ var DashboardExchangeTenders = {
           "Border": ";;;;",
           "Values": {
             "0": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(Apple.Open)",
               "SeriesType": "Stock"
             }
           },
           "CloseValues": {
             "0": {
-              "Ident": "6",
+              "Ident": "CloseValueChartMeter",
               "Expression": "Sum(Apple.Close)",
               "Label": "Close"
             }
           },
           "LowValues": {
             "0": {
-              "Ident": "7",
+              "Ident": "LowValueChartMeter",
               "Expression": "Sum(Apple.Low)"
             }
           },
           "HighValues": {
             "0": {
-              "Ident": "8",
+              "Ident": "HighValueChartMeter",
               "Expression": "Sum(Apple.High)"
             }
           },
           "Arguments": {
             "0": {
-              "Ident": "1",
+              "Ident": "ArgumentChartMeter",
               "Expression": "Apple.Date"
             }
           },
           "TopN": {
-            "Mode": null
+            "Mode": "None"
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
           },
           "Title": {
             "Visible": false
@@ -343,16 +364,6 @@ var DashboardExchangeTenders = {
             "GroupSeparator": ",",
             "State": "DecimalDigits",
             "PositivePattern": 0
-          },
-          "XAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "YAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
           },
           "Area": {
             "GridLinesHor": {
@@ -377,7 +388,7 @@ var DashboardExchangeTenders = {
           "ClientRectangle": "0,80,480,240",
           "Border": ";;;;",
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "TextFormat": {
             "Ident": "StiCurrencyFormatService",
@@ -386,15 +397,15 @@ var DashboardExchangeTenders = {
             "PositivePattern": 0
           },
           "Value": {
-            "Ident": "18",
+            "Ident": "ValueIndicatorMeter",
             "Expression": "Sum(Apple.Close)"
           },
           "Target": {
-            "Ident": "17",
+            "Ident": "TargetIndicatorMeter",
             "Expression": "Sum(Apple.Open)"
           },
           "Series": {
-            "Ident": "16",
+            "Ident": "SeriesIndicatorMeter",
             "Expression": "Apple.Date"
           },
           "Title": {
@@ -409,6 +420,12 @@ var DashboardExchangeTenders = {
           "Name": "Text1",
           "Guid": "a7ea4de5deb948ac8f40c30f2aeac5c3",
           "ClientRectangle": "0,0,1200,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
           "Text": "<font face=\"Arial\" size=\"36\"><text-align=\"Center\"><font-color=\"#7F7F7F\">Exchange Tenders</font-color></text-align></font>",
           "Title": {
@@ -423,10 +440,10 @@ var DashboardExchangeTenders = {
           "ClientRectangle": "0,40,480,40",
           "Border": ";;;;",
           "Font": ";10;;",
-          "Condition": "EqualTo",
+          "Condition": "LessThan",
           "SelectionMode": "AutoRange",
           "ValueMeter": {
-            "Ident": "44",
+            "Ident": "ValueDatePickerMeter",
             "Expression": "Apple.Date"
           }
         },
@@ -438,18 +455,25 @@ var DashboardExchangeTenders = {
           "Border": ";;;;",
           "Values": {
             "0": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(Apple.Volume)"
             }
           },
           "Arguments": {
             "0": {
-              "Ident": "1",
+              "Ident": "ArgumentChartMeter",
               "Expression": "Apple.Date"
             }
           },
           "TopN": {
-            "Mode": null
+            "Mode": "None"
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
           },
           "Title": {
             "Text": "Volume of All Shares",
@@ -464,18 +488,8 @@ var DashboardExchangeTenders = {
             "NegativePattern": 0,
             "DecimalDigits": 0,
             "GroupSeparator": ",",
-            "State": "DecimalDigits",
+            "State": "DecimalDigits, Abbreviation",
             "PositivePattern": 0
-          },
-          "XAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "YAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
           },
           "Area": {
             "GridLinesHor": {
@@ -501,15 +515,21 @@ var DashboardExchangeTenders = {
           "Border": ";;;;",
           "Columns": {
             "0": {
-              "Ident": "31",
+              "Ident": "DimensionColumn",
               "Expression": "Apple.Date",
               "HorAlignment": "Center",
               "TextFormat": {
                 "Ident": "StiDateFormatService"
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               }
             },
             "1": {
-              "Ident": "32",
+              "Ident": "IndicatorColumn",
               "Expression": "Sum(Apple.Open - Apple.Close)",
               "Label": "Open vs Close",
               "HorAlignment": "Right",
@@ -518,10 +538,16 @@ var DashboardExchangeTenders = {
                 "NegativePattern": 0,
                 "GroupSeparator": ",",
                 "PositivePattern": 0
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               }
             },
             "2": {
-              "Ident": "30",
+              "Ident": "DataBarsColumn",
               "Expression": "Sum(Apple.High - Apple.Low)",
               "Label": "High vs Low",
               "TextFormat": {
@@ -530,10 +556,16 @@ var DashboardExchangeTenders = {
                 "GroupSeparator": ",",
                 "PositivePattern": 0
               },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              },
               "HorAlignment": "Right"
             },
             "3": {
-              "Ident": "29",
+              "Ident": "ColorScaleColumn",
               "Expression": "Sum(Apple.Volume)",
               "HorAlignment": "Right",
               "TextFormat": {
@@ -541,8 +573,14 @@ var DashboardExchangeTenders = {
                 "NegativePattern": 0,
                 "DecimalDigits": 0,
                 "GroupSeparator": ",",
-                "State": "DecimalDigits",
+                "State": "DecimalDigits, Abbreviation",
                 "PositivePattern": 0
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               }
             }
           },
@@ -551,6 +589,12 @@ var DashboardExchangeTenders = {
             "Text": "Share Price",
             "Font": ";15.75;;",
             "HorAlignment": "Center"
+          },
+          "DashboardInteraction": {
+            "Ident": "Table",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
           }
         }
       },
@@ -561,7 +605,7 @@ var DashboardExchangeTenders = {
       "Name": "Dashboard2",
       "Guid": "95a12f6c076449db8c556a5951b3072a",
       "Alias": "Boeing",
-      "Brush": "solid:Transparent",
+      "Brush": "solid:",
       "Components": {
         "0": {
           "Ident": "StiChartElement",
@@ -571,7 +615,7 @@ var DashboardExchangeTenders = {
           "Border": ";;;;",
           "Values": {
             "0": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(Boeing.Open)",
               "Label": "Open",
               "SeriesType": "Stock"
@@ -579,34 +623,41 @@ var DashboardExchangeTenders = {
           },
           "CloseValues": {
             "0": {
-              "Ident": "6",
+              "Ident": "CloseValueChartMeter",
               "Expression": "Sum(Boeing.Close)",
               "Label": "Close"
             }
           },
           "LowValues": {
             "0": {
-              "Ident": "7",
+              "Ident": "LowValueChartMeter",
               "Expression": "Sum(Boeing.Low)",
               "Label": "Low"
             }
           },
           "HighValues": {
             "0": {
-              "Ident": "8",
+              "Ident": "HighValueChartMeter",
               "Expression": "Sum(Boeing.High)",
               "Label": "High"
             }
           },
           "Arguments": {
             "0": {
-              "Ident": "1",
+              "Ident": "ArgumentChartMeter",
               "Expression": "Boeing.Date",
               "Label": "Date"
             }
           },
           "TopN": {
-            "Mode": null
+            "Mode": "None"
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
           },
           "Title": {
             "Visible": false
@@ -621,16 +672,6 @@ var DashboardExchangeTenders = {
             "GroupSeparator": ",",
             "State": "DecimalDigits",
             "PositivePattern": 0
-          },
-          "XAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "YAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
           },
           "Area": {
             "GridLinesHor": {
@@ -655,7 +696,7 @@ var DashboardExchangeTenders = {
           "ClientRectangle": "0,80,480,240",
           "Border": ";;;;",
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "TextFormat": {
             "Ident": "StiCurrencyFormatService",
@@ -664,16 +705,16 @@ var DashboardExchangeTenders = {
             "PositivePattern": 0
           },
           "Value": {
-            "Ident": "18",
+            "Ident": "ValueIndicatorMeter",
             "Expression": "Sum(Boeing.Close)",
             "Label": "Close"
           },
           "Target": {
-            "Ident": "17",
+            "Ident": "TargetIndicatorMeter",
             "Expression": "Sum(Boeing.Open)"
           },
           "Series": {
-            "Ident": "16",
+            "Ident": "SeriesIndicatorMeter",
             "Expression": "Boeing.Date"
           },
           "Title": {
@@ -688,6 +729,12 @@ var DashboardExchangeTenders = {
           "Name": "Text2",
           "Guid": "a7ea4de5deb948ac8f40c30f2aeac5c3",
           "ClientRectangle": "0,0,1200,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
           "Text": "<font face=\"Arial\" size=\"36\"><text-align=\"Center\">Exchange Tenders</text-align></font>",
           "Title": {
@@ -702,10 +749,10 @@ var DashboardExchangeTenders = {
           "ClientRectangle": "0,40,480,40",
           "Border": ";;;;",
           "Font": ";10;;",
-          "Condition": "EqualTo",
+          "Condition": "LessThan",
           "SelectionMode": "AutoRange",
           "ValueMeter": {
-            "Ident": "44",
+            "Ident": "ValueDatePickerMeter",
             "Expression": "Boeing.Date",
             "Label": "Date"
           }
@@ -718,18 +765,25 @@ var DashboardExchangeTenders = {
           "Border": ";;;;",
           "Values": {
             "0": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(Boeing.Volume)"
             }
           },
           "Arguments": {
             "0": {
-              "Ident": "1",
+              "Ident": "ArgumentChartMeter",
               "Expression": "Boeing.Date"
             }
           },
           "TopN": {
-            "Mode": null
+            "Mode": "None"
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
           },
           "Title": {
             "Text": "Volume of All Shares",
@@ -744,18 +798,8 @@ var DashboardExchangeTenders = {
             "NegativePattern": 0,
             "DecimalDigits": 0,
             "GroupSeparator": ",",
-            "State": "DecimalDigits",
+            "State": "DecimalDigits, Abbreviation",
             "PositivePattern": 0
-          },
-          "XAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "YAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
           },
           "Area": {
             "GridLinesHor": {
@@ -781,15 +825,21 @@ var DashboardExchangeTenders = {
           "Border": ";;;;",
           "Columns": {
             "0": {
-              "Ident": "31",
+              "Ident": "DimensionColumn",
               "Expression": "Boeing.Date",
               "HorAlignment": "Center",
               "TextFormat": {
                 "Ident": "StiDateFormatService"
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               }
             },
             "1": {
-              "Ident": "32",
+              "Ident": "IndicatorColumn",
               "Expression": "Sum(Boeing.Open - Boeing.Close)",
               "Label": "Open vs Close",
               "HorAlignment": "Right",
@@ -798,10 +848,16 @@ var DashboardExchangeTenders = {
                 "NegativePattern": 0,
                 "GroupSeparator": ",",
                 "PositivePattern": 0
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               }
             },
             "2": {
-              "Ident": "30",
+              "Ident": "DataBarsColumn",
               "Expression": "Sum(Boeing.High - Boeing.Low)",
               "Label": "High vs Low",
               "TextFormat": {
@@ -810,10 +866,16 @@ var DashboardExchangeTenders = {
                 "GroupSeparator": ",",
                 "PositivePattern": 0
               },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              },
               "HorAlignment": "Right"
             },
             "3": {
-              "Ident": "29",
+              "Ident": "ColorScaleColumn",
               "Expression": "Sum(Boeing.Volume)",
               "HorAlignment": "Right",
               "TextFormat": {
@@ -821,8 +883,14 @@ var DashboardExchangeTenders = {
                 "NegativePattern": 0,
                 "DecimalDigits": 0,
                 "GroupSeparator": ",",
-                "State": "DecimalDigits",
+                "State": "DecimalDigits, Abbreviation",
                 "PositivePattern": 0
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               }
             }
           },
@@ -831,6 +899,12 @@ var DashboardExchangeTenders = {
             "Text": "Share Price",
             "Font": "Arial Narrow;15.75;;",
             "HorAlignment": "Center"
+          },
+          "DashboardInteraction": {
+            "Ident": "Table",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
           }
         }
       },
@@ -841,7 +915,7 @@ var DashboardExchangeTenders = {
       "Name": "Dashboard3",
       "Guid": "6942f63648c749d8b8e283aa2aac26db",
       "Alias": "Dell",
-      "Brush": "solid:Transparent",
+      "Brush": "solid:",
       "Components": {
         "0": {
           "Ident": "StiIndicatorElement",
@@ -850,7 +924,7 @@ var DashboardExchangeTenders = {
           "ClientRectangle": "0,80,480,240",
           "Border": ";;;;",
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "TextFormat": {
             "Ident": "StiCurrencyFormatService",
@@ -859,17 +933,17 @@ var DashboardExchangeTenders = {
             "PositivePattern": 0
           },
           "Value": {
-            "Ident": "18",
+            "Ident": "ValueIndicatorMeter",
             "Expression": "Sum(Dell.Close)",
             "Label": "Close"
           },
           "Target": {
-            "Ident": "17",
+            "Ident": "TargetIndicatorMeter",
             "Expression": "Sum(Dell.Open)",
             "Label": "Open"
           },
           "Series": {
-            "Ident": "16",
+            "Ident": "SeriesIndicatorMeter",
             "Expression": "Dell.Date",
             "Label": "Date"
           },
@@ -885,6 +959,12 @@ var DashboardExchangeTenders = {
           "Name": "Text3",
           "Guid": "a7ea4de5deb948ac8f40c30f2aeac5c3",
           "ClientRectangle": "0,0,1200,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
           "Text": "<font face=\"Arial\" size=\"36\"><text-align=\"Center\">Exchange Tenders</text-align></font>",
           "Title": {
@@ -899,10 +979,10 @@ var DashboardExchangeTenders = {
           "ClientRectangle": "0,40,480,40",
           "Border": ";;;;",
           "Font": "Segoe UI;10;;",
-          "Condition": "EqualTo",
+          "Condition": "LessThan",
           "SelectionMode": "AutoRange",
           "ValueMeter": {
-            "Ident": "44",
+            "Ident": "ValueDatePickerMeter",
             "Expression": "Dell.Date",
             "Label": "Date"
           }
@@ -915,7 +995,7 @@ var DashboardExchangeTenders = {
           "Border": ";;;;",
           "Values": {
             "0": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(Dell.Open)",
               "Label": "Open",
               "SeriesType": "Stock"
@@ -923,34 +1003,41 @@ var DashboardExchangeTenders = {
           },
           "CloseValues": {
             "0": {
-              "Ident": "6",
+              "Ident": "CloseValueChartMeter",
               "Expression": "Sum(Dell.Close)",
               "Label": "Close"
             }
           },
           "LowValues": {
             "0": {
-              "Ident": "7",
+              "Ident": "LowValueChartMeter",
               "Expression": "Sum(Dell.Low)",
               "Label": "Low"
             }
           },
           "HighValues": {
             "0": {
-              "Ident": "8",
+              "Ident": "HighValueChartMeter",
               "Expression": "Sum(Dell.High)",
               "Label": "High"
             }
           },
           "Arguments": {
             "0": {
-              "Ident": "1",
+              "Ident": "ArgumentChartMeter",
               "Expression": "Dell.Date",
               "Label": "Date"
             }
           },
           "TopN": {
-            "Mode": null
+            "Mode": "None"
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
           },
           "Title": {
             "Visible": false
@@ -965,16 +1052,6 @@ var DashboardExchangeTenders = {
             "GroupSeparator": ",",
             "State": "DecimalDigits",
             "PositivePattern": 0
-          },
-          "XAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "YAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
           },
           "Area": {
             "GridLinesHor": {
@@ -1000,20 +1077,27 @@ var DashboardExchangeTenders = {
           "Border": ";;;;",
           "Values": {
             "0": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(Dell.Volume)",
               "Label": "Volume"
             }
           },
           "Arguments": {
             "0": {
-              "Ident": "1",
+              "Ident": "ArgumentChartMeter",
               "Expression": "Dell.Date",
               "Label": "Date"
             }
           },
           "TopN": {
-            "Mode": null
+            "Mode": "None"
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
           },
           "Title": {
             "Text": "Volume of All Shares",
@@ -1028,18 +1112,8 @@ var DashboardExchangeTenders = {
             "NegativePattern": 0,
             "DecimalDigits": 0,
             "GroupSeparator": ",",
-            "State": "DecimalDigits",
+            "State": "DecimalDigits, Abbreviation",
             "PositivePattern": 0
-          },
-          "XAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "YAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
           },
           "Area": {
             "GridLinesHor": {
@@ -1065,16 +1139,22 @@ var DashboardExchangeTenders = {
           "Border": ";;;;",
           "Columns": {
             "0": {
-              "Ident": "31",
+              "Ident": "DimensionColumn",
               "Expression": "Dell.Date",
               "Label": "Date",
               "HorAlignment": "Center",
               "TextFormat": {
                 "Ident": "StiDateFormatService"
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               }
             },
             "1": {
-              "Ident": "32",
+              "Ident": "IndicatorColumn",
               "Expression": "Sum(Dell.Open - Dell.Close)",
               "Label": "Open vs Close",
               "HorAlignment": "Right",
@@ -1083,10 +1163,16 @@ var DashboardExchangeTenders = {
                 "NegativePattern": 0,
                 "GroupSeparator": ",",
                 "PositivePattern": 0
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               }
             },
             "2": {
-              "Ident": "30",
+              "Ident": "DataBarsColumn",
               "Expression": "Sum(Dell.High - Dell.Low)",
               "Label": "High vs Low",
               "TextFormat": {
@@ -1095,10 +1181,16 @@ var DashboardExchangeTenders = {
                 "GroupSeparator": ",",
                 "PositivePattern": 0
               },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              },
               "HorAlignment": "Right"
             },
             "3": {
-              "Ident": "29",
+              "Ident": "ColorScaleColumn",
               "Expression": "Sum(Dell.Volume)",
               "HorAlignment": "Right",
               "TextFormat": {
@@ -1106,8 +1198,14 @@ var DashboardExchangeTenders = {
                 "NegativePattern": 0,
                 "DecimalDigits": 0,
                 "GroupSeparator": ",",
-                "State": "DecimalDigits",
+                "State": "DecimalDigits, Abbreviation",
                 "PositivePattern": 0
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               }
             }
           },
@@ -1116,6 +1214,12 @@ var DashboardExchangeTenders = {
             "Text": "Share Price",
             "Font": "Arial Narrow;15.75;;",
             "HorAlignment": "Center"
+          },
+          "DashboardInteraction": {
+            "Ident": "Table",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
           }
         }
       },
@@ -1126,7 +1230,7 @@ var DashboardExchangeTenders = {
       "Name": "Dashboard4",
       "Guid": "d8fb6c249ea94be2a0b5edb128f29509",
       "Alias": "IBM",
-      "Brush": "solid:Transparent",
+      "Brush": "solid:",
       "Components": {
         "0": {
           "Ident": "StiChartElement",
@@ -1136,7 +1240,7 @@ var DashboardExchangeTenders = {
           "Border": ";;;;",
           "Values": {
             "0": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(IBM.Open)",
               "Label": "Open",
               "SeriesType": "Stock"
@@ -1144,34 +1248,41 @@ var DashboardExchangeTenders = {
           },
           "CloseValues": {
             "0": {
-              "Ident": "6",
+              "Ident": "CloseValueChartMeter",
               "Expression": "Sum(IBM.Close)",
               "Label": "Close"
             }
           },
           "LowValues": {
             "0": {
-              "Ident": "7",
+              "Ident": "LowValueChartMeter",
               "Expression": "Sum(IBM.Low)",
               "Label": "Low"
             }
           },
           "HighValues": {
             "0": {
-              "Ident": "8",
+              "Ident": "HighValueChartMeter",
               "Expression": "Sum(IBM.High)",
               "Label": "High"
             }
           },
           "Arguments": {
             "0": {
-              "Ident": "1",
+              "Ident": "ArgumentChartMeter",
               "Expression": "IBM.Date",
               "Label": "Date"
             }
           },
           "TopN": {
-            "Mode": null
+            "Mode": "None"
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
           },
           "Title": {
             "Visible": false
@@ -1186,16 +1297,6 @@ var DashboardExchangeTenders = {
             "GroupSeparator": ",",
             "State": "DecimalDigits",
             "PositivePattern": 0
-          },
-          "XAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "YAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
           },
           "Area": {
             "GridLinesHor": {
@@ -1220,7 +1321,7 @@ var DashboardExchangeTenders = {
           "ClientRectangle": "0,80,480,240",
           "Border": ";;;;",
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "TextFormat": {
             "Ident": "StiCurrencyFormatService",
@@ -1229,17 +1330,17 @@ var DashboardExchangeTenders = {
             "PositivePattern": 0
           },
           "Value": {
-            "Ident": "18",
+            "Ident": "ValueIndicatorMeter",
             "Expression": "Sum(IBM.Close)",
             "Label": "Close"
           },
           "Target": {
-            "Ident": "17",
+            "Ident": "TargetIndicatorMeter",
             "Expression": "Sum(IBM.Open)",
             "Label": "Open"
           },
           "Series": {
-            "Ident": "16",
+            "Ident": "SeriesIndicatorMeter",
             "Expression": "IBM.Date",
             "Label": "Date"
           },
@@ -1255,6 +1356,12 @@ var DashboardExchangeTenders = {
           "Name": "Text4",
           "Guid": "a7ea4de5deb948ac8f40c30f2aeac5c3",
           "ClientRectangle": "0,0,1200,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
           "Text": "<font face=\"Arial\" size=\"36\"><text-align=\"Center\">Exchange Tenders</text-align></font>",
           "Title": {
@@ -1269,10 +1376,10 @@ var DashboardExchangeTenders = {
           "ClientRectangle": "0,40,480,40",
           "Border": ";;;;",
           "Font": ";9.75;;",
-          "Condition": "EqualTo",
+          "Condition": "LessThan",
           "SelectionMode": "AutoRange",
           "ValueMeter": {
-            "Ident": "44",
+            "Ident": "ValueDatePickerMeter",
             "Expression": "IBM.Date",
             "Label": "Date"
           }
@@ -1285,20 +1392,27 @@ var DashboardExchangeTenders = {
           "Border": ";;;;",
           "Values": {
             "0": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(IBM.Volume)",
               "Label": "Volume"
             }
           },
           "Arguments": {
             "0": {
-              "Ident": "1",
+              "Ident": "ArgumentChartMeter",
               "Expression": "IBM.Date",
               "Label": "Date"
             }
           },
           "TopN": {
-            "Mode": null
+            "Mode": "None"
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
           },
           "Title": {
             "Text": "Volume of All Shares",
@@ -1313,18 +1427,8 @@ var DashboardExchangeTenders = {
             "NegativePattern": 0,
             "DecimalDigits": 0,
             "GroupSeparator": ",",
-            "State": "DecimalDigits",
+            "State": "DecimalDigits, Abbreviation",
             "PositivePattern": 0
-          },
-          "XAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "YAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
           },
           "Area": {
             "GridLinesHor": {
@@ -1350,13 +1454,22 @@ var DashboardExchangeTenders = {
           "Border": ";;;;",
           "Columns": {
             "0": {
-              "Ident": "31",
+              "Ident": "DimensionColumn",
               "Expression": "IBM.Date",
               "Label": "Date",
-              "HorAlignment": "Center"
+              "HorAlignment": "Center",
+              "TextFormat": {
+                "Ident": "StiDateFormatService"
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              }
             },
             "1": {
-              "Ident": "32",
+              "Ident": "IndicatorColumn",
               "Expression": "Sum(IBM.Open - IBM.Close)",
               "Label": "Open vs Close",
               "HorAlignment": "Right",
@@ -1365,10 +1478,16 @@ var DashboardExchangeTenders = {
                 "NegativePattern": 0,
                 "GroupSeparator": ",",
                 "PositivePattern": 0
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               }
             },
             "2": {
-              "Ident": "30",
+              "Ident": "DataBarsColumn",
               "Expression": "Sum(IBM.High - IBM.Low)",
               "Label": "High vs Low",
               "TextFormat": {
@@ -1377,17 +1496,31 @@ var DashboardExchangeTenders = {
                 "GroupSeparator": ",",
                 "PositivePattern": 0
               },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              },
               "HorAlignment": "Right"
             },
             "3": {
-              "Ident": "29",
+              "Ident": "ColorScaleColumn",
               "Expression": "Sum(IBM.Volume)",
               "HorAlignment": "Right",
               "TextFormat": {
                 "Ident": "StiCurrencyFormatService",
                 "NegativePattern": 0,
+                "DecimalDigits": 0,
                 "GroupSeparator": ",",
+                "State": "DecimalDigits, Abbreviation",
                 "PositivePattern": 0
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               }
             }
           },
@@ -1396,6 +1529,12 @@ var DashboardExchangeTenders = {
             "Text": "Share Price",
             "Font": "Arial Narrow;15.75;;",
             "HorAlignment": "Center"
+          },
+          "DashboardInteraction": {
+            "Ident": "Table",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
           }
         }
       },
@@ -1406,7 +1545,7 @@ var DashboardExchangeTenders = {
       "Name": "Dashboard5",
       "Guid": "698d5dc3d5704142bfb5e7fb5cf8c478",
       "Alias": "Microsoft",
-      "Brush": "solid:Transparent",
+      "Brush": "solid:",
       "Components": {
         "0": {
           "Ident": "StiChartElement",
@@ -1416,7 +1555,7 @@ var DashboardExchangeTenders = {
           "Border": ";;;;",
           "Values": {
             "0": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(Microsoft.Open)",
               "Label": "Open",
               "SeriesType": "Stock"
@@ -1424,34 +1563,41 @@ var DashboardExchangeTenders = {
           },
           "CloseValues": {
             "0": {
-              "Ident": "6",
+              "Ident": "CloseValueChartMeter",
               "Expression": "Sum(Microsoft.Close)",
               "Label": "Close"
             }
           },
           "LowValues": {
             "0": {
-              "Ident": "7",
+              "Ident": "LowValueChartMeter",
               "Expression": "Sum(Microsoft.Low)",
               "Label": "Low"
             }
           },
           "HighValues": {
             "0": {
-              "Ident": "8",
+              "Ident": "HighValueChartMeter",
               "Expression": "Sum(Microsoft.High)",
               "Label": "High"
             }
           },
           "Arguments": {
             "0": {
-              "Ident": "1",
+              "Ident": "ArgumentChartMeter",
               "Expression": "Microsoft.Date",
               "Label": "Date"
             }
           },
           "TopN": {
-            "Mode": null
+            "Mode": "None"
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
           },
           "Title": {
             "Visible": false
@@ -1466,16 +1612,6 @@ var DashboardExchangeTenders = {
             "GroupSeparator": ",",
             "State": "DecimalDigits",
             "PositivePattern": 0
-          },
-          "XAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "YAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
           },
           "Area": {
             "GridLinesHor": {
@@ -1500,7 +1636,7 @@ var DashboardExchangeTenders = {
           "ClientRectangle": "0,80,480,240",
           "Border": ";;;;",
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "TextFormat": {
             "Ident": "StiCurrencyFormatService",
@@ -1509,17 +1645,17 @@ var DashboardExchangeTenders = {
             "PositivePattern": 0
           },
           "Value": {
-            "Ident": "18",
+            "Ident": "ValueIndicatorMeter",
             "Expression": "Sum(Microsoft.Close)",
             "Label": "Close"
           },
           "Target": {
-            "Ident": "17",
+            "Ident": "TargetIndicatorMeter",
             "Expression": "Sum(Microsoft.Open)",
             "Label": "Open"
           },
           "Series": {
-            "Ident": "16",
+            "Ident": "SeriesIndicatorMeter",
             "Expression": "Microsoft.Date",
             "Label": "Date"
           },
@@ -1535,6 +1671,12 @@ var DashboardExchangeTenders = {
           "Name": "Text5",
           "Guid": "a7ea4de5deb948ac8f40c30f2aeac5c3",
           "ClientRectangle": "0,0,1200,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
           "Text": "<font face=\"Arial\" size=\"36\"><text-align=\"Center\">Exchange Tenders</text-align></font>",
           "Title": {
@@ -1549,10 +1691,10 @@ var DashboardExchangeTenders = {
           "ClientRectangle": "0,40,480,40",
           "Border": ";;;;",
           "Font": ";9.75;;",
-          "Condition": "EqualTo",
+          "Condition": "LessThan",
           "SelectionMode": "AutoRange",
           "ValueMeter": {
-            "Ident": "44",
+            "Ident": "ValueDatePickerMeter",
             "Expression": "Microsoft.Date",
             "Label": "Date"
           }
@@ -1565,20 +1707,27 @@ var DashboardExchangeTenders = {
           "Border": ";;;;",
           "Values": {
             "0": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(Microsoft.Volume)",
               "Label": "Volume"
             }
           },
           "Arguments": {
             "0": {
-              "Ident": "1",
+              "Ident": "ArgumentChartMeter",
               "Expression": "Microsoft.Date",
               "Label": "Date"
             }
           },
           "TopN": {
-            "Mode": null
+            "Mode": "None"
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
           },
           "Title": {
             "Text": "Volume of All Shares",
@@ -1593,18 +1742,8 @@ var DashboardExchangeTenders = {
             "NegativePattern": 0,
             "DecimalDigits": 0,
             "GroupSeparator": ",",
-            "State": "DecimalDigits",
+            "State": "DecimalDigits, Abbreviation",
             "PositivePattern": 0
-          },
-          "XAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "YAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
           },
           "Area": {
             "GridLinesHor": {
@@ -1630,13 +1769,22 @@ var DashboardExchangeTenders = {
           "Border": ";;;;",
           "Columns": {
             "0": {
-              "Ident": "31",
+              "Ident": "DimensionColumn",
               "Expression": "Microsoft.Date",
               "Label": "Date",
-              "HorAlignment": "Center"
+              "HorAlignment": "Center",
+              "TextFormat": {
+                "Ident": "StiDateFormatService"
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              }
             },
             "1": {
-              "Ident": "32",
+              "Ident": "IndicatorColumn",
               "Expression": "Sum(Microsoft.Open - Microsoft.Close)",
               "Label": "Open vs Close",
               "HorAlignment": "Right",
@@ -1645,10 +1793,16 @@ var DashboardExchangeTenders = {
                 "NegativePattern": 0,
                 "GroupSeparator": ",",
                 "PositivePattern": 0
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               }
             },
             "2": {
-              "Ident": "30",
+              "Ident": "DataBarsColumn",
               "Expression": "Sum(Microsoft.High - Microsoft.Low)",
               "Label": "High vs Low",
               "TextFormat": {
@@ -1657,10 +1811,16 @@ var DashboardExchangeTenders = {
                 "GroupSeparator": ",",
                 "PositivePattern": 0
               },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              },
               "HorAlignment": "Right"
             },
             "3": {
-              "Ident": "29",
+              "Ident": "ColorScaleColumn",
               "Expression": "Sum(Microsoft.Volume)",
               "HorAlignment": "Right",
               "TextFormat": {
@@ -1668,8 +1828,14 @@ var DashboardExchangeTenders = {
                 "NegativePattern": 0,
                 "DecimalDigits": 0,
                 "GroupSeparator": ",",
-                "State": "DecimalDigits",
+                "State": "DecimalDigits, Abbreviation",
                 "PositivePattern": 0
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               }
             }
           },
@@ -1678,6 +1844,12 @@ var DashboardExchangeTenders = {
             "Text": "Share Price",
             "Font": "Arial Narrow;15.75;;",
             "HorAlignment": "Center"
+          },
+          "DashboardInteraction": {
+            "Ident": "Table",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
           }
         }
       },

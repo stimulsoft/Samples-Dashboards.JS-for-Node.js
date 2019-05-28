@@ -1,15 +1,24 @@
 var DashboardOrders = {
-  "ReportVersion": "2019.2.1",
+  "ReportVersion": "2019.3.1.0",
   "ReportGuid": "0c0adfefb281455897c76c221c7e9e24",
   "ReportName": "DashboardOrders",
   "ReportAlias": "DashboardOrders",
-  "ReportFile": "DashboardOrders.mrt",
-  "ReportCreated": "/Date(-21600000+0300)/",
-  "ReportChanged": "/Date(-21600000+0300)/",
+  "ReportCreated": "/Date(1529248458000+0300)/",
+  "ReportChanged": "/Date(1548231092000+0300)/",
   "EngineVersion": "EngineV2",
   "CalculationMode": "Interpretation",
   "ReportUnit": "Inches",
-  "PreviewSettings": 268435455,
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\n\r\nnamespace Reports\r\n{\r\n    public class DashboardOrders : Stimulsoft.Report.StiReport\r\n    {\r\n        public DashboardOrders()        {\r\n            this.InitializeComponent();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
+  "ReferencedAssemblies": {
+    "0": "System.Dll",
+    "1": "System.Drawing.Dll",
+    "2": "System.Windows.Forms.Dll",
+    "3": "System.Data.Dll",
+    "4": "System.Xml.Dll",
+    "5": "Stimulsoft.Controls.Dll",
+    "6": "Stimulsoft.Base.Dll",
+    "7": "Stimulsoft.Report.Dll"
+  },
   "Dictionary": {
     "Resources": {
       "0": {
@@ -24,6 +33,7 @@ var DashboardOrders = {
         "Ident": "StiDataTableSource",
         "Name": "Statistics",
         "Alias": "Statistics",
+        "Key": "de6e228a7e894edf8528fc018f237fd9",
         "Columns": {
           "0": {
             "Name": "State",
@@ -95,6 +105,7 @@ var DashboardOrders = {
         "Ident": "StiDataTableSource",
         "Name": "Sales",
         "Alias": "Sales",
+        "Key": "8e29441605f24925b2b68f33a57aed49",
         "Columns": {
           "0": {
             "Name": "Day",
@@ -136,29 +147,30 @@ var DashboardOrders = {
       "Name": "Dashboard1",
       "Guid": "b542cc6f839d4e329b8a5540e975d460",
       "Alias": "Orders",
-      "Brush": "solid:Transparent",
+      "Brush": "solid:",
       "Components": {
         "0": {
           "Ident": "StiIndicatorElement",
           "Name": "Indicator1",
           "Guid": "a3922bf1d88c4dcab6802459a0e2472c",
           "ClientRectangle": "0,40,400,160",
-          "Border": "15;211,212,213;;;",
+          "Border": "All;211,212,213;;;",
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "TextFormat": {
             "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
             "DecimalDigits": 0,
             "GroupSeparator": ",",
             "State": "DecimalDigits"
           },
           "Value": {
-            "Ident": "18",
+            "Ident": "ValueIndicatorMeter",
             "Expression": "Sum(Statistics.Orders)"
           },
           "Target": {
-            "Ident": "17",
+            "Ident": "TargetIndicatorMeter",
             "Expression": "Sum([Statistics.Taget Orders])"
           },
           "Title": {
@@ -173,22 +185,23 @@ var DashboardOrders = {
           "Name": "Indicator2",
           "Guid": "ee05d51a084841c1b7870828c8dcdd46",
           "ClientRectangle": "800,40,400,160",
-          "Border": "15;211,212,213;;;",
+          "Border": "All;211,212,213;;;",
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "TextFormat": {
             "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
             "DecimalDigits": 0,
             "GroupSeparator": ",",
             "State": "DecimalDigits"
           },
           "Value": {
-            "Ident": "18",
+            "Ident": "ValueIndicatorMeter",
             "Expression": "Sum([Statistics.New Customers])"
           },
           "Target": {
-            "Ident": "17",
+            "Ident": "TargetIndicatorMeter",
             "Expression": "Sum([Statistics.Target Customers])"
           },
           "Title": {
@@ -203,16 +216,16 @@ var DashboardOrders = {
           "Name": "Progress1",
           "Guid": "13bb0cb90dfb43bd826576b34e98edc4",
           "ClientRectangle": "400,40,400,160",
-          "Border": "15;211,212,213;;;",
+          "Border": "All;211,212,213;;;",
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "Value": {
-            "Ident": "21",
+            "Ident": "ValueProgressMeter",
             "Expression": "Sum([Statistics.Repeat Purchases])"
           },
           "Target": {
-            "Ident": "20",
+            "Ident": "TargetProgressMeter",
             "Expression": "Sum([Statistics.Target Repeat Purchases])"
           },
           "Title": {
@@ -220,7 +233,8 @@ var DashboardOrders = {
             "Font": "Arial Narrow;15.75;;",
             "HorAlignment": "Center"
           },
-          "Font": ";13;;"
+          "Font": ";13;;",
+          "ColorEach": true
         },
         "3": {
           "Ident": "StiRegionMapElement",
@@ -228,21 +242,27 @@ var DashboardOrders = {
           "Guid": "e91cbab2cd244f62a4be4260e66f922d",
           "ClientRectangle": "0,200,1200,400",
           "Border": ";;;;",
+          "DashboardInteraction": {
+            "Ident": "RegionMap",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
           "Title": {
             "Text": "ORDERS by STATE",
             "Font": "Arial Narrow;15.75;;",
             "HorAlignment": "Center"
           },
           "KeyMeter": {
-            "Ident": "24",
+            "Ident": "KeyMapMeter",
             "Expression": "Statistics.State"
           },
           "NameMeter": {
-            "Ident": "25",
+            "Ident": "NameMapMeter",
             "Expression": "Statistics.State"
           },
           "ValueMeter": {
-            "Ident": "26",
+            "Ident": "ValueMapMeter",
             "Expression": "Statistics.Orders"
           },
           "DataFrom": "DataColumns",
@@ -256,6 +276,12 @@ var DashboardOrders = {
           "Name": "Text1",
           "Guid": "56689f43239a4eedbbb8069be6cd9552",
           "ClientRectangle": "0,0,1200,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
           "Text": "<font face=\"Arial\" size=\"36\"><text-align=\"Center\"><font-color=\"#7F7F7F\">ORDERS STATS</font-color></text-align></font>",
           "Title": {

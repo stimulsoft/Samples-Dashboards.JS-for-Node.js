@@ -1,16 +1,25 @@
 var DashboardSalesStatistics = {
-  "ReportVersion": "2019.2.1",
-  "ReportGuid": "78206b1d3e4945378d7ecacd73924696",
+  "ReportVersion": "2019.3.1.0",
+  "ReportGuid": "c31dc97b6cc64872b339e76dc7bc0c89",
   "ReportName": "DashboardSalesStatistics",
   "ReportAlias": "DashboardSalesStatistics",
-  "ReportFile": "DashboardSalesStatistics.mrt",
   "ReportAuthor": "Stimulsoft",
-  "ReportCreated": "/Date(-21600000+0300)/",
-  "ReportChanged": "/Date(-21600000+0300)/",
+  "ReportCreated": "/Date(1529242206000+0300)/",
+  "ReportChanged": "/Date(1556307471000+0300)/",
   "EngineVersion": "EngineV2",
-  "CalculationMode": "Interpretation",
   "ReportUnit": "Inches",
-  "PreviewSettings": 268435455,
+  "Culture": "en-US",
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\n\r\nnamespace Reports\r\n{\r\n    public class DashboardSalesStatistics : Stimulsoft.Report.StiReport\r\n    {\r\n        public DashboardSalesStatistics()        {\r\n            this.InitializeComponent();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
+  "ReferencedAssemblies": {
+    "0": "System.Dll",
+    "1": "System.Drawing.Dll",
+    "2": "System.Windows.Forms.Dll",
+    "3": "System.Data.Dll",
+    "4": "System.Xml.Dll",
+    "5": "Stimulsoft.Controls.Dll",
+    "6": "Stimulsoft.Base.Dll",
+    "7": "Stimulsoft.Report.Dll"
+  },
   "Dictionary": {
     "Resources": {
       "0": {
@@ -25,6 +34,7 @@ var DashboardSalesStatistics = {
         "Ident": "StiDataTableSource",
         "Name": "Sales",
         "Alias": "Sales",
+        "Key": "166bd8ac79624be296a034497b830869",
         "Columns": {
           "0": {
             "Name": "Seafood",
@@ -103,6 +113,7 @@ var DashboardSalesStatistics = {
         "Ident": "StiDataTableSource",
         "Name": "Requests",
         "Alias": "Requests",
+        "Key": "54761c6ebf234943bc0f3157ace9a6da",
         "Columns": {
           "0": {
             "Name": "Requests",
@@ -139,6 +150,7 @@ var DashboardSalesStatistics = {
         "Ident": "StiDataTableSource",
         "Name": "Average Check",
         "Alias": "Average Check",
+        "Key": "fbca51b17a3b4baa94b0658441cd9cc3",
         "Columns": {
           "0": {
             "Name": "Real",
@@ -191,7 +203,6 @@ var DashboardSalesStatistics = {
         },
         "NameInSource": "Relation",
         "Alias": "DaysID",
-        "IsCloud": null,
         "Active": true,
         "Key": "995139f5ea354bee94eec8fbd88bbdd7",
         "ParentSource": "Average Check",
@@ -207,7 +218,6 @@ var DashboardSalesStatistics = {
         },
         "NameInSource": "Relation2",
         "Alias": "Days",
-        "IsCloud": null,
         "Active": true,
         "Key": "da15190be4dd4d37b35c566cddde4204",
         "ParentSource": "Average Check",
@@ -218,297 +228,10 @@ var DashboardSalesStatistics = {
   "Pages": {
     "0": {
       "Ident": "StiDashboard",
-      "Name": "Dashboard1",
-      "Guid": "2f54b6a854194861a22f337939a0b2e5",
-      "Alias": "Sales Statistics",
-      "Brush": "solid:Transparent",
-      "Components": {
-        "0": {
-          "Ident": "StiChartElement",
-          "Name": "Chart1",
-          "Guid": "3f61b2b3421b4e9db6ca3782bbaa458b",
-          "ClientRectangle": "0,40,600,280",
-          "Border": ";;;;",
-          "Values": {
-            "0": {
-              "Ident": "3",
-              "Expression": "Sum([Average Check.Real])",
-              "SeriesType": "StackedColumn"
-            },
-            "1": {
-              "Ident": "3",
-              "Expression": "Sum([Average Check.Estimated])",
-              "SeriesType": "StackedColumn"
-            }
-          },
-          "Arguments": {
-            "0": {
-              "Ident": "1",
-              "Expression": "[Average Check.Day]"
-            }
-          },
-          "TopN": {
-            "Mode": null
-          },
-          "Title": {
-            "Text": "Average Check",
-            "Font": "Arial Narrow;15.75;;",
-            "HorAlignment": "Center"
-          },
-          "ArgumentFormat": {
-            "Ident": "StiGeneralFormatService"
-          },
-          "ValueFormat": {
-            "Ident": "StiCurrencyFormatService",
-            "NegativePattern": 0,
-            "DecimalDigits": 0,
-            "GroupSeparator": ",",
-            "State": "DecimalDigits",
-            "PositivePattern": 0
-          },
-          "XAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "YAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "Area": {
-            "GridLinesHor": {
-              "Color": "Transparent",
-              "Visible": true
-            },
-            "GridLinesVert": {
-              "Color": "Transparent"
-            },
-            "InterlacingHor": {
-              "Color": "Transparent"
-            },
-            "InterlacingVert": {
-              "Color": "Transparent"
-            }
-          }
-        },
-        "1": {
-          "Ident": "StiChartElement",
-          "Name": "Chart2",
-          "Guid": "002e5d08e30540a385800c96032f5853",
-          "ClientRectangle": "0,320,600,280",
-          "Border": ";;;;",
-          "Values": {
-            "0": {
-              "Ident": "3",
-              "Expression": "Sum(Requests.Requests)"
-            }
-          },
-          "Arguments": {
-            "0": {
-              "Ident": "1",
-              "Expression": "Requests.Category"
-            }
-          },
-          "TopN": {
-            "Mode": null
-          },
-          "Title": {
-            "Text": "Number of Requests by Category",
-            "Font": "Arial Narrow;15.75;;",
-            "HorAlignment": "Center"
-          },
-          "ArgumentFormat": {
-            "Ident": "StiGeneralFormatService"
-          },
-          "ValueFormat": {
-            "Ident": "StiNumberFormatService",
-            "DecimalDigits": 0,
-            "GroupSeparator": ",",
-            "State": "DecimalDigits"
-          },
-          "XAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "YAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "Area": {
-            "GridLinesHor": {
-              "Color": "Transparent",
-              "Visible": true
-            },
-            "GridLinesVert": {
-              "Color": "Transparent"
-            },
-            "InterlacingHor": {
-              "Color": "Transparent"
-            },
-            "InterlacingVert": {
-              "Color": "Transparent"
-            }
-          }
-        },
-        "2": {
-          "Ident": "StiChartElement",
-          "Name": "Chart3",
-          "Guid": "1da90577f43746cbb50671bdcce3033e",
-          "ClientRectangle": "600,320,600,280",
-          "Border": ";;;;",
-          "Values": {
-            "0": {
-              "Ident": "3",
-              "Expression": "Sum(Sales.Beverages)",
-              "SeriesType": "Area"
-            },
-            "1": {
-              "Ident": "3",
-              "Expression": "Sum(Sales.Confections)",
-              "SeriesType": "Area"
-            },
-            "2": {
-              "Ident": "3",
-              "Expression": "Sum(Sales.Condiments)",
-              "SeriesType": "Area"
-            },
-            "3": {
-              "Ident": "3",
-              "Expression": "Sum([Sales.Dairy Products])",
-              "SeriesType": "Area"
-            },
-            "4": {
-              "Ident": "3",
-              "Expression": "Sum(Sales.Grains)",
-              "SeriesType": "Area"
-            },
-            "5": {
-              "Ident": "3",
-              "Expression": "Sum(Sales.Meat)",
-              "SeriesType": "Area"
-            },
-            "6": {
-              "Ident": "3",
-              "Expression": "Sum(Sales.Produce)",
-              "SeriesType": "Area"
-            },
-            "7": {
-              "Ident": "3",
-              "Expression": "Sum(Sales.Seafood)",
-              "SeriesType": "Area"
-            }
-          },
-          "Arguments": {
-            "0": {
-              "Ident": "1",
-              "Expression": "Sales.Day"
-            }
-          },
-          "TopN": {
-            "Mode": null
-          },
-          "Title": {
-            "Text": "My Sales by Category",
-            "Font": "Arial Narrow;15.75;;",
-            "HorAlignment": "Center"
-          },
-          "ArgumentFormat": {
-            "Ident": "StiGeneralFormatService"
-          },
-          "ValueFormat": {
-            "Ident": "StiNumberFormatService",
-            "DecimalDigits": 0,
-            "GroupSeparator": ",",
-            "State": "DecimalDigits"
-          },
-          "XAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "YAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "Area": {
-            "GridLinesHor": {
-              "Color": "Transparent",
-              "Visible": true
-            },
-            "GridLinesVert": {
-              "Color": "Transparent"
-            },
-            "InterlacingHor": {
-              "Color": "Transparent"
-            },
-            "InterlacingVert": {
-              "Color": "Transparent"
-            }
-          }
-        },
-        "3": {
-          "Ident": "StiIndicatorElement",
-          "Name": "Indicator1",
-          "Guid": "109733f6903b400293c8569fcec9fcdd",
-          "ClientRectangle": "600,40,600,280",
-          "Border": ";;;;",
-          "TopN": {
-            "Mode": null
-          },
-          "TextFormat": {
-            "Ident": "StiNumberFormatService",
-            "DecimalDigits": 0,
-            "GroupSeparator": ",",
-            "State": "DecimalDigits"
-          },
-          "Value": {
-            "Ident": "18",
-            "Expression": "Sum(Requests.Requests)",
-            "Label": "Requests"
-          },
-          "Target": {
-            "Ident": "17",
-            "Expression": "Sum(Requests.Target)",
-            "Label": "Target"
-          },
-          "Series": {
-            "Ident": "16",
-            "Expression": "Requests.Category",
-            "Label": "Category"
-          },
-          "Title": {
-            "Text": "Statistics",
-            "Font": "Arial Narrow;15.75;;",
-            "HorAlignment": "Center"
-          },
-          "Font": ";13;;"
-        },
-        "4": {
-          "Ident": "StiTextElement",
-          "Name": "Text1",
-          "Guid": "2b8e14cce978450bb3d12fcc0ef6e385",
-          "ClientRectangle": "0,0,1200,40",
-          "Border": ";;;;",
-          "Text": "<font face=\"Arial\" size=\"36\"><text-align=\"Center\">Sales Statistics</text-align></font>",
-          "Title": {
-            "Text": "Text",
-            "Visible": false
-          }
-        }
-      },
-      "Style": "SlateGray",
-      "Border": ";;2;;;;;solid:Black"
-    },
-    "1": {
-      "Ident": "StiDashboard",
       "Name": "Dashboard2",
       "Guid": "732ae41c9aee4d3eaa12e5a166be67a5",
       "Alias": "Sales Statistics with Progress",
-      "Brush": "solid:Transparent",
+      "Brush": "solid:",
       "Components": {
         "0": {
           "Ident": "StiChartElement",
@@ -518,24 +241,31 @@ var DashboardSalesStatistics = {
           "Border": ";;;;",
           "Values": {
             "0": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum([Average Check.Real])",
               "SeriesType": "StackedColumn"
             },
             "1": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum([Average Check.Estimated])",
               "SeriesType": "StackedColumn"
             }
           },
           "Arguments": {
             "0": {
-              "Ident": "1",
+              "Ident": "ArgumentChartMeter",
               "Expression": "[Average Check.Day]"
             }
           },
           "TopN": {
-            "Mode": null
+            "Mode": "None"
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
           },
           "Title": {
             "Text": "Average Check",
@@ -550,18 +280,8 @@ var DashboardSalesStatistics = {
             "NegativePattern": 0,
             "DecimalDigits": 0,
             "GroupSeparator": ",",
-            "State": "DecimalDigits",
+            "State": "DecimalDigits, Abbreviation",
             "PositivePattern": 0
-          },
-          "XAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "YAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
           },
           "Area": {
             "GridLinesHor": {
@@ -587,18 +307,25 @@ var DashboardSalesStatistics = {
           "Border": ";;;;",
           "Values": {
             "0": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(Requests.Requests)"
             }
           },
           "Arguments": {
             "0": {
-              "Ident": "1",
+              "Ident": "ArgumentChartMeter",
               "Expression": "Requests.Category"
             }
           },
           "TopN": {
-            "Mode": null
+            "Mode": "None"
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
           },
           "Title": {
             "Text": "Number of Requests by Category",
@@ -610,19 +337,10 @@ var DashboardSalesStatistics = {
           },
           "ValueFormat": {
             "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
             "DecimalDigits": 0,
             "GroupSeparator": ",",
             "State": "DecimalDigits"
-          },
-          "XAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "YAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
           },
           "Area": {
             "GridLinesHor": {
@@ -648,54 +366,61 @@ var DashboardSalesStatistics = {
           "Border": ";;;;",
           "Values": {
             "0": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(Sales.Beverages)",
               "SeriesType": "Area"
             },
             "1": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(Sales.Confections)",
               "SeriesType": "Area"
             },
             "2": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(Sales.Condiments)",
               "SeriesType": "Area"
             },
             "3": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum([Sales.Dairy Products])",
               "SeriesType": "Area"
             },
             "4": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(Sales.Grains)",
               "SeriesType": "Area"
             },
             "5": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(Sales.Meat)",
               "SeriesType": "Area"
             },
             "6": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(Sales.Produce)",
               "SeriesType": "Area"
             },
             "7": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(Sales.Seafood)",
               "SeriesType": "Area"
             }
           },
           "Arguments": {
             "0": {
-              "Ident": "1",
+              "Ident": "ArgumentChartMeter",
               "Expression": "Sales.Day"
             }
           },
           "TopN": {
-            "Mode": null
+            "Mode": "None"
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
           },
           "Title": {
             "Text": "My Sales by Category",
@@ -707,19 +432,10 @@ var DashboardSalesStatistics = {
           },
           "ValueFormat": {
             "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
             "DecimalDigits": 0,
             "GroupSeparator": ",",
             "State": "DecimalDigits"
-          },
-          "XAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "YAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
           },
           "Area": {
             "GridLinesHor": {
@@ -742,6 +458,12 @@ var DashboardSalesStatistics = {
           "Name": "Text2",
           "Guid": "2b8e14cce978450bb3d12fcc0ef6e385",
           "ClientRectangle": "0,0,1200,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
           "Text": "<font face=\"Arial\" size=\"36\"><text-align=\"Center\">Sales Statistics</text-align></font>",
           "Title": {
@@ -756,20 +478,20 @@ var DashboardSalesStatistics = {
           "ClientRectangle": "600,40,600,280",
           "Border": ";;;;",
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "Value": {
-            "Ident": "21",
+            "Ident": "ValueProgressMeter",
             "Expression": "Sum(Requests.Requests)",
             "Label": "Requests"
           },
           "Target": {
-            "Ident": "20",
+            "Ident": "TargetProgressMeter",
             "Expression": "Sum(Requests.Target)",
             "Label": "Target"
           },
           "Series": {
-            "Ident": "19",
+            "Ident": "SeriesProgressMeter",
             "Expression": "Requests.Category",
             "Label": "Category"
           },
@@ -779,10 +501,298 @@ var DashboardSalesStatistics = {
             "HorAlignment": "Center"
           },
           "Font": ";13;Bold;",
-          "Mode": "DataBars"
+          "Mode": "DataBars",
+          "ColorEach": true
         }
       },
-      "Style": "DarkBlue",
+      "Style": "DarkTurquoise",
+      "Border": ";;2;;;;;solid:Black"
+    },
+    "1": {
+      "Ident": "StiDashboard",
+      "Name": "Dashboard1",
+      "Guid": "2f54b6a854194861a22f337939a0b2e5",
+      "Alias": "Sales Statistics",
+      "Brush": "solid:",
+      "Components": {
+        "0": {
+          "Ident": "StiChartElement",
+          "Name": "Chart1",
+          "Guid": "3f61b2b3421b4e9db6ca3782bbaa458b",
+          "ClientRectangle": "0,40,600,280",
+          "Border": ";;;;",
+          "Values": {
+            "0": {
+              "Ident": "ValueChartMeter",
+              "Expression": "Sum([Average Check.Real])",
+              "SeriesType": "StackedColumn"
+            },
+            "1": {
+              "Ident": "ValueChartMeter",
+              "Expression": "Sum([Average Check.Estimated])",
+              "SeriesType": "StackedColumn"
+            }
+          },
+          "Arguments": {
+            "0": {
+              "Ident": "ArgumentChartMeter",
+              "Expression": "[Average Check.Day]"
+            }
+          },
+          "TopN": {
+            "Mode": "None"
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
+          },
+          "Title": {
+            "Text": "Average Check",
+            "Font": "Arial Narrow;15.75;;",
+            "HorAlignment": "Center"
+          },
+          "ArgumentFormat": {
+            "Ident": "StiGeneralFormatService"
+          },
+          "ValueFormat": {
+            "Ident": "StiCurrencyFormatService",
+            "NegativePattern": 0,
+            "DecimalDigits": 0,
+            "GroupSeparator": ",",
+            "State": "DecimalDigits, Abbreviation",
+            "PositivePattern": 0
+          },
+          "Area": {
+            "GridLinesHor": {
+              "Color": "Transparent",
+              "Visible": true
+            },
+            "GridLinesVert": {
+              "Color": "Transparent"
+            },
+            "InterlacingHor": {
+              "Color": "Transparent"
+            },
+            "InterlacingVert": {
+              "Color": "Transparent"
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiChartElement",
+          "Name": "Chart2",
+          "Guid": "002e5d08e30540a385800c96032f5853",
+          "ClientRectangle": "0,320,600,280",
+          "Border": ";;;;",
+          "Values": {
+            "0": {
+              "Ident": "ValueChartMeter",
+              "Expression": "Sum(Requests.Requests)"
+            }
+          },
+          "Arguments": {
+            "0": {
+              "Ident": "ArgumentChartMeter",
+              "Expression": "Requests.Category"
+            }
+          },
+          "TopN": {
+            "Mode": "None"
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
+          },
+          "Title": {
+            "Text": "Number of Requests by Category",
+            "Font": "Arial Narrow;15.75;;",
+            "HorAlignment": "Center"
+          },
+          "ArgumentFormat": {
+            "Ident": "StiGeneralFormatService"
+          },
+          "ValueFormat": {
+            "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
+            "DecimalDigits": 0,
+            "GroupSeparator": ",",
+            "State": "DecimalDigits"
+          },
+          "Area": {
+            "GridLinesHor": {
+              "Color": "Transparent",
+              "Visible": true
+            },
+            "GridLinesVert": {
+              "Color": "Transparent"
+            },
+            "InterlacingHor": {
+              "Color": "Transparent"
+            },
+            "InterlacingVert": {
+              "Color": "Transparent"
+            }
+          }
+        },
+        "2": {
+          "Ident": "StiChartElement",
+          "Name": "Chart3",
+          "Guid": "1da90577f43746cbb50671bdcce3033e",
+          "ClientRectangle": "600,320,600,280",
+          "Border": ";;;;",
+          "Values": {
+            "0": {
+              "Ident": "ValueChartMeter",
+              "Expression": "Sum(Sales.Beverages)",
+              "SeriesType": "Area"
+            },
+            "1": {
+              "Ident": "ValueChartMeter",
+              "Expression": "Sum(Sales.Confections)",
+              "SeriesType": "Area"
+            },
+            "2": {
+              "Ident": "ValueChartMeter",
+              "Expression": "Sum(Sales.Condiments)",
+              "SeriesType": "Area"
+            },
+            "3": {
+              "Ident": "ValueChartMeter",
+              "Expression": "Sum([Sales.Dairy Products])",
+              "SeriesType": "Area"
+            },
+            "4": {
+              "Ident": "ValueChartMeter",
+              "Expression": "Sum(Sales.Grains)",
+              "SeriesType": "Area"
+            },
+            "5": {
+              "Ident": "ValueChartMeter",
+              "Expression": "Sum(Sales.Meat)",
+              "SeriesType": "Area"
+            },
+            "6": {
+              "Ident": "ValueChartMeter",
+              "Expression": "Sum(Sales.Produce)",
+              "SeriesType": "Area"
+            },
+            "7": {
+              "Ident": "ValueChartMeter",
+              "Expression": "Sum(Sales.Seafood)",
+              "SeriesType": "Area"
+            }
+          },
+          "Arguments": {
+            "0": {
+              "Ident": "ArgumentChartMeter",
+              "Expression": "Sales.Day"
+            }
+          },
+          "TopN": {
+            "Mode": "None"
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
+          },
+          "Title": {
+            "Text": "My Sales by Category",
+            "Font": "Arial Narrow;15.75;;",
+            "HorAlignment": "Center"
+          },
+          "ArgumentFormat": {
+            "Ident": "StiGeneralFormatService"
+          },
+          "ValueFormat": {
+            "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
+            "DecimalDigits": 0,
+            "GroupSeparator": ",",
+            "State": "DecimalDigits"
+          },
+          "Area": {
+            "GridLinesHor": {
+              "Color": "Transparent",
+              "Visible": true
+            },
+            "GridLinesVert": {
+              "Color": "Transparent"
+            },
+            "InterlacingHor": {
+              "Color": "Transparent"
+            },
+            "InterlacingVert": {
+              "Color": "Transparent"
+            }
+          }
+        },
+        "3": {
+          "Ident": "StiIndicatorElement",
+          "Name": "Indicator1",
+          "Guid": "109733f6903b400293c8569fcec9fcdd",
+          "ClientRectangle": "600,40,600,280",
+          "Border": ";;;;",
+          "TopN": {
+            "Mode": "None"
+          },
+          "TextFormat": {
+            "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
+            "DecimalDigits": 0,
+            "GroupSeparator": ",",
+            "State": "DecimalDigits"
+          },
+          "Value": {
+            "Ident": "ValueIndicatorMeter",
+            "Expression": "Sum(Requests.Requests)",
+            "Label": "Requests"
+          },
+          "Target": {
+            "Ident": "TargetIndicatorMeter",
+            "Expression": "Sum(Requests.Target)",
+            "Label": "Target"
+          },
+          "Series": {
+            "Ident": "SeriesIndicatorMeter",
+            "Expression": "Requests.Category",
+            "Label": "Category"
+          },
+          "Title": {
+            "Text": "Statistics",
+            "Font": "Arial Narrow;15.75;;",
+            "HorAlignment": "Center"
+          },
+          "Font": ";13;;"
+        },
+        "4": {
+          "Ident": "StiTextElement",
+          "Name": "Text1",
+          "Guid": "2b8e14cce978450bb3d12fcc0ef6e385",
+          "ClientRectangle": "0,0,1200,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
+          "Border": ";;;;",
+          "Text": "<font face=\"Arial\" size=\"36\"><text-align=\"Center\">Sales Statistics</text-align></font>",
+          "Title": {
+            "Text": "Text",
+            "Visible": false
+          }
+        }
+      },
+      "Style": "SlateGray",
       "Border": ";;2;;;;;solid:Black"
     }
   }

@@ -490,17 +490,17 @@ var DashboardOrderDetails = {
             "HorAlignment": "Center"
           },
           "KeyMeter": {
-            "Ident": "24",
+            "Ident": "KeyMapMeter",
             "Expression": "Data1.ShipCountry",
             "Label": "Ship Country"
           },
           "NameMeter": {
-            "Ident": "25",
+            "Ident": "NameMapMeter",
             "Expression": "Data1.ShipCountry",
             "Label": "Ship Country"
           },
           "ValueMeter": {
-            "Ident": "26",
+            "Ident": "ValueMapMeter",
             "Expression": "Data1.Quantity",
             "Label": "Quantity"
           },

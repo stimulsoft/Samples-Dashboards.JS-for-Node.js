@@ -1,11 +1,11 @@
 var DashboardSocialNetworksStatistics = {
-  "ReportVersion": "2019.2.3.0",
-  "ReportGuid": "4a6dae20f5244eb9a6e4bf1a5f496ac8",
+  "ReportVersion": "2019.3.1.0",
+  "ReportGuid": "7251d8a1144b45a4a9bfdde524a2057d",
   "ReportName": "DashboardSocialNetworksStatistics",
   "ReportAlias": "DashboardSocialNetworksStatistics",
   "ReportAuthor": "Stimulsoft",
   "ReportCreated": "/Date(1544125128000+0300)/",
-  "ReportChanged": "/Date(1550126841000+0300)/",
+  "ReportChanged": "/Date(1556307581000+0300)/",
   "EngineVersion": "EngineV2",
   "CalculationMode": "Interpretation",
   "ReportUnit": "Inches",
@@ -60,6 +60,7 @@ var DashboardSocialNetworksStatistics = {
       "RadialBarEmptyBorderBrush": "empty",
       "NeedleBrush": "solid:White",
       "NeedleBorderBrush": "empty",
+      "LinearScaleBrush": "solid:112,173,71",
       "NeedleCapBrush": "solid:White",
       "NeedleCapBorderBrush": "solid:255,192,0"
     },
@@ -187,6 +188,7 @@ var DashboardSocialNetworksStatistics = {
         "Ident": "StiDataTableSource",
         "Name": "SiteStatistics",
         "Alias": "SiteStatistics",
+        "Key": "56b953b644bf4253ac68462c4e9cdc49",
         "Columns": {
           "0": {
             "Name": "Month",
@@ -334,6 +336,12 @@ var DashboardSocialNetworksStatistics = {
           "Guid": "815f91746a774a2a9c74dcd9a6018871",
           "ClientRectangle": "360,300,500,300",
           "Border": ";;;;",
+          "DashboardInteraction": {
+            "Ident": "RegionMap",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
           "Title": {
             "Text": "NEW USERS",
             "ForeColor": "White",
@@ -391,7 +399,8 @@ var DashboardSocialNetworksStatistics = {
             "Ident": "Chart",
             "OnHover": "ShowToolTip",
             "OnClick": "ApplyFilter",
-            "HyperlinkDestination": "NewTab"
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
           },
           "Title": {
             "Text": "USERS",
@@ -404,7 +413,11 @@ var DashboardSocialNetworksStatistics = {
             "Ident": "StiGeneralFormatService"
           },
           "ValueFormat": {
-            "Ident": "StiGeneralFormatService"
+            "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
+            "DecimalDigits": 0,
+            "GroupSeparator": ",",
+            "State": "DecimalDigits"
           },
           "XAxis": {
             "Labels": {
@@ -479,9 +492,8 @@ var DashboardSocialNetworksStatistics = {
           "TextFormat": {
             "Ident": "StiNumberFormatService",
             "NegativePattern": 1,
-            "DecimalDigits": 0,
             "GroupSeparator": ",",
-            "State": "DecimalDigits"
+            "State": "DecimalDigits, Abbreviation"
           },
           "Value": {
             "Ident": "ValueIndicatorMeter",
@@ -528,7 +540,8 @@ var DashboardSocialNetworksStatistics = {
             "Ident": "Chart",
             "OnHover": "ShowToolTip",
             "OnClick": "ApplyFilter",
-            "HyperlinkDestination": "NewTab"
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
           },
           "Title": {
             "Text": "AVERAGE SESSION DURATION",
@@ -618,7 +631,7 @@ var DashboardSocialNetworksStatistics = {
             "NegativePattern": 1,
             "DecimalDigits": 0,
             "GroupSeparator": ",",
-            "State": "DecimalDigits"
+            "State": "DecimalDigits, Abbreviation"
           },
           "Value": {
             "Ident": "ValueIndicatorMeter",
@@ -652,7 +665,7 @@ var DashboardSocialNetworksStatistics = {
             "NegativePattern": 1,
             "DecimalDigits": 0,
             "GroupSeparator": ",",
-            "State": "DecimalDigits"
+            "State": "DecimalDigits, Abbreviation"
           },
           "Value": {
             "Ident": "ValueIndicatorMeter",
@@ -686,7 +699,7 @@ var DashboardSocialNetworksStatistics = {
             "NegativePattern": 1,
             "DecimalDigits": 0,
             "GroupSeparator": ",",
-            "State": "DecimalDigits"
+            "State": "DecimalDigits, Abbreviation"
           },
           "Value": {
             "Ident": "ValueIndicatorMeter",

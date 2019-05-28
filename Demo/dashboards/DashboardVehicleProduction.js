@@ -1,16 +1,26 @@
 var DashboardVehicleProduction = {
-  "ReportVersion": "2019.2.1",
-  "ReportGuid": "5fad011459ca43909db1814a2692172e",
+  "ReportVersion": "2019.3.1.0",
+  "ReportGuid": "c7e78ff77ddc4cdaaa046b069d183baf",
   "ReportName": "DashboardVehicleProduction",
   "ReportAlias": "DashboardVehicleProduction",
-  "ReportFile": "DashboardVehicleProduction.mrt",
   "ReportAuthor": "Stimulsoft",
-  "ReportCreated": "/Date(-21600000+0300)/",
-  "ReportChanged": "/Date(-21600000+0300)/",
+  "ReportCreated": "/Date(1458631671000+0300)/",
+  "ReportChanged": "/Date(1558097050000+0300)/",
   "EngineVersion": "EngineV2",
   "CalculationMode": "Interpretation",
   "ReportUnit": "HundredthsOfInch",
   "PreviewSettings": 268435455,
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\n\r\nnamespace Reports\r\n{\r\n    public class Perfomance : Stimulsoft.Report.StiReport\r\n    {\r\n        public Perfomance()        {\r\n            this.InitializeComponent();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
+  "ReferencedAssemblies": {
+    "0": "System.Dll",
+    "1": "System.Drawing.Dll",
+    "2": "System.Windows.Forms.Dll",
+    "3": "System.Data.Dll",
+    "4": "System.Xml.Dll",
+    "5": "Stimulsoft.Controls.Dll",
+    "6": "Stimulsoft.Base.Dll",
+    "7": "Stimulsoft.Report.Dll"
+  },
   "Dictionary": {
     "Resources": {
       "0": {
@@ -20,32 +30,12 @@ var DashboardVehicleProduction = {
         "Image": "UzsPCVJuq7sV0PkuvyYxzwSyaNpV12HCDj+ZSF4tS8wTglzdhcCClnYQDbKVHpgZ0tYnbvrRST6n7dXf3Tnhw7bzcWNzlyqXmr1PyssM8SvEAk/l5m3Q8XEwiTeA8o4ExVZfp5SC9DjqwPuLc7NdjbzQFQJ71XdrK/oL9xJY2MFS5FWuHPnbRlTx4nlzXOpRV9GGL5BSCwZXT/k9TV7+pI3rKvHoG8MoGR7ZAgjK5SW81rwjXFqSE6SS7WvN9EdlmX/dLYaFyDEtmtgipD49vIiaENpr0LNYWbNUs38Zag+VUfxF5y5JpfuGMtepcVKXqPRDEur2vRdvGh1GP9NRfG/b0BsDA83qqtEBJWQldsduLSF4CfC5lULmISmmPQYQW5+D/0SiEnVg6Z3/V7C5FIbel7TsI20ZzAoBfk7ckB2RLAYDRe/aHzMUpFgq7aXH+t9MAUbjUQ1IAnhrI2p1uglSYcWl6zuPFjtoch6lZFHFLlby1v3Ir7gdhXBv9zv6MOqBAgf6Su38IPrnEWVt8BCQ6L5BIfKVUQYrfasp9ZJVQDAdg9SwE/ON5A2T7gg74Em+mqT/kSsRNZe6Gihyq6ZK/MiIwjhP675ICb0zr9A6EB/vWhPXIMI1HyETN1zBoCGuH86lZpaeKY1ioJx4eD/Lp63w0iG1+JcbvcyF5ZBwil7IlWGn8pYeihoGG+yPXFpbSZff33sV/YFW2yqHuiuYySnSmRIOP0OGg6Uz3IYA8bsSt9WemHnAozvCg3f99mumCT5znDX2dJV5be4ss/Z30GTpw8H91qnmyFyXfhYXESKfdhOsxQPw2Gr8pzxD1q0zdOALO6Tx8CUgGJ4Gy2R4c7VB+LnIqsiew4zhwrMkYCi0f8+3OazguovuekZwXLuMGyPWL1N28FQiF9ZIvv4dS6ONOfDKW4vRl/jxHEywU1USFe/tEFne9Uf4RPbC7E+GTiX0zNMzZ1plE+iXRkVidsTGZqmaNegdIWNUASa3AqswJV1mk+Aq+xI47xXSjRoGV6BdDA6JhuPsNOjxZ4ic99tQViDB7ntJslLdFsoXmvbrgQTEDGRjDW1Zodlg2LEtkwaHHgklb3HWR4KtcFF3nVXhy7Gb+LAYonOxUxVmvn8YfGjwSU8NEokAwLP60UViafwlGm/w30R07hRVklEoXnlonai8nVLlRJUyVWZ4bwz4l2m8yETAd/tzAxy9/Epc4Ovxo7Erc6heehuSW0qPGsZngSHK1v899csEtihaOkWI00Agk0qLwaV9IvQnyHf9wQjvm8pQjnlF4lMYOh/taoB10+jEu5zZho4pnJDrldosujEIeal2qaoTAe//vKgv0DnaqvrmxEA5qJp9GDq5LyJeZxFg7ZQww9X6Gk1yC2spzfK83c7O8TWvuNTBJAkMpONXwWnKvbl126dOKMRMCWlJbA6G/TNJMTFoW/PLFOIdmmF010EO6Qg0wKPpMQhCc2kC09Uim51tVJ09KQ5vsnyvLAmw3R3wEpKbHX8sL38abi/ia8aEcDKZmQvDcmMgThLLN5jCdZXI5AVKaYH4C62sLuX8n5L0KSMMFXJjs/r084Yh0zJ8prwyoxDsKzASSlF7pmPgng54ZoCBAIy0eTSmsNvyssBii8OecjUCOic690r4eMTEkIMZCB+aQmQga7jd3SdlRdZEYTUTwI/S9Q5qRmlRX4l2L0QKIaEpSMJULm1Z7VpCf5EdHO+7BAgoFlYywdySX/SGv2TO9sx3IOdUymKJ7WMucYnRiotuTu9rll0ec/a0mah4UVHElTP3NdIyvfZu7Mo+jb+sdnUNC0k1Lff2+cd9D6n9q4kE3l3XPfUwzbAmOW4kNcbh8QKCkKlaFnDsYIRcuIGUajCkWv9MW+C7lSiA5JUK8tjoTx9IJsapny9MnAe3VrmCjUWwhJR7PRVR5i6G"
       }
     },
-    "Variables": {
-      "0": {
-        "Value": "USA",
-        "Name": "Variable1",
-        "DialogInfo": {
-          "ItemsInitializationType": "Columns",
-          "KeysColumn": "Customers.Country",
-          "ValuesColumn": "Customers.Country",
-          "AllowUserValues": false
-        },
-        "Alias": "Country",
-        "Type": "System.String",
-        "RequestFromUser": true
-      },
-      "1": {
-        "Value": "iVBORw0KGgoAAAANSUhEUgAAACAAAAAWCAYAAAChWZ5EAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAABbUlEQVRIS+3VvyvEcRzH8SNESkoGdavQd1Amkygpg9FqZGCVv0BZDEYlg5EsJruSMhj9KhlYyCKlHM7zdfl8+/S596fLffW95YbHdb0/78/7877P9313hSRJLlFukJIaOAqCeao00IMdfP4G83KNGTXgDGMfVvJ/esYaOlDwG3DGcQJrcxZv2IBuPD3PPzg0hxtYxf6ihG0MoOocvexi1A962rGCJ1jFaznEEKzaegTLeqPEb+j5DyJMlG7oub0iPMRyhglYtVoxj1uUFfA3fiB6XejHFnSt/j7nCireAmv/NC6Q7lHQL+BoYNbRi7CIjEDX6xq5wxLaYOVP4hThOdEGnBesogthUelEXxDzjeEYVu0KJZkLgQcsIvYJQxq8PXzBqpdSsrkQoV+vBWiQwkOlCM1QbEaqaJO5UMM5ZuEa0dBu4h1WflS9DTiakXvU/T+StYHMmg00G1AD+pExF/OgBqbw6Adzwlc3OfgBCpeadn7ZCMUAAAAASUVORK5CYII=",
-        "Name": "Variable2",
-        "Alias": "Variable2",
-        "Type": "System.String"
-      }
-    },
     "DataSources": {
       "0": {
         "Ident": "StiDataTableSource",
         "Name": "Auto",
         "Alias": "Auto",
+        "Key": "c62adcef6b954ab8982f83a90c46be4f",
         "Columns": {
           "0": {
             "Name": "Country",
@@ -101,7 +91,7 @@ var DashboardVehicleProduction = {
       "Name": "DashboardVehicleProduction",
       "Guid": "11ad24abf71b439badecfa04cffb6ad5",
       "Alias": "Vehicle Production",
-      "Brush": "solid:Transparent",
+      "Brush": "solid:",
       "Components": {
         "0": {
           "Ident": "StiTableElement",
@@ -111,30 +101,48 @@ var DashboardVehicleProduction = {
           "Border": ";;;;",
           "Columns": {
             "0": {
-              "Ident": "31",
-              "Expression": "Auto.Country"
+              "Ident": "DimensionColumn",
+              "Expression": "Auto.Country",
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              }
             },
             "1": {
-              "Ident": "30",
+              "Ident": "DataBarsColumn",
               "Expression": "First(Auto.Year2015 - Auto.Year2010)",
               "Label": "Increase in 2015",
               "TextFormat": {
                 "Ident": "StiNumberFormatService",
-                "DecimalDigits": 0,
+                "NegativePattern": 1,
                 "GroupSeparator": ",",
-                "State": "DecimalDigits"
+                "State": "DecimalDigits, Abbreviation"
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               },
               "HorAlignment": "Left"
             },
             "2": {
-              "Ident": "30",
+              "Ident": "DataBarsColumn",
               "Expression": "First(Auto.Year2019 - Auto.Year2015)",
               "Label": "Increase in 2019",
               "TextFormat": {
                 "Ident": "StiNumberFormatService",
-                "DecimalDigits": 0,
+                "NegativePattern": 1,
                 "GroupSeparator": ",",
-                "State": "DecimalDigits"
+                "State": "DecimalDigits, Abbreviation"
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
               },
               "HorAlignment": "Right"
             }
@@ -145,6 +153,12 @@ var DashboardVehicleProduction = {
             "Visible": false,
             "Font": "Segoe UI;15.75;;",
             "HorAlignment": "Center"
+          },
+          "DashboardInteraction": {
+            "Ident": "Table",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
           }
         },
         "1": {
@@ -155,19 +169,19 @@ var DashboardVehicleProduction = {
           "Border": ";;;;",
           "Values": {
             "0": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(Auto.Year2010)",
               "Label": "Year 2010",
               "SeriesType": "StackedColumn"
             },
             "1": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(Auto.Year2015)",
               "Label": "Year 2015",
               "SeriesType": "StackedColumn"
             },
             "2": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(Auto.Year2019)",
               "Label": "Year 2019",
               "SeriesType": "StackedColumn"
@@ -175,12 +189,19 @@ var DashboardVehicleProduction = {
           },
           "Arguments": {
             "0": {
-              "Ident": "1",
+              "Ident": "ArgumentChartMeter",
               "Expression": "Auto.Country"
             }
           },
           "TopN": {
-            "Mode": null
+            "Mode": "None"
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserDrillDown": false
           },
           "Title": {
             "Text": "Vehicle Production by Country",
@@ -193,19 +214,10 @@ var DashboardVehicleProduction = {
           },
           "ValueFormat": {
             "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
             "DecimalDigits": 0,
             "GroupSeparator": ",",
-            "State": "DecimalDigits"
-          },
-          "XAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
-          },
-          "YAxis": {
-            "Labels": {
-              "TextAlignment": "Center, Right"
-            }
+            "State": "DecimalDigits, Abbreviation"
           },
           "Area": {
             "GridLinesHor": {
@@ -229,6 +241,12 @@ var DashboardVehicleProduction = {
           "Guid": "a66d5995c855435fa6412a94326409e1",
           "ClientRectangle": "440,80,760,240",
           "Border": ";;;;",
+          "DashboardInteraction": {
+            "Ident": "RegionMap",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
           "Title": {
             "Text": "Vehicle Production Globally",
             "Visible": false,
@@ -236,11 +254,11 @@ var DashboardVehicleProduction = {
             "HorAlignment": "Center"
           },
           "KeyMeter": {
-            "Ident": "24",
+            "Ident": "KeyMapMeter",
             "Expression": "Auto.Country"
           },
           "ValueMeter": {
-            "Ident": "26",
+            "Ident": "ValueMapMeter",
             "Expression": "Auto.Year2019",
             "Label": "Year 2019"
           },
@@ -255,6 +273,12 @@ var DashboardVehicleProduction = {
           "Name": "Text1",
           "Guid": "189c4532abb94cd6b4424bf311e4d6fa",
           "ClientRectangle": "0,0,1200,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
           "Text": "<font face=\"Arial\" size=\"36\"><text-align=\"Center\">Vehicle Production</text-align></font>",
           "Title": {
@@ -269,26 +293,26 @@ var DashboardVehicleProduction = {
           "ClientRectangle": "0,80,440,240",
           "Border": ";;;;",
           "TopN": {
-            "Mode": null
+            "Mode": "None"
           },
           "TextFormat": {
             "Ident": "StiNumberFormatService",
-            "DecimalDigits": 0,
+            "NegativePattern": 1,
             "GroupSeparator": ",",
-            "State": "DecimalDigits"
+            "State": "DecimalDigits, Abbreviation"
           },
           "Value": {
-            "Ident": "18",
+            "Ident": "ValueIndicatorMeter",
             "Expression": "Sum(Auto.Year2019)",
             "Label": "Year 2019"
           },
           "Target": {
-            "Ident": "17",
+            "Ident": "TargetIndicatorMeter",
             "Expression": "Sum(Auto.Year2015)",
             "Label": "Year 2015"
           },
           "Series": {
-            "Ident": "16",
+            "Ident": "SeriesIndicatorMeter",
             "Expression": "Auto.Country"
           },
           "Title": {
@@ -303,6 +327,12 @@ var DashboardVehicleProduction = {
           "Name": "Text2",
           "Guid": "25ae2ca07c0c4acf8fba53bddb269c8e",
           "ClientRectangle": "0,40,440,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
           "Text": "<font face=\"Arial\" size=\"16\"><text-align=\"Center\">Growth by Country</text-align></font>",
           "Title": {
@@ -315,6 +345,12 @@ var DashboardVehicleProduction = {
           "Name": "Text3",
           "Guid": "573a382ddc494bb2af5c1270dbe37efb",
           "ClientRectangle": "440,40,760,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
           "Text": "<font face=\"Arial\" size=\"16\"><text-align=\"Center\">Vehicle Production Globally</text-align></font>",
           "Title": {
@@ -327,6 +363,12 @@ var DashboardVehicleProduction = {
           "Name": "Text4",
           "Guid": "c0cd44764d6144abb747d165d457c8e8",
           "ClientRectangle": "0,320,440,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
           "Text": "<font face=\"Arial\" size=\"16\"><text-align=\"Center\">Vehicle Production 2010 - 2019</text-align></font>",
           "Title": {
@@ -339,6 +381,12 @@ var DashboardVehicleProduction = {
           "Name": "Text5",
           "Guid": "62ed12801e7d4ae8ba5482f2398ed648",
           "ClientRectangle": "440,320,760,40",
+          "Padding": {
+            "Left": 0.0,
+            "Top": 0.0,
+            "Right": 0.0,
+            "Bottom": 0.0
+          },
           "Border": ";;;;",
           "Text": "<font face=\"Arial\" size=\"16\"><text-align=\"Center\">Vehicle Production by Country</text-align></font>",
           "Title": {
