@@ -406,11 +406,11 @@
           "ShowAllValue": true,
           "SelectionMode": "Multi",
           "NameMeter": {
-            "Ident": "38",
+            "Ident": "NameListBoxMeter",
             "Expression": "List.Name"
           },
           "KeyMeter": {
-            "Ident": "39",
+            "Ident": "KeyListBoxMeter",
             "Expression": "List.Name"
           },
           "Title": {
@@ -466,12 +466,12 @@
           "Font": ";9.75;;",
           "SelectionMode": "Multi",
           "NameMeter": {
-            "Ident": "38",
+            "Ident": "NameListBoxMeter",
             "Expression": "List.Year",
             "Label": "Year"
           },
           "KeyMeter": {
-            "Ident": "39",
+            "Ident": "KeyListBoxMeter",
             "Expression": "List.Year",
             "Label": "Year"
           },

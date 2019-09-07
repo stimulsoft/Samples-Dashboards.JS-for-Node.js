@@ -2,19 +2,39 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>stimulsoft</title>
-  <link rel="stylesheet" href="stimulsoft/stimulsoft.designer.office2013.whiteblue.css">
-  <link rel="stylesheet" href="stimulsoft/stimulsoft.viewer.office2013.whiteblue.css">
+    <meta charset="utf-8">
+    <title>stimulsoft</title>
+    <link rel="stylesheet" href="stimulsoft/stimulsoft.designer.office2013.whiteblue.css">
+    <link rel="stylesheet" href="stimulsoft/stimulsoft.viewer.office2013.whiteblue.css">
 </head>
 
 <body>
-  <div id="app"></div>
-  <script src="stimulsoft/stimulsoft.reports.js"></script>
-  <script src="stimulsoft/stimulsoft.dashboards.js"></script>
-  <script src="stimulsoft/stimulsoft.viewer.js"></script>
-  <script src="stimulsoft/stimulsoft.designer.js"></script>
-  <script src="/dist/build.js"></script>
+    <div id="app"></div>
+    <script src="stimulsoft/stimulsoft.reports.js"></script>
+    <script src="stimulsoft/stimulsoft.dashboards.js"></script>
+    <script src="stimulsoft/stimulsoft.viewer.js"></script>
+    <script src="stimulsoft/stimulsoft.designer.js"></script>
+    <script src="/dist/build.js"></script>
 </body>
+<script>
+    Stimulsoft.Report.Dictionary.StiCustomDatabase.registerCustomDatabase(
+        {
+            serviceName: "MyDatabase",
+            sampleConnectionString: "123",
+            process:
+                function (command, callback) {
+                    if (command.command == "TestConnection")
+                        callback({ success: false, notice: "Error" });
+                    if (command.command == "RetrieveSchema")
+                        callback({ success: true, data: demoData });
+                    if (command.command == "RetrieveData")
+                        callback({ success: true, data: demoData[command.queryString] });
+                }
+        });
+
+    var demoData = {
+        Table1: [{ Column1: "value1", Column2: 1, Column3: 2 }, { Column1: "value2", Column2: 2 }, { Column1: "value3", Column2: 3 }],
+        Table2: [{ Column1: "value1", Column2: 1 }, { Column1: "value2", Column2: 2 }, { Column1: "value3", Column2: 3 }]
+    }; </script>
 
 </html>

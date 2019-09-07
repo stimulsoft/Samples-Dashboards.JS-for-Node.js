@@ -365,7 +365,7 @@
           "Condition": "EqualTo",
           "SelectionMode": "AutoRange",
           "ValueMeter": {
-            "Ident": "44",
+            "Ident": "ValueDatePickerMeter",
             "Expression": "Company1.date",
             "Label": "date"
           },
@@ -381,7 +381,7 @@
           "Condition": "EqualTo",
           "SelectionMode": "AutoRange",
           "ValueMeter": {
-            "Ident": "44",
+            "Ident": "ValueDatePickerMeter",
             "Expression": "Company2.date",
             "Label": "date"
           },
