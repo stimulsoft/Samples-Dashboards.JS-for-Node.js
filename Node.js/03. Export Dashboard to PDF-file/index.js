@@ -17,7 +17,7 @@ console.log("Dashboard template loaded");
 // Export to PDF
 report.exportDocumentAsync((pdfData) => {
     // Converting Array into buffer
-    var buffer = Buffer.from(pdfData)
+    var buffer = Buffer.from(pdfData);
 
     // File System module
     var fs = require('fs');
