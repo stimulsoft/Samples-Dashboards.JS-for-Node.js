@@ -10,7 +10,6 @@
 
 	<!-- Stimusloft Dashboards.JS -->
 	<script src="scripts/stimulsoft.reports.js" type="text/javascript"></script>
-	<script src="scripts/stimulsoft.reports.maps.js" type="text/javascript"></script>
 	<script src="scripts/stimulsoft.dashboards.js" type="text/javascript"></script>
 	<script src="scripts/stimulsoft.viewer.js" type="text/javascript"></script>
 </head>

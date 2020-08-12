@@ -14,7 +14,6 @@
 
     <!-- Stimusloft Dashboards.JS -->
     <script src="Scripts/stimulsoft.reports.js" type="text/javascript"></script>
-    <script src="Scripts/stimulsoft.reports.maps.js" type="text/javascript"></script>
     <script src="Scripts/stimulsoft.dashboards.js" type="text/javascript"></script>
     <script src="Scripts/stimulsoft.viewer.js" type="text/javascript"></script>
 </head>

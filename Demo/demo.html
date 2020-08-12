@@ -6,9 +6,9 @@
 
 	<title>Stimulsoft Dashboards.JS - Standalone Demo</title>
 	<meta charset="utf-8" />
-	
+
 	<!-- Helper css for demo -->
-	<link href="css/demo.css" rel="stylesheet">		
+	<link href="css/demo.css" rel="stylesheet">
 
 	<!-- Dashboard Viewer Office2013 style -->
 	<link href="css/stimulsoft.viewer.office2013.whiteblue.css" rel="stylesheet">
@@ -22,7 +22,6 @@
 
 	<!-- Stimusloft Dashboards.JS -->
 	<script src="scripts/stimulsoft.reports.js" type="text/javascript"></script>
-	<script src="scripts/stimulsoft.reports.maps.js" type="text/javascript"></script>
 	<script src="scripts/stimulsoft.dashboards.js" type="text/javascript"></script>
 	<script src="scripts/stimulsoft.viewer.js" type="text/javascript"></script>
 	<script src="scripts/stimulsoft.designer.js" type="text/javascript"></script>
@@ -56,24 +55,26 @@
 
 <body style="background:#ffffff; margin: 0px; padding: 0px;" onload="onBodyLoad();">
 	<div id="designerContent"></div>
-	<div class="stiLeftPanel" style="width: 270px;" id="stiMainLeftPanel" >            
-        <div class="stiLogo" id="stiLogo" style="overflow: hidden; width: 100%;" onclick="window.open('https://www.stimulsoft.com/en')" >
-            <table style="width: 100%; height: 100%">
-                <tr>
-                    <td style="vertical-align: middle; text-align: center;">
-                        STIMULSOFT
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="stiLeftPanelItem" onclick="resizeLeftPanel();" >
-            <img id="stiLeftPanelResizingImage" style="margin: 12px 0 0 14px" alt="" src="images//mainitem.png" />
-        </div>
-        <div class="stiLeftPanelItemSeparator"></div>
-        <div id="stiDashboardsContainer" style="width: 100%;" class="stiReportsContainer">
-            <script type="text/javascript">createDashboardButtons();</script> 
-        </div>
-    </div>        
+	<div class="stiLeftPanel" style="width: 270px;" id="stiMainLeftPanel">
+		<div class="stiLogo" id="stiLogo" style="overflow: hidden; width: 100%;"
+			onclick="window.open('https://www.stimulsoft.com/en')">
+			<table style="width: 100%; height: 100%">
+				<tr>
+					<td style="vertical-align: middle; text-align: center;">
+						STIMULSOFT
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="stiLeftPanelItem" onclick="resizeLeftPanel();">
+			<img id="stiLeftPanelResizingImage" style="margin: 12px 0 0 14px" alt="" src="images//mainitem.png" />
+		</div>
+		<div class="stiLeftPanelItemSeparator"></div>
+		<div id="stiDashboardsContainer" style="width: 100%;" class="stiReportsContainer">
+			<script type="text/javascript">createDashboardButtons();</script>
+		</div>
+	</div>
 	<div id="stiRightPanel" style="margin-left: 270px;" class="stiRightPanel"></div>
 </body>
+
 </html>
