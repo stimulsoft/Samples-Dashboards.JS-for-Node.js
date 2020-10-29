@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
-
-declare var Stimulsoft: any;
+import { Stimulsoft } from 'stimulsoft-reports-js/Scripts/stimulsoft.designer'
 
 @Component({
   selector: 'app-root',
@@ -30,7 +29,7 @@ export class AppComponent {
     console.log('Load dashboard from url');
     this.designer.report.loadFile('/dashboard/DashboardChristmas.mrt');
 
-    console.log('Rendering the dashboard to selected element');
+    console.log('Rendering the designer to selected element');
     this.designer.renderHtml('designer');
 
     console.log('Loading completed successfully!');

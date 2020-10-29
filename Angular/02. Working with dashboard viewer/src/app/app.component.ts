@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 import { Http } from '@angular/http';
 import { Response } from '@angular/http';
-
-declare var Stimulsoft: any;
+import { Stimulsoft } from 'stimulsoft-reports-js/Scripts/stimulsoft.designer'
 
 @Component({
   selector: 'app-root',
@@ -23,7 +22,7 @@ export class AppComponent {
     this.http.request('dashboard/DashboardChristmas.mrt').subscribe((data: Response) => {
 
       console.log('Load dashboard from url');
-      this.report.load(data.json());
+      this.report.loadDocument(data.json());
       this.viewer.report = this.report;
 
       console.log('Rendering the viewer to selected element');
