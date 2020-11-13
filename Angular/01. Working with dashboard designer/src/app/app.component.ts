@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
-import { Stimulsoft } from 'stimulsoft-reports-js/Scripts/stimulsoft.designer'
+import { Stimulsoft } from 'stimulsoft-dashboards-js/Scripts/stimulsoft.designer'
 
 @Component({
   selector: 'app-root',

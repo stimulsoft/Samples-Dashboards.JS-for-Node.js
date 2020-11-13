@@ -20,8 +20,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "../node_modules/stimulsoft-reports-js/css/stimulsoft.designer.office2013.whiteblue.css",
-        "stimulsoft/stimulsoft.viewer.office2013.whiteblue.css",
+        "../node_modules/stimulsoft-dashboards-js/css/stimulsoft.designer.office2013.whiteblue.css",
+        "../node_modules/stimulsoft-dashboards-js/css/stimulsoft.viewer.office2013.whiteblue.css",
         "styles.css"
       ],
       "scripts": [],

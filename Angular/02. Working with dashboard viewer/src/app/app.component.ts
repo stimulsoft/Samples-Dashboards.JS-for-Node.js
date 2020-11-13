@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 import { Http } from '@angular/http';
 import { Response } from '@angular/http';
-import { Stimulsoft } from 'stimulsoft-reports-js/Scripts/stimulsoft.designer'
+import { Stimulsoft } from 'stimulsoft-dashboards-js/Scripts/stimulsoft.designer'
 
 @Component({
   selector: 'app-root',
