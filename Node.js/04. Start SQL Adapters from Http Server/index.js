@@ -28,9 +28,10 @@ function accept(req, res) {
         command = JSON.parse(data.toString());
 
         if (command.database == "MySQL") MySQLAdapter.process(command, onProcess);
-        if (command.database == "Firebird") FirebirdAdapter.process(command, onProcess);
-        if (command.database == "MS SQL") MSSQLAdapter.process(command, onProcess);
-        if (command.database == "PostgreSQL") PostgreSQLAdapter.process(command, onProcess);
+        else if (command.database == "Firebird") FirebirdAdapter.process(command, onProcess);
+        else if (command.database == "MS SQL") MSSQLAdapter.process(command, onProcess);
+        else if (command.database == "PostgreSQL") PostgreSQLAdapter.process(command, onProcess);
+        else onResult({ success: false, notice: "Database '" + command.database + "' not supported!" });
     });
 }
 

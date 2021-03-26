@@ -17,6 +17,8 @@ This example demonstrates the implementation of connections to different databas
 
 [05. Load Dashboard from Server Side and send to Client](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/Node.js/05.%20Load%20Dashboard%20from%20Server%20Side)
 
+[06. Create Table add Two Filter and Export to Excel](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/Node.js/06.%20Create%20Table%20add%20Two%20Filter%20and%20Export%20to%20Excel)
+
 Use npm to install requred modules:
 ```sh
 $ npm install

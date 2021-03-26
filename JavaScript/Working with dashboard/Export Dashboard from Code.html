@@ -26,18 +26,18 @@
 
         function onExportToPdfClick() {
             // Export to PDF
-            var stream = Stimulsoft.Dashboard.Export.StiDashboardExportTools.exportToStream(report, new Stimulsoft.Dashboard.Export.Settings.StiPdfDashboardExportSettings());
-
-            // Save data to file
-            Stimulsoft.System.StiObject.saveAs(stream.toArray(), report.reportName + ".pdf", "application/pdf");
+            report.exportDocumentAsync((data) => {
+                // Save data to file
+                Stimulsoft.System.StiObject.saveAs(data, report.reportName + ".pdf", "application/pdf");
+            }, Stimulsoft.Report.StiExportFormat.Pdf);
         }
 
         function onExportToExcelClick() {
             // Export to Excel
-            var stream = Stimulsoft.Dashboard.Export.StiDashboardExportTools.exportToStream(report, new Stimulsoft.Dashboard.Export.Settings.StiExcelDashboardExportSettings());
-
-            // Save data to file
-            Stimulsoft.System.StiObject.saveAs(stream.toArray(), report.reportName + ".xlsx", "application/vnd.ms-excel");
+            report.exportDocumentAsync((data) => {
+                // Save data to file
+                Stimulsoft.System.StiObject.saveAs(data, report.reportName + ".xlsx", "application/vnd.ms-excel");
+            }, Stimulsoft.Report.StiExportFormat.Excel2007);
         }
     </script>
 </head>
