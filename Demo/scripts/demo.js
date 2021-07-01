@@ -1,4 +1,4 @@
-﻿var dashboardButtonsId = [];
+var dashboardButtonsId = [];
 var viewer = null;
 var designer = null;
 
