@@ -7,8 +7,8 @@ function onBodyLoad() {
     createViewer();
 
     //load first dashboard
-    setSelectedDashboardButton("DashboardOpec");
-    setDashboard(DashboardOpec);
+    setSelectedDashboardButton("DashboardManufacturingKPI");
+    setDashboard(DashboardManufacturingKPI);
 }
 
 function createViewer() {
@@ -68,23 +68,36 @@ function createDashboardButtons() {
     var dashboardsContainer = document.getElementById("stiDashboardsContainer");
 
     var allDashboards = [
+		{
+            category: "KPI Dashboards",
+            dashboards: {
+                "DashboardManufacturingKPI": "Manufacturing KPI",
+				"DashboardHospitalPerfomance": "Hospital Perfomance",
+				"DashboardSaaSMetrics": "SaaS Metrics",              				
+				"DashboardPersonalPageStatistic": "Personal Page Statistic",
+				"DashboardPopulationInternetAndMobileUsers": "Population, Internet and Mobile Users",
+				"DashboardSummary": "Summary"
+            }
+        },
         {
             category: "Miscellaneous Dashboards",
             dashboards: {
-                "DashboardOpec": "Opec"
-                //"DashboardNascar": "Nascar"
+                "DashboardOpec": "Opec",
+                "DashboardNascar": "Nascar"
             }
         },
         {
             category: "Sales Dashboards",
-            dashboards: {
-                //"DashboardSalesByCompanies": "Sales By Companies",
+            dashboards: {               
+				"DashboardOnlineStoreSales": "Online Store Sales",
+				"DashboardOrderDetails": " Order Details",
                 "DashboardProducts": "Products",
+				"DashboardSalesByCompanies": "Sales By Companies",
                 "DashboardSalesByMonth": "Sales By Month",
                 "DashboardSalesOverview": "Sales Overview",
                 "DashboardSalesStatistics": "Sales Statistics",
                 "DashboardSalesPerfomance": "Sales Perfomance",
-                //"DashboardSiteStatistics": "Site Statistic",
+                "DashboardSiteStatistics": "Site Statistic",
                 "DashboardVehicleProduction": "Vehicle Production"
             }
         },
@@ -92,18 +105,20 @@ function createDashboardButtons() {
             category: "Social Dashboards",
             dashboards: {
                 "DashboardChristmas": "Christmas",
+				"DashboardFastFoodLanch": "Fast Food Lanch",
                 "DashboardGlobalInternetUsage": "Global Internet Usage",
                 "DashboardPopulationByState": "Population By State"
             }
         },
         {
             category: "Statistics Dashboards",
-            dashboards: {
-                "DashboardSocialNetworksStatistics": "Social Networks Statistics",
+            dashboards: {                
                 "DashboardExchangeTenders": "Exchange Tenders",
                 "DashboardFinancial": "Financial",
+				"DashboardMetrics": "Metrics",
                 "DashboardOrders": "Orders",
                 "DashboardRestaurantAttendanceTracking": "Restaurant Attendance Tracking",
+				"DashboardSocialNetworksStatistics": "Social Networks Statistics",
                 "DashboardTicketsStatistics": "Tickets Statistics",
                 "DashboardWebsiteAnalytics": "Website Analytics"
             }
