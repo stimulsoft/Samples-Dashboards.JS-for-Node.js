@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Stimulsoft Dashboard Viewer</title>
+
+	<link href="stimulsoft.viewer.office2013.whiteblue.css" rel="stylesheet" />
+	<script src="stimulsoft.reports.js" type="text/javascript" />
+	</script>
+	<script src="stimulsoft.dashboards.js" type="text/javascript" />
+	</script>
+	<script src="stimulsoft.viewer.js" type="text/javascript" />
+	</script>
+
+	<script type="text/javascript">
+		//Create Viewer
+		var options = new Stimulsoft.Viewer.StiViewerOptions();
+		var viewer = new Stimulsoft.Viewer.StiViewer(options, "StiViewer", false);
+		viewer.renderHtml();
+
+		//Send request to server
+		var request = new XMLHttpRequest();
+		request.open("get", window.location.href + "getDashboard", false);
+		request.send();
+
+		//Dashboard JSON string from server
+		var dashboardJson = request.responseText;
+
+		// Creating new dashboard
+		var report = Stimulsoft.Report.StiReport.createNewDashboard();
+		// Load dashboard
+		report.loadDocument(dashboardJson);
+
+		//Assign dashboard to viewer
+		viewer.report = report;
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>

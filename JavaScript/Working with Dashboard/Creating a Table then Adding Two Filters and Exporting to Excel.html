@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Creating a Table then Adding Two Filters and Exporting to Excel</title>
+
+    <!-- Dashboard viewer Office2013 style -->
+    <link href="../css/stimulsoft.viewer.office2013.whiteblue.css" rel="stylesheet">
+
+    <!-- Stimusloft Dashboards.JS -->
+    <script src="../scripts/stimulsoft.reports.js" type="text/javascript"></script>
+    <script src="../scripts/stimulsoft.dashboards.js" type="text/javascript"></script>
+
+    <!-- Dashboard viewer scripts, may be external -->
+    <script type="text/javascript">
+
+        // Creating new dashboard
+        var report = Stimulsoft.Report.StiReport.createNewDashboard();
+        var dashboard = report.pages.getByIndex(0);
+
+        // Load and add reg data
+        var dataSet = new Stimulsoft.System.Data.DataSet();
+        dataSet.readXmlFile("../dashboard/Demo.xml");
+
+        report.regData("Demo", "Demo", dataSet);
+        report.dictionary.synchronize();
+
+        // Create new table element
+        var tableElement = new Stimulsoft.Dashboard.Components.Table.StiTableElement();
+        tableElement.left = 100;
+        tableElement.top = 100;
+        tableElement.width = 500;
+        tableElement.height = 500;
+        tableElement.backColor = Stimulsoft.System.Drawing.Color.lightGray;
+        tableElement.name = "Example";
+        dashboard.components.add(tableElement);
+
+        // Add column to table
+        var productIDСolumns = new Stimulsoft.Dashboard.Components.Table.StiDimensionColumn();
+        productIDСolumns.expression = "Products.ProductID";
+        tableElement.columns.add(productIDСolumns);
+
+        var productNameСolumns = new Stimulsoft.Dashboard.Components.Table.StiDimensionColumn();
+        productNameСolumns.expression = "Products.ProductName";
+        tableElement.columns.add(productNameСolumns);
+
+        var unitPriceСolumns = new Stimulsoft.Dashboard.Components.Table.StiDimensionColumn();
+        unitPriceСolumns.expression = "Products.UnitPrice";
+        tableElement.columns.add(unitPriceСolumns);
+
+        // Add filter to table
+        var productIDFilter = new Stimulsoft.Data.Engine.StiDataFilterRule();
+        productIDFilter.condition = Stimulsoft.Data.Engine.StiDataFilterCondition.BeginningWith;
+        productIDFilter.path = "Products.ProductID";
+        productIDFilter.value = "1";
+        tableElement.dataFilters.add(productIDFilter);
+
+        // Add filter to table
+        var unitPriceFilter = new Stimulsoft.Data.Engine.StiDataFilterRule();
+        unitPriceFilter.condition = Stimulsoft.Data.Engine.StiDataFilterCondition.EndingWith;
+        unitPriceFilter.path = "Products.UnitPrice";
+        unitPriceFilter.value = "1";
+        tableElement.dataFilters.add(unitPriceFilter);
+
+        function onExportToExcelClick() {
+            // Export to Excel
+            report.exportDocumentAsync((data) => {
+                Stimulsoft.System.StiObject.saveAs(data, report.reportName + ".xlsx", "application/vnd.ms-excel");
+            }, Stimulsoft.Report.StiExportFormat.Excel2007);
+        }
+    </script>
+</head>
+
+<body>
+    Creating a Table then Adding Two Filters and Exporting to Excel
+    <br><br>
+
+    <input type="submit" value="Export to Excel" onclick="onExportToExcelClick()" />
+</body>
+
+</html>
