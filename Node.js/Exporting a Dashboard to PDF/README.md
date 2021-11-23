@@ -1,4 +1,4 @@
-# 03. Export Rendered Dashboard to PDF-file
+# Exporting a Dashboard to PDF
 
 This example illustrates loading of the dashboard, data rendering and storing the result to the PDF-document.
 
