@@ -1,4 +1,4 @@
-# 02. Export Rendered Dashboard to Excel-file
+# Exporting a Dashboard to Excel
 
 This example illustrates loading of the dashboard, data rendering and storing the result to the Excel-file.
 
