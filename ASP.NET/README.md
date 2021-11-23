@@ -5,7 +5,7 @@
 #Overview
 This repository has some examples (Visual Studio Projects) each in different folders:
 
-### [01. Load Dashboard from Server Side](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/ASP.NET/01.%20Load%20Dashboard%20from%20Server%20Side) - This folder contains simple demo of using Stimulsoft Dashboards.JS Viewer in the ASP.NET project. Some samples of various Dashboards available:
+### [Loading a Dashboard from the Server-Side](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/ASP.NET/Loading%20a%20Dashboard%20from%20the%20Server-Side) - This folder contains simple demo of using Stimulsoft Dashboards.JS Viewer in the ASP.NET project. Some samples of various Dashboards available:
 
 * Christmas
 * Financial
