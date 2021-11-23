@@ -1,4 +1,4 @@
-#Node.js samples for Stimulsoft Dashboards.JS
+# Node.js samples for Stimulsoft Dashboards.JS
 
 In this folder are available examples of using Stimulsoft Dashboards.JS in node.js
 For each example, there is a full set of necessary files (Roboto-Black.ttf to render the dashboard, the test dashboard file SimpleList.mrt etc. )
