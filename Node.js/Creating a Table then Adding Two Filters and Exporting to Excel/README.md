@@ -1,4 +1,4 @@
-# 06. Create Table add Two Filter and Export to Excel
+# Creating a Table then Adding Two Filters and Exporting to Excel
 
 This example illustrates how to add a filter to the table element in the dashboard and store the result in the Excel file.
 
