@@ -2,12 +2,12 @@
 How it works -> [link](https://github.com/stimulsoft/DataAdapters.JS).  
   
 If you need examples for other platforms, follow the links below:
-* [NodeJs](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/Node.js/04.%20Start%20SQL%20Adapters%20from%20Http%20Server)
-* [ASP.NET](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/ASP.NET/02.%20Connect%20to%20databases)
-* [PHP](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/PHP/02.%20Connect%20to%20databases)
-* [Java](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/Java/01.%20Data%20Adapter)
+* [NodeJs](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/Node.js/Starting%20a%20SQL%20adapters%20from%20the%20HTTP%20server)
+* [ASP.NET](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/ASP.NET/Loading%20a%20Dashboard%20from%20the%20Server-Side)
+* [PHP](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/PHP/Loading%20a%20Dashboard%20from%20the%20Server-Side)
+* [Java](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/Java/Connecting%20to%20Databases)
 
-# 04. Start SQL Adapters from Http Server
+# Starting a SQL adapters from the HTTP server
 
 This example demonstrates the implementation of connections to different databases (MySQL, Firebird, MSSQL and PostgreSQL). Adapters files are in a directory with an example. You can include adapters into your projects without changes.
 
