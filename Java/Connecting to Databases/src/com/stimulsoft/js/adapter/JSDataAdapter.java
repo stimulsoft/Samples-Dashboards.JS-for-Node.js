@@ -20,6 +20,7 @@ import java.util.Properties;
 import com.stimulsoft.base.json.JSONException;
 import com.stimulsoft.base.json.JSONObject;
 import com.stimulsoft.base.system.StiSqlTypes;
+import com.stimulsoft.lib.base64.StiBase64DecoderUtil;
 
 /**
  * Copyright Stimulsoft
@@ -27,11 +28,11 @@ import com.stimulsoft.base.system.StiSqlTypes;
 public class JSDataAdapter {
 
     private static final List<String> USERS_KEYS = Arrays.asList(
-            new String[] { "jdbc.username", "username", "uid", "user", "user id", "userId", "connection.username" });
+            new String[] { "jdbc.username", "username", "uid", "user", "user id", "userid", "connection.username" });
     private static final List<String> PASSWORD_KEYS = Arrays.asList(new String[] { "jdbc.password", "pwd", "password", "connection.password" });
     private static final List<String> HOST_KEY = Arrays.asList(new String[] { "host", "server", "location" });
     private static final List<String> PORT_KEY = Arrays.asList(new String[] { "port" });
-    private static final List<String> DATABASE_KEY = Arrays.asList(new String[] { "database", "database name", "databaseName", "data source" });
+    private static final List<String> DATABASE_KEY = Arrays.asList(new String[] { "database", "database name", "databasename", "data source" });
     protected static final List<String> URL_KEYS = Arrays.asList(new String[] { "jdbc.url", "connectionurl", "url", "connection.url" });
 
     private static String onError(Exception e) {
@@ -56,20 +57,25 @@ public class JSDataAdapter {
                 info.setProperty("characterEncoding", "UTF-8");
             }
             info.putAll(params);
+            String url = getUrl(params);
+
             if ("MySQL".equals(dbName)) {
                 Class.forName("com.mysql.jdbc.Driver");
-                // connectionURL = String.format("jdbc:mysql://%s:%s/%s", getHost(params),
-                // getPort(params), getDatabase(params));
+                if (url == null) {
+                    url = String.format("jdbc:mysql://%s:%s/%s", getHost(params), getPort(params, "3306"), getDatabase(params));
+                }
             } else if ("MS SQL".equals(dbName)) {
                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                // connectionURL = String.format("jdbc:sqlserver://%s:%s;databaseName=%s",
-                // getHost(params), getPort(params), getDatabase(params));
+                if (url == null) {
+                    url = String.format("jdbc:sqlserver://%s:%s;databaseName=%s", getHost(params), getPort(params, "1433"), getDatabase(params));
+                }
             } else if ("PostgreSQL".equals(dbName)) {
                 Class.forName("org.postgresql.Driver");
-                // connectionURL = String.format("jdbc:postgresql://%s:%s/%s", getHost(params),
-                // getPort(params), getDatabase(params));
+                if (url == null) {
+                    url = String.format("jdbc:postgresql://%s:%s/%s", getHost(params), getPort(params, "5432"), getDatabase(params));
+                }
             }
-            con = DriverManager.getConnection(getUrl(params), info);
+            con = DriverManager.getConnection(url, info);
             return onConnect(command, con);
         } catch (Exception e) {
             return onError(e);
@@ -186,6 +192,10 @@ public class JSDataAdapter {
         while ((str = r.readLine()) != null) {
             command.append(str);
         }
+        if (command.charAt(0) != '{') {
+            byte[] decoded = StiBase64DecoderUtil.decode(rot13(command).toString());
+            command = new StringBuilder(new String(decoded, "UTF-8"));
+        }
         return connect(new JSONObject(command.toString()));
     }
 
@@ -206,17 +216,15 @@ public class JSDataAdapter {
         return getLeastOne(params, URL_KEYS);
     }
 
-    @SuppressWarnings("unused")
     private static String getDatabase(Map<String, String> params) {
         return getLeastOne(params, DATABASE_KEY);
     }
 
-    @SuppressWarnings("unused")
-    private static String getPort(Map<String, String> params) {
-        return getLeastOne(params, PORT_KEY);
+    private static String getPort(Map<String, String> params, String def) {
+        String result = getLeastOne(params, PORT_KEY);
+        return result != null ? result : def;
     }
 
-    @SuppressWarnings("unused")
     private static String getHost(Map<String, String> params) {
         return getLeastOne(params, HOST_KEY);
     }
@@ -238,6 +246,23 @@ public class JSDataAdapter {
             }
         }
         return null;
+    }
+
+    private static StringBuilder rot13(StringBuilder str) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if (c >= 'a' && c <= 'm')
+                c += 13;
+            else if (c >= 'A' && c <= 'M')
+                c += 13;
+            else if (c >= 'n' && c <= 'z')
+                c -= 13;
+            else if (c >= 'N' && c <= 'Z')
+                c -= 13;
+            result.append(c);
+        }
+        return result;
     }
 
 }
