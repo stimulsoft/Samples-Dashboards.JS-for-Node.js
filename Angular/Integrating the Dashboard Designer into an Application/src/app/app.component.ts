@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ViewEncapsulation } from '@angular/core';
 import { Stimulsoft } from 'stimulsoft-dashboards-js/Scripts/stimulsoft.blockly'
 
 @Component({
