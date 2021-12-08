@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
-import { Http } from '@angular/http';
-import { Response } from '@angular/http';
-import { Stimulsoft } from 'stimulsoft-dashboards-js/Scripts/stimulsoft.designer'
+import { HttpClient } from '@angular/common/http';
+import { Stimulsoft } from 'stimulsoft-dashboards-js/Scripts/stimulsoft.viewer'
 
 @Component({
   selector: 'app-root',
@@ -13,16 +12,18 @@ import { Stimulsoft } from 'stimulsoft-dashboards-js/Scripts/stimulsoft.designer
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-  viewer: any = new Stimulsoft.Viewer.StiViewer(null, 'StiViewer', false);
-  report: any = Stimulsoft.Report.StiReport.createNewDashboard();
+  viewer = new Stimulsoft.Viewer.StiViewer(undefined, 'StiViewer', false);
+  report = Stimulsoft.Report.StiReport.createNewDashboard();
 
   ngOnInit() {
     console.log('Loading Viewer view');
 
-    this.http.request('dashboard/DashboardChristmas.mrt').subscribe((data: Response) => {
+    this.http.get('dashboard/DashboardChristmas.mrt', {
+      responseType: 'text'
+    }).subscribe(data => {
 
       console.log('Load dashboard from url');
-      this.report.loadDocument(data.text());
+      this.report.loadDocument(data);
       this.viewer.report = this.report;
 
       console.log('Rendering the viewer to selected element');
@@ -30,7 +31,7 @@ export class AppComponent {
     });
   }
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
 
   }
 }
