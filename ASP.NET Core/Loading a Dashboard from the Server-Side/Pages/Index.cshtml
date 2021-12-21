@@ -1,0 +1,49 @@
+﻿@page
+@model Example.Pages.IndexModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>Stimulsoft Dashboards.JS - ASP.NET Demo</title>
+
+    <!-- Dashboard Viewer Office2013 style -->
+    <link href="Css/stimulsoft.viewer.office2013.whiteblue.css" rel="stylesheet" />
+
+    <!-- Stimusloft Dashboards.JS -->
+    <script src="Scripts/stimulsoft.reports.js" type="text/javascript"></script>
+    <script src="Scripts/stimulsoft.dashboards.js" type="text/javascript"></script>
+    <script src="Scripts/stimulsoft.viewer.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <script>
+        function onSelectedDashboard() {
+            var selectedDashboard = document.getElementById("SelectedDashboard").value;
+            var dashboardDiv = document.getElementById("dashboard");
+            dashboardDiv.style.visibility = selectedDashboard ? "visible" : "hidden";
+            if (selectedDashboard) {
+                // Create a new dashboard instance and load dashboard from server
+                var report = Stimulsoft.Report.StiReport.createNewDashboard();
+                report.loadFile("/GetDashboard/" + selectedDashboard);
+
+                // View dashboard in Viewer
+                var viewer = new Stimulsoft.Viewer.StiViewer(null, "StiViewer", false);
+                viewer.report = report;
+                viewer.renderHtml("dashboard");
+            }
+        }
+    </script>
+    <form>
+        <select id="SelectedDashboard" name="SelectedDashboard" style="height: 25px; width: 200px" onchange="onSelectedDashboard()">
+            <option value=""></option>
+            <option value="DashboardChristmas">Christmas</option>
+            <option value="DashboardFinancial">Financial</option>
+            <option value="DashboardOpec">Opec</option>
+            <option value="DashboardProducts">Products</option>
+        </select>
+    </form>
+    <div id="dashboard" style="margin-top: 10px"></div>
+</body>
+</html>
