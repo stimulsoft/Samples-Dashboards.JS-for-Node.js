@@ -18,6 +18,15 @@
 </head>
 
 <body>
+    <form>
+        <select id="SelectedDashboard" name="SelectedDashboard" style="height: 25px; width: 200px" onchange="onSelectedDashboard()">
+            <option value="DashboardChristmas">Christmas</option>
+            <option value="DashboardFinancial">Financial</option>
+            <option value="DashboardOpec">Opec</option>
+            <option value="DashboardProducts">Products</option>
+        </select>
+    </form>
+    <div id="dashboard" style="margin-top: 10px"></div>
     <script>
         function onSelectedDashboard() {
             var selectedDashboard = document.getElementById("SelectedDashboard").value;
@@ -34,16 +43,7 @@
                 viewer.renderHtml("dashboard");
             }
         }
+        onSelectedDashboard();
     </script>
-    <form>
-        <select id="SelectedDashboard" name="SelectedDashboard" style="height: 25px; width: 200px" onchange="onSelectedDashboard()">
-            <option value=""></option>
-            <option value="DashboardChristmas">Christmas</option>
-            <option value="DashboardFinancial">Financial</option>
-            <option value="DashboardOpec">Opec</option>
-            <option value="DashboardProducts">Products</option>
-        </select>
-    </form>
-    <div id="dashboard" style="margin-top: 10px"></div>
 </body>
 </html>
