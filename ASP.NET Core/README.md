@@ -1,11 +1,11 @@
-## This folder contains examples of integration Stimulsoft Dashboards.JS with the ASP.NET.
+## This folder contains examples of integration Stimulsoft Dashboards.JS with the ASP.NET Core.
 
-#### Here is the source code of the examples of usage Stimulsoft Dashboards.JS with ASP.NET, using C# code and HTML Dashboarding components.
+#### Here is the source code of the examples of usage Stimulsoft Dashboards.JS with ASP.NET Core, using C# code and HTML Dashboarding components.
 
-#Overview
+# Overview
 This repository has some examples (Visual Studio Projects) each in different folders:
 
-### [Loading a Dashboard from the Server-Side](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/ASP.NET Core/Loading%20a%20Dashboard%20from%20the%20Server-Side) - This folder contains simple demo of using Stimulsoft Dashboards.JS Viewer in the ASP.NET project. Some samples of various Dashboards available:
+### [Loading a Dashboard from the Server-Side](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/ASP.NET%20Core/Loading%20a%20Dashboard%20from%20the%20Server-Side) - This folder contains simple demo of using Stimulsoft Dashboards.JS Viewer in the ASP.NET Core project. Some samples of various Dashboards available:
 
 * Christmas
 * Financial
