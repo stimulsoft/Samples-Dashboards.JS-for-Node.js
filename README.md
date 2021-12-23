@@ -1,6 +1,7 @@
 ## This repository contains samples for Stimulsoft Dashboards.JS - a dashboard tool for Node.js, JavaScript, ASP.NET, ASP.NET Core, PHP, Angular, Angular, React and Vue.js applications.
 
 * In the [ASP.NET folder](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/ASP.NET) you can find examples of using Stimulsoft Dashboards.JS with ASP.NET applications.
+* In the [ASP.NET Core folder](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/ASP.NET%20Core) you can find examples of using Stimulsoft Dashboards.JS with ASP.NET Core applications.
 * The [AngularJS folder](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/AngularJS) contains examples of integration the Stimulsoft Dashboards.JS into simple Angular.JS project.
 * The [Angular folder](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/Angular) contains examples of integration the Stimulsoft Dashboards.JS into simple Angular project.
 * The [React folder](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/React) contains examples of integration the Stimulsoft Dashboards.JS into simple React project.
