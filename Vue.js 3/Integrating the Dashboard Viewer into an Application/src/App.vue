@@ -10,7 +10,6 @@ onMounted(() => {
   let viewer = new Stimulsoft.Viewer.StiViewer(undefined, "StiViewer", false);
 
   console.log("Creating a new dashboard instance");
-    
   let report = Stimulsoft.Report.StiReport.createNewDashboard();
 
   console.log("Load dashboard from url");
@@ -24,7 +23,7 @@ onMounted(() => {
 
   console.log("Loading completed successfully!");
 });
-</script>
+</script>s
 
 <template>
   <div id="app">
