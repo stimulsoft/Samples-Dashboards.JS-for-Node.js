@@ -1,6 +1,6 @@
-# Stimulsoft Dashboards.JS + Vue.js
+# Stimulsoft Dashboards.JS + Vue.js 3
 
-This simple demo illustrates integration of Stimulsoft Dashboards.JS into an Vue.js project.
+This simple demo illustrates integration of Stimulsoft Dashboards.JS into an Vue.js 3 project.
 
 This project was generated with [create-vue](https://github.com/vuejs/create-vue).
 
