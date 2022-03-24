@@ -23,43 +23,22 @@ StiOptions.WebServer.url = "http://localhost:9615";
 Loading required modules:
 
     var http = require('http');
-    var MySQLAdapter = require('./MySQLAdapter');
-    var FirebirdAdapter = require('./FirebirdAdapter');
-    var MSSQLAdapter = require('./MSSQLAdapter');
-    var PostgreSQLAdapter = require('./PostgreSQLAdapter');
+    var adapter = require("stimulsoft-data-adapter");
 
 Main function for work with adapter, it collect data from responce and run adapter with received command:
 
-    var response;
-        function accept(req, res) {
-            response = res;
-            response.setHeader("Access-Control-Allow-Origin", "*");
-            response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-            response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PUT");
-            response.setHeader("Cache-Control", "no-cache");
-            
-            var data = "";
-            req.on('data', function (buffer) {
-                data += buffer;
-            });
-        
-            req.on('end', function () {
-                command = JSON.parse(data.toString());
-                command.queryString = applyQueryParameters(command.queryString, command.parameters, command.escapeQueryParameters);
+    var data = "";
+    request.on('data', function (buffer) {
+        data += buffer;
+    });
 
-                if (command.database == "MySQL") MySQLAdapter.process(command, onProcess);
-                else if (command.database == "Firebird") FirebirdAdapter.process(command, onProcess);
-                else if (command.database == "MS SQL") MSSQLAdapter.process(command, onProcess);
-                else if (command.database == "PostgreSQL") PostgreSQLAdapter.process(command, onProcess);
-                else onResult({ success: false, notice: "Database '" + command.database + "' not supported!" });
-            });
-        }
-
-Setting onProcess callback:
-
-    var onProcess = function (result){
-        response.end(JSON.stringify(result));
-    }
+    request.on('end', function () {
+        var command = adapter.getCommand(data);
+        adapter.process(command, function (result) {
+            var responseData = getResponse(result);
+            response.end(responseData);
+        });
+    });
 
 Starting DataAdapter
 

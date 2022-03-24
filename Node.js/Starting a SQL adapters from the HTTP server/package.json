@@ -1,14 +1,11 @@
 {
     "name": "nodejsdataadapters",
-    "version": "0.0.2",
+    "version": "0.0.4",
     "description": "NodejsDataAdapters",
-    "main": "app.js",
+    "main": "index.js",
     "author": "Stimulsoft (http://www.stimulsoft.com)",
     "dependencies": {
-        "mssql": "^4.1.0",
-        "mysql": "^2.15.0",
-        "node-firebird": "^0.8.4",
-        "pg": "^4.5.1"
+        "stimulsoft-data-adapter": "^2022.2.1"
     },
     "maintainers": [
         {
