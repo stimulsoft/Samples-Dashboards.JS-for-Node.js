@@ -17,7 +17,7 @@ This example demonstrates the implementation of connections to different databas
 
 [Loading a Dashboard from the Server-Side](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/Node.js/Loading%20a%20Dashboard%20from%20the%20Server-Side)
 
-[Starting a SQL adapters from the HTTP server](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/Node.js/Starting%20a%20SQL%20adapters%20from%20the%20HTTP%20server)
+[Starting SQL adapters from the HTTP server](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/Node.js/Starting%20a%20SQL%20adapters%20from%20the%20HTTP%20server)
 
 Use npm to install requred modules:
 ```sh
