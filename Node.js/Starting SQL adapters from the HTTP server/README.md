@@ -1,7 +1,7 @@
 
 How it works -> [link](https://github.com/stimulsoft/DataAdapters.JS).  
   
-# Starting a SQL adapters from the HTTP server
+# Starting SQL Adapters from the HTTP Server
 
 This example demonstrates the implementation of connections to different databases (MySQL, Firebird, MSSQL and PostgreSQL). Adapters files are in a directory with an example. You can include adapters into your projects without changes.
 
