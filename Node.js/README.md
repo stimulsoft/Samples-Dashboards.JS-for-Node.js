@@ -12,12 +12,12 @@ This example allows you to download the dashboard, render it and export it to HT
 [Exporting a Dashboard to PDF](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/Node.js/Exporting%20a%20Dashboard%20to%20PDF)
 This example contains code to render a dashboard to a PDF-document.
 
-[Starting a SQL adapters from the HTTP server](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/Node.js/Starting%20a%20SQL%20adapters%20from%20the%20HTTP%20server)
+[Starting SQL Adapters from the HTTP Server](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/Node.js/Starting%20SQL%20adapters%20from%20the%20HTTP%20server)
 This example demonstrates the implementation of connections to different databases (MySQL, Firebird, MSSQL and PostgreSQL). Adapters files are in a directory with an example.
 
 [Loading a Dashboard from the Server-Side](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/Node.js/Loading%20a%20Dashboard%20from%20the%20Server-Side)
 
-[Starting SQL adapters from the HTTP server](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/Node.js/Starting%20a%20SQL%20adapters%20from%20the%20HTTP%20server)
+[Creating a Table then Adding Two Filters and Exporting to Excel](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/Node.js/Creating%20a%20Table%20then%20Adding%20Two%20Filters%20and%20Exporting%20to%20Excel)
 
 Use npm to install requred modules:
 ```sh
