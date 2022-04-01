@@ -22,8 +22,8 @@
 
         var report = Stimulsoft.Report.StiReport.createNewDashboard();
 
-        var fileContent = Stimulsoft.System.IO.File.getFile("../dashboard/Roboto-Black.ttf", true);
-        var resource = new Stimulsoft.Report.Dictionary.StiResource("Roboto-Black", "Roboto-Black", false, Stimulsoft.Report.Dictionary.StiResourceType.FontTtf, fileContent);
+        var fontFileContent = Stimulsoft.System.IO.File.getFile("../dashboard/Roboto-Black.ttf", true);
+        var resource = new Stimulsoft.Report.Dictionary.StiResource("Roboto-Black", "Roboto-Black", false, Stimulsoft.Report.Dictionary.StiResourceType.FontTtf, fontFileContent);
         report.dictionary.resources.add(resource);
 
         var dashboard = report.pages.getByIndex(0);
