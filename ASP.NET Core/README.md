@@ -12,6 +12,8 @@ This repository has some examples (Visual Studio Projects) each in different fol
 * Opec
 * Products
 
+### [Supply Custom Headers for Json Database](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/ASP.NET%20Core/Supply%20Custom%20Headers%20for%20Json%20Database) - This sample demonstrate how to supply custom HTTP headers for loading Json database.
+
 They are all combined in a Visual Studio solution (.sln-file).
 
 # Running samples

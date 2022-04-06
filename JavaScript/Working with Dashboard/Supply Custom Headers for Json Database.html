@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Supply Custom Headers for Json Database</title>
+
+    <script src="../scripts/stimulsoft.reports.js" type="text/javascript"></script>
+    <script src="../scripts/stimulsoft.dashboards.js" type="text/javascript"></script>
+    <script src="../scripts/stimulsoft.viewer.js" type="text/javascript"></script>
+</head>
+
+<body>
+    Supply Custom Headers for Json Database
+    <br><br>
+
+    <script type="text/javascript">
+        // Create the dashboard viewer with default options
+		var viewer = new Stimulsoft.Viewer.StiViewer(null, "StiViewer", false);
+        // Create a new dashboard instance
+		var report = Stimulsoft.Report.StiReport.createNewDashboard();
+        // In `onBeginProcessData` event handler add custom HTTP headers
+        report.onBeginProcessData = function (args) {
+            if (
+                args.database === "JSON" && 
+                args.command === "GetData" && 
+                args.pathData && args.pathData.indexOf("/dashboard/ProtectedDemo.json") >= 0
+            ) {
+                // Add custom header to pass through backend server protection
+                args.headers.push({key: "X-Auth-Token", value: "*YOUR TOKEN*"});
+            }
+        };
+		// Load dashboard from url
+		report.loadFile("../dashboard/DBSsimp.mrt");
+		// Assign dashboard to the viewer
+		viewer.report = report;
+        // Show the dashboard viewer in this place
+        viewer.renderHtml();
+    </script>
+</body>
+
+</html>

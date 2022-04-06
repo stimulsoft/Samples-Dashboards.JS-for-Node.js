@@ -19,6 +19,8 @@ This example demonstrates the implementation of connections to different databas
 
 [Creating a Table then Adding Two Filters and Exporting to Excel](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/Node.js/Creating%20a%20Table%20then%20Adding%20Two%20Filters%20and%20Exporting%20to%20Excel)
 
+[Supply Custom Headers for Json Database](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/Node.js/Supply%20Custom%20Headers%20for%20Json%20Database)
+
 Use npm to install requred modules:
 ```sh
 $ npm install
@@ -26,5 +28,5 @@ $ npm install
 
 Run Sample:
 ```sh
-$ node index
+$ npm start
 ```

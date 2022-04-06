@@ -7,3 +7,6 @@ This folder contains demo of using Stimulsoft Dashboards.JS Designer in the Angu
 
 [Integrating the Dashboard Viewer into an Application](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/Angular/Integrating%20the%20Dashboard%20Viewer%20into%20an%20Application)
 This folder contains demo of using Stimulsoft Dashboards.JS Viewer in the Angular project.
+
+[Supply Custom Headers for Json Database](https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/Angular/Support%20Custom%20Headers%20for%20Json%20Database)
+This folder contains demo of using JSON database loaded from another backend and protected with custom HTTP header.
