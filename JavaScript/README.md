@@ -1,4 +1,4 @@
-##Samples of using Stimulsoft Dashboard.JS in the JavaScript applications
+## Samples of using Stimulsoft Dashboard.JS in the JavaScript applications
 
 To run the examples:
 ```sh
