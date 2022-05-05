@@ -34,7 +34,7 @@
             // Adjust database PathData to always link to our server
             report.dictionary.databases.getByIndex(0).pathData = `${window.location.origin}/GetJson`;
 
-            // View report in Viewer
+            // View dashboard in Viewer
             var viewer = new Stimulsoft.Viewer.StiViewer(null, "StiViewer", false);
             viewer.report = report;
             viewer.renderHtml("viewer");
