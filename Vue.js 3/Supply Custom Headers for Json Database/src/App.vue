@@ -11,7 +11,7 @@ onMounted(() => {
   let options = new Stimulsoft.Designer.StiDesignerOptions();
   options.appearance.fullScreenMode = false;
 
-  console.log("Create the report designer with specified options");
+  console.log("Create the dashboard designer with specified options");
   let designer = new Stimulsoft.Designer.StiDesigner(options, "StiDesigner", false);
 
   console.log("Create a new dashboard instance");
@@ -29,10 +29,10 @@ onMounted(() => {
     }
   };
 
-  console.log("Load report from url");
+  console.log("Load dashboard from url");
   report.loadFile("dashboards/DBSsimp.mrt");
 
-  console.log("Edit report template in the designer");
+  console.log("Edit dashboard template in the designer");
   designer.report = report;
 
   console.log("Rendering the designer to selected element");
