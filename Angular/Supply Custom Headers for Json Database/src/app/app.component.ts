@@ -19,10 +19,10 @@ export class AppComponent {
     this.options = new Stimulsoft.Designer.StiDesignerOptions();
     this.options.appearance.fullScreenMode = false;
 
-    console.log('Create the report designer with specified options');
+    console.log('Create the dashboard designer with specified options');
     this.designer = new Stimulsoft.Designer.StiDesigner(this.options, 'StiDesigner', false);
 
-    console.log('Edit report template in the designer');
+    console.log('Edit dashboard template in the designer');
     this.designer.report = Stimulsoft.Report.StiReport.createNewDashboard();
 
     // In `onBeginProcessData` event handler add custom HTTP headers
@@ -37,7 +37,7 @@ export class AppComponent {
       }
     };
 
-    console.log('Load report from url');
+    console.log('Load dashboard from url');
     this.designer.report.loadFile('/dashboards/DBSsimp.mrt');
 
     console.log('Rendering the designer to selected element');
