@@ -33,7 +33,7 @@ onMounted(() => {
 <template>
   <div id="app">
     <div>
-      <h2>Stimulsoft Dashboards.JS Designer</h2>
+      <h2 id="app-title">Stimulsoft Dashboards.JS Designer</h2>
       <div id="designer"></div>
     </div>
   </div>
@@ -43,9 +43,11 @@ onMounted(() => {
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  -moz-osx-font-smoothing: grayscale;  
   color: #2c3e50;
   margin-top: 60px;
+}
+#app-title {
+  text-align: center;
 }
 </style>
