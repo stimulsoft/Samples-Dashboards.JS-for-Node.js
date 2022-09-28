@@ -9,9 +9,6 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <title>Stimulsoft Dashboards.JS - ASP.NET Demo</title>
 
-    <!-- Dashboard Viewer Office2013 style -->
-    <link href="Css/stimulsoft.viewer.office2013.whiteblue.css" rel="stylesheet" />
-
     <!-- Stimusloft Dashboards.JS -->
     <script src="Scripts/stimulsoft.reports.js" type="text/javascript"></script>
     <script src="Scripts/stimulsoft.dashboards.js" type="text/javascript"></script>

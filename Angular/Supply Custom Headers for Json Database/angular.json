@@ -31,8 +31,6 @@
               "src/dashboards"
             ],
             "styles": [
-              "./node_modules/stimulsoft-dashboards-js/Css/stimulsoft.designer.office2013.whiteblue.css",
-              "./node_modules/stimulsoft-dashboards-js/Css/stimulsoft.viewer.office2013.whiteblue.css",
               "src/styles.css"
             ],
             "scripts": []

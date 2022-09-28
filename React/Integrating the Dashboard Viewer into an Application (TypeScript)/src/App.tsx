@@ -1,6 +1,5 @@
 import React from 'react';
 import { Stimulsoft } from 'stimulsoft-dashboards-js/Scripts/stimulsoft.viewer'
-import 'stimulsoft-dashboards-js/Css/stimulsoft.viewer.office2013.whiteblue.css';
 import './App.css';
 
 class App extends React.Component {

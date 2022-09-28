@@ -17,7 +17,6 @@ http.createServer(function (req, res) {
         res.end();
         return;
     }
-    console.log('---->', uri);
     var filename = path.join(process.cwd(), uri);
     try {
         if (fs.statSync(filename).isDirectory()) filename += '/index.html';
