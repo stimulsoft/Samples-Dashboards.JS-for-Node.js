@@ -4,10 +4,7 @@
 	<link rel="shortcut icon" href="favicon.ico" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Stimulsoft Dashboards.JS - PHP Demo</title>
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 	<!-- Stimusloft Dashboards.JS -->
 	<script src="scripts/stimulsoft.reports.js" type="text/javascript"></script>
 	<script src="scripts/stimulsoft.dashboards.js" type="text/javascript"></script>
