@@ -36,6 +36,24 @@
                 Stimulsoft.System.StiObject.saveAs(data, report.reportName + ".xlsx", "application/vnd.ms-excel");
             }, Stimulsoft.Report.StiExportFormat.Excel2007);
         }
+
+        function onExportChartToPdfClick() {
+            var table = report.getComponentByName("Chart1");
+            // Export to PDF
+            Stimulsoft.Dashboard.Export.StiDashboardExportTools.exportAsync((data) => {
+                // Save data to file
+                Stimulsoft.System.StiObject.saveAs(data, report.reportName + ".pdf", "application/pdf");
+            }, table, Stimulsoft.Report.StiExportFormat.Pdf);
+        }
+
+        function onExportTableToPdfClick() {
+            var table = report.getComponentByName("TableList");
+            // Export to PDF
+            Stimulsoft.Dashboard.Export.StiDashboardExportTools.exportAsync((data) => {
+                // Save data to file
+                Stimulsoft.System.StiObject.saveAs(data, report.reportName + ".pdf", "application/pdf");
+            }, table, Stimulsoft.Report.StiExportFormat.Pdf);
+        }
     </script>
 </head>
 
@@ -45,6 +63,9 @@
 
     <input type="submit" value="Export to PDF" onclick="onExportToPdfClick()" />
     <input type="submit" value="Export to Excel" onclick="onExportToExcelClick()" />
+
+    <input type="submit" value="Export only the Chart to PDF" onclick="onExportChartToPdfClick()" />
+    <input type="submit" value="Export only the Table to PDF" onclick="onExportTableToPdfClick()" />
 
     <br><br>
     <div>
