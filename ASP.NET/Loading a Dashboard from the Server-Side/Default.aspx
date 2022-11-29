@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <title>Stimulsoft Dashboards.JS - ASP.NET Demo</title>
 
-    <!-- Stimusloft Dashboards.JS -->
+    <!-- Stimulsoft Dashboards.JS -->
     <script src="Scripts/stimulsoft.reports.js" type="text/javascript"></script>
     <script src="Scripts/stimulsoft.dashboards.js" type="text/javascript"></script>
     <script src="Scripts/stimulsoft.viewer.js" type="text/javascript"></script>
