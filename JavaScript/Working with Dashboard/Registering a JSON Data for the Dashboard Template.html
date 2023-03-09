@@ -22,7 +22,7 @@
 
         var report = Stimulsoft.Report.StiReport.createNewDashboard();
         // Load json file
-        var content = Stimulsoft.System.IO.File.getFile("../dashboard/Demo.json", true);
+        var content = Stimulsoft.System.IO.File.getFile("../dashboard/Demo.json");
 
         // Add json data
         var resource = new Stimulsoft.Report.Dictionary.StiResource("DemoName", "DemoAlias", false, Stimulsoft.Report.Dictionary.StiResourceType.Json, content);
