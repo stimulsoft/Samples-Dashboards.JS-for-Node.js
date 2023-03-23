@@ -52,7 +52,7 @@
           "Border": ";;;;",
           "Values": {
             "0": {
-              "Ident": "3",
+              "Ident": "ValueChartMeter",
               "Expression": "Sum(Table1.Column1)",
               "Label": "Column1",
               "SeriesType": "Line"
@@ -60,7 +60,7 @@
           },
           "Arguments": {
             "0": {
-              "Ident": "1",
+              "Ident": "ArgumentChartMeter",
               "Expression": "Table1.Column2",
               "Label": "Column2"
             }
