@@ -1,26 +1,45 @@
-# Samples of using Stimulsoft Dashboards.JS components in the HTML / JavaScript applications
+# Node.js, React, Vue.js, ASP.NET, Java and more samples for Stimulsoft Dashboards.JS
 
-In this repository are available examples of using Dashboards.JS data analytics and data visualization tool on Web pages using pure JavaScript.
+This repository contains samples for Dashboards.JS components for Node.js, ASP.NET, ASP.NET Core, React, Vue.js, PHP and Java applications.
 
-# Running samples
-To launch these examples, you can use any web-server. Below are some options:
+* [ASP.NET](https://github.com/stimulsoft/Samples-Dashboards-JS-React-Node.js-Vue.js/tree/master/ASP.NET)   
+  There you can find examples of using Dashboards.JS with **ASP.NET** applications.
 
-* run the `node index` command in the console and navigate to the `http://localhost:8888/` link in the web browser;
-* just copy this folder to any web server, and open the `index.html` page in the web browser;
-* in Visual Studio, please open the menu `File` and click to `Open` > `Web Site...` item, select the folder with this repository, right mouse click on the `index.html` > `Set As Start Page`, and run the project. 
 
-**Note:** The [Demo](https://github.com/stimulsoft/Samples-Dashboards-JS-Native-HTML/tree/master/Demo) project written in the HTML/JS, this application demonstrates using Stimulsoft Dashboards.JS without any server side – it works in the browser from the local disk storage. Many types of dashboards are available for work.
+* [ASP.NET Core](https://github.com/stimulsoft/Samples-Dashboards-JS-React-Node.js-Vue.js/tree/master/ASP.NET%20Core)  
+  There you can find examples of using Dashboards.JS with **ASP.NET Core** applications.
 
-# Angular, AngularJS, React, Node.js, and Vue.js samples
+
+* [React](https://github.com/stimulsoft/Samples-Dashboards-JS-React-Node.js-Vue.js/tree/master/React)  
+  This folder contains examples of integration Dashboards.JS into simple **React** project.
+
+
+* [Node.js](https://github.com/stimulsoft/Samples-Dashboards-JS-React-Node.js-Vue.js/tree/master/Node.js)  
+  There you can explore examples of using Dashboards.JS on the server-side with the **Node.js** applications.
+
+
+* [PHP](https://github.com/stimulsoft/Samples-Dashboards-JS-React-Node.js-Vue.js/tree/master/PHP)  
+  This folder contains examples of integration Dashboards.JS with the server-side **PHP** application.
+
+
+* [Vue.js](https://github.com/stimulsoft/Samples-Dashboards-JS-React-Node.js-Vue.js/tree/master/Vue.js)  
+  This folder contains examples of integration Dashboards.JS into simple **Vue.js** project.
+
+
+* [Java](https://github.com/stimulsoft/Samples-Dashboards-JS-React-Node.js-Vue.js/tree/master/Java)  
+  This folder contains examples of integration Dashboards.JS into **Java** project.
+
+
+# Angular, AngularJS, and JavaScript samples
 
 Examples for these frameworks can be found in the repositories listed below:
 
 [Angular and AngularJS](https://github.com/stimulsoft/Samples-Dashboards-JS-Angular)
 
-[React, Node.js, Vue.js](https://github.com/stimulsoft/Samples-Dashboards-JS-React-Node.js-Vue.js)
+[Native HTML / JavaScript](https://github.com/stimulsoft/Samples-Dashboards-JS-Native-HTML)
 
 
-# About Dashboards.JS product
+## About Dashboards.JS product
 Stimulsoft Dashboards.JS is a full-featured tool used to create dashboards for the JavaScript platform. To generate and view dashboards, you need any web browser that supports HTML5 and JavaScript. It can work as Client-Side when no server side required, as well as Server-Side that can be used on the server side.
 
 [Live Demo](http://demo.stimulsoft.com/#Js)
@@ -30,3 +49,4 @@ Stimulsoft Dashboards.JS is a full-featured tool used to create dashboards for t
 [Free Download](https://www.stimulsoft.com/en/downloads#dashboards)
 
 [License](LICENSE.md)
+

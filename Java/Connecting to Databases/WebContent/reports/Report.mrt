@@ -1,0 +1,155 @@
+{
+  "ReportGuid": "fdadb9d2f447f6f3d8d80b937d9e95ea",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportFile": "Report.mrt",
+  "ReportCreated": "/Date(1585075766000+0300)/",
+  "ReportChanged": "/Date(1585075787000+0300)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "PreviewSettings": 268435455,
+  "Dictionary": {
+    "DataSources": {
+      "0": {
+        "Ident": "StiMySqlSource",
+        "Name": "DataSource1",
+        "Alias": "DataSource1",
+        "Key": "6d723efba8594ab698280ca4f1a6741c",
+        "Columns": {
+          "0": {
+            "Name": "actor_id",
+            "Index": -1,
+            "NameInSource": "actor_id",
+            "Alias": "actor_id",
+            "Type": "System.UInt16"
+          },
+          "1": {
+            "Name": "first_name",
+            "Index": -1,
+            "NameInSource": "first_name",
+            "Alias": "first_name",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "last_name",
+            "Index": -1,
+            "NameInSource": "last_name",
+            "Alias": "last_name",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "last_update",
+            "Index": -1,
+            "NameInSource": "last_update",
+            "Alias": "last_update",
+            "Type": "System.DateTime"
+          }
+        },
+        "NameInSource": "MySQL",
+        "SqlCommand": "select * from actor"
+      }
+    },
+    "Databases": {
+      "0": {
+        "Ident": "StiMySqlDatabase",
+        "Name": "MySQL",
+        "Alias": "MySQL",
+        "ConnectionStringEncrypted": "43pp60hdMc3zE9XMZCWxc4ta+yhEWZOFRX39velco2PRbPXLT1RDgfla7cBheGMni/I="
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiDashboard",
+      "Name": "Dashboard1",
+      "Guid": "ea7e96837c4a7a26b9be8ff107ee9ab1",
+      "Brush": "solid:",
+      "Components": {
+        "0": {
+          "Ident": "StiTableElement",
+          "Name": "TableElement1_DataSource1",
+          "Guid": "0a8b1f511e204d0d0f18234f01d63975",
+          "ClientRectangle": "40,40,640,280",
+          "Border": ";;;;",
+          "Columns": {
+            "0": {
+              "Ident": "DimensionColumn",
+              "Key": "b0d99ebb3f6352c491846129c395aef0",
+              "Expression": "DataSource1.actor_id",
+              "Label": "actor_id",
+              "HorAlignment": "Right",
+              "TextFormat": {
+                "Ident": "StiNumberFormatService",
+                "NegativePattern": 1,
+                "DecimalSeparator": ",",
+                "DecimalDigits": 0,
+                "GroupSeparator": " ",
+                "UseGroupSeparator": false,
+                "UseLocalSetting": false
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              }
+            },
+            "1": {
+              "Ident": "DimensionColumn",
+              "Key": "c25ef6852e151737129fed4d62739da2",
+              "Expression": "DataSource1.first_name",
+              "Label": "first_name",
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              }
+            },
+            "2": {
+              "Ident": "DimensionColumn",
+              "Key": "194b6d03c6a49a1746a151bdb8e5579d",
+              "Expression": "DataSource1.last_name",
+              "Label": "last_name",
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              }
+            },
+            "3": {
+              "Ident": "DimensionColumn",
+              "Key": "675a809e038855e81cd5b4430351cf1b",
+              "Expression": "DataSource1.last_update",
+              "Label": "last_update",
+              "HorAlignment": "Center",
+              "TextFormat": {
+                "Ident": "StiDateFormatService"
+              },
+              "DashboardInteraction": {
+                "Ident": "TableColumn",
+                "OnHover": "None",
+                "OnClick": "None",
+                "HyperlinkDestination": "NewTab"
+              }
+            }
+          },
+          "HeaderFont": ";10;;",
+          "FooterFont": ";10;;",
+          "Title": {
+            "Text": "DataSource1"
+          },
+          "DashboardInteraction": {
+            "Ident": "Table",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          }
+        }
+      },
+      "Border": ";;2;;;;;solid:Black"
+    }
+  }
+}
