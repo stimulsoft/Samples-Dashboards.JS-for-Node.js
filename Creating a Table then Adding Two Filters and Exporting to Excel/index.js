@@ -28,17 +28,17 @@ tableElement.name = "Example";
 dashboard.components.add(tableElement);
 
 // Add column to table
-var productIDСolumns = new Stimulsoft.Dashboard.Components.Table.StiDimensionColumn();
-productIDСolumns.expression = "Products.ProductID";
-tableElement.columns.add(productIDСolumns);
+var productIDColumns = new Stimulsoft.Dashboard.Components.Table.StiDimensionColumn();
+productIDColumns.expression = "Products.ProductID";
+tableElement.columns.add(productIDColumns);
 
-var productNameСolumns = new Stimulsoft.Dashboard.Components.Table.StiDimensionColumn();
-productNameСolumns.expression = "Products.ProductName";
-tableElement.columns.add(productNameСolumns);
+var productNameColumns = new Stimulsoft.Dashboard.Components.Table.StiDimensionColumn();
+productNameColumns.expression = "Products.ProductName";
+tableElement.columns.add(productNameColumns);
 
-var unitPriceСolumns = new Stimulsoft.Dashboard.Components.Table.StiDimensionColumn();
-unitPriceСolumns.expression = "Products.UnitPrice";
-tableElement.columns.add(unitPriceСolumns);
+var unitPriceColumns = new Stimulsoft.Dashboard.Components.Table.StiDimensionColumn();
+unitPriceColumns.expression = "Products.UnitPrice";
+tableElement.columns.add(unitPriceColumns);
 
 // Add filter to table
 var productIDFilter = new Stimulsoft.Data.Engine.StiDataFilterRule();
