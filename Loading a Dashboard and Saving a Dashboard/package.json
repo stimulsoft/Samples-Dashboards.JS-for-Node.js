@@ -9,7 +9,7 @@
     "author": "Stimulsoft",
     "license": "MIT",
     "dependencies": {
-        "stimulsoft-dashboards-js": "latest"
+        "stimulsoft-dashboards-js": "2023.2.8"
     },
     "repository": {
         "type": "git",

@@ -5,7 +5,7 @@
     "main": "index.js",
     "author": "Stimulsoft (http://www.stimulsoft.com)",
     "dependencies": {
-        "stimulsoft-data-adapter": "^2022.2.1"
+        "stimulsoft-data-adapter": "2023.2.8"
     },
     "scripts": {
         "start": "node index.js"
