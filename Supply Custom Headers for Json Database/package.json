@@ -10,6 +10,6 @@
   "license": "MIT",
   "dependencies": {
     "concurrently": "^7.1.0",
-    "stimulsoft-dashboards-js": "2023.2.8"
+    "stimulsoft-dashboards-js": "latest"
   }
 }
