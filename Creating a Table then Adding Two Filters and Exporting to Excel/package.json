@@ -1,7 +1,7 @@
 {
-  "name": "06_create_table_add_two_filter_and_export_to_excel",
+  "name": "creating_a_table_then_adding_two_filters_and_exporting_to_excel",
   "version": "1.0.0",
-  "description": "06. Create Table add Two Filter and Export to Excel",
+  "description": "Creating a Table then Adding Two Filters and Exporting to Excel",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -13,6 +13,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stimulsoft/Samples-Dashboards-JS/tree/master/Node.js/06.%20Create%20Table%20add%20Two%20Filter%20and%20Export%20to%20Excel"
+    "url": "git+https://github.com/stimulsoft/Samples-Dashboards.JS-for-Node.js/tree/master/Creating%20a%20Table%20then%20Adding%20Two%20Filters%20and%20Exporting%20to%20Excel"
   }
 }

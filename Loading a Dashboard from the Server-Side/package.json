@@ -1,7 +1,7 @@
 {
-  "name": "06_load_dashboard_from_server_side",
+  "name": "loading_a_dashboard_from_the_server_side",
   "version": "1.0.0",
-  "description": "Load Dashboard from Server Side and send to Client",
+  "description": "Loading a Dashboard from the Server Side",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -13,6 +13,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stimulsoft/Samples-Dashboard-JS/tree/master/Node.js/05.%20Load%20Dashboard%20from%20Server%20Side"
+    "url": "git+https://github.com/stimulsoft/Samples-Dashboards.JS-for-Node.js/tree/master/Loading%20a%20Dashboard%20from%20the%20Server-Side"
   }
 }
