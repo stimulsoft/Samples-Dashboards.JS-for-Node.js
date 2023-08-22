@@ -11,7 +11,7 @@ Run Sample:
     $ node index
 
 ### Step by step
-Stimulsoft DashboardS module loading:
+Stimulsoft Dashboards.JS module loading:
 
     var Stimulsoft = require('stimulsoft-dashboards-js');
 
