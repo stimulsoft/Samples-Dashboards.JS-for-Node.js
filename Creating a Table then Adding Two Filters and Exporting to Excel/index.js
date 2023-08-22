@@ -2,10 +2,6 @@
 var Stimulsoft = require('stimulsoft-dashboards-js');
 console.log("Stimulsoft Dashboards loaded");
 
-// Loading fonts
-Stimulsoft.Base.StiFontCollection.addOpentypeFontFile("Roboto-Black.ttf");
-console.log("Font loaded");
-
 // Creating new dashboard
 var report = Stimulsoft.Report.StiReport.createNewDashboard();
 var dashboard = report.pages.getByIndex(0);

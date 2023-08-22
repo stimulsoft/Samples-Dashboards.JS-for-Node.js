@@ -18,14 +18,14 @@ Stimulsoft Dashboards module loading:
 Creating new dashboard:
 
     var report = Stimulsoft.Report.StiReport.createNewDashboard();
+    var dashboard = report.pages.getByIndex(0);
 
 Load and add reg data
 
-    var dataPath = "Demo.xml";
-    var data = new Stimulsoft.System.Data.DataSet();
-    data.readXmlFile(dataPath);
+    var dataSet = new Stimulsoft.System.Data.DataSet();
+    dataSet.readXmlFile("Demo.xml");
 
-    report.regData("Demo", "Demo", data);
+    report.regData("Demo", "Demo", dataSet);
     report.dictionary.synchronize();
 
 Create new table element
@@ -35,31 +35,29 @@ Create new table element
 
 Add column to table
 
-    var dataBase = new Stimulsoft.Dashboard.Components.Table.StiDimensionColumn();
-    dataBase.expression = "Products.ProductID";
-    tableElement.columns.add(dataBase);
+    var productIDColumns = new Stimulsoft.Dashboard.Components.Table.StiDimensionColumn();
+    productIDColumns.expression = "Products.ProductID";
+    tableElement.columns.add(productIDColumns);
 
 Add filter to table
 
-    var filter1 = new Stimulsoft.Data.Engine.StiDataFilterRule();
-    filter1.condition = Stimulsoft.Data.Engine.StiDataFilterCondition.BeginningWith;
-    filter1.path = "Products.ProductID";
-    filter1.value = "1";
-    tableElement.dataFilters.add(filter1);
+    var productIDFilter = new Stimulsoft.Data.Engine.StiDataFilterRule();
+    productIDFilter.condition = Stimulsoft.Data.Engine.StiDataFilterCondition.BeginningWith;
+    productIDFilter.path = "Products.ProductID";
+    productIDFilter.value = "1";
+    tableElement.dataFilters.add(productIDFilter);
 
 Export to Excel
 
-    var stream = Stimulsoft.Dashboard.Export.StiDashboardExportTools.exportToStream(report, new Stimulsoft.Dashboard.Export.Settings.StiExcelDashboardExportSettings());
+    report.exportDocumentAsync((data) => {
+        // Converting Array into buffer
+        var buffer = Buffer.from(data)
 
-Converting to buffer
-    
-    var buffer = Buffer.from(stream.toArray())
+        // File System module
+        var fs = require('fs');
 
-Loading File System module:
-
-    var fs = require('fs');
-
-Saving to a file:
-
-    fs.writeFileSync('./DashboardChristmas.xlsx', buffer);
+        //Saving to a file
+        fs.writeFileSync('./SampleDashboard.xlsx', buffer);
+        console.log("Dashboard saved into Excel-file.");
+}, Stimulsoft.Report.StiExportFormat.Excel2007);
 
