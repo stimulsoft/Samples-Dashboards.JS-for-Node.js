@@ -11,7 +11,7 @@ Run Sample:
     $ npm start
 
 ### Step by step
-Stimulsoft DashboardS module loading:
+Stimulsoft Dashboards.JS module loading:
 
     var Stimulsoft = require('stimulsoft-dashboards-js');
 
@@ -22,8 +22,15 @@ Creating new dashboard:
 Add onBeginProcessData event handler and set necessary headers:
 
     report.onBeginProcessData = function (args) {
-        args.headers.push({key: "X-Auth-Token", value: "*YOUR TOKEN*"});
-    });
+        if (
+            args.database === "JSON" && 
+            args.command === "GetData" && 
+            args.pathData && args.pathData.endsWith("/ProtectedDemo.json")
+        ) {
+            // Add custom header to pass through server protection
+            args.headers.push({key: "X-Auth-Token", value: "*YOUR TOKEN*"});
+        }
+    };
 
 Loading sample report template:
 
@@ -31,16 +38,14 @@ Loading sample report template:
 
 Export to PDF
 
-	var stream = Stimulsoft.Dashboard.Export.StiDashboardExportTools.exportToStream(report, new Stimulsoft.Dashboard.Export.Settings.StiPdfDashboardExportSettings());
+	report.exportDocumentAsync((pdfData) => {
+        // Converting Array into buffer
+        var buffer = Buffer.from(pdfData);
 
-Converting to buffer:
+        // File System module
+        var fs = require('fs');
 
-    var buffer = Buffer.from(stream.toArray())
-
-Loading File System module:
-
-    var fs = require('fs');
-
-Saving string with rendered report in PDF form into a file:
-
-    fs.writeFileSync('./Dashboard.pdf', buffer);
+        // Saving string with rendered dashboard in PDF into a file
+        fs.writeFileSync('./Dashboard.pdf', buffer);
+        console.log("Dashboard saved into PDF-file.");
+    }, Stimulsoft.Report.StiExportFormat.Pdf);
