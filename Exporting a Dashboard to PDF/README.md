@@ -21,20 +21,18 @@ Creating new dashboard:
 
 Loading sample report template:
 
-    report.loadFile("DashboardChristmas.mrt");
+    report.loadFile("Dashboard.mrt");
 
 Export to PDF
 
-	var stream = Stimulsoft.Dashboard.Export.StiDashboardExportTools.exportToStream(report, new Stimulsoft.Dashboard.Export.Settings.StiPdfDashboardExportSettings());
+	report.exportDocumentAsync((pdfData) => {
+        // Converting Array into buffer
+        var buffer = Buffer.from(pdfData);
 
-Converting to buffer:
+        // File System module
+        var fs = require('fs');
 
-    var buffer = Buffer.from(stream.toArray())
-
-Loading File System module:
-
-    var fs = require('fs');
-
-Saving string with rendered report in PDF form into a file:
-
-    fs.writeFileSync('./DashboardChristmas.pdf', buffer);
+        // Saving string with rendered dashboard in PDF into a file
+        fs.writeFileSync('./Dashboard.pdf', buffer);
+        console.log("Dashboard saved into PDF-file.");
+    }, Stimulsoft.Report.StiExportFormat.Pdf);
