@@ -1,6 +1,6 @@
 # Loading a Dashboard and Saving a Dashboard
 
-This example illustrates loading of the dashboard, and storing to the file.
+This example illustrates loading of the dashboard, and saving to the file.
 
 ### Installation and running
 Use npm to install requred modules:
@@ -12,7 +12,7 @@ Run Sample:
 
 ### Step by step
 
-Stimulsoft Dashboards module loading:
+Stimulsoft Dashboards.JS module loading:
 
     var Stimulsoft = require('stimulsoft-dashboards-js');
 
@@ -22,8 +22,8 @@ Creating new dashboard:
 
 Loading sample dashboard template:
 
-    report.loadFile("DashboardChristmas.mrt");
+    report.loadFile("Dashboard.mrt");
 
 Save dashboard to file
 
-    report.saveFile("DashboardChristmas2.mrt");
+    report.saveFile("Dashboard2.mrt");
