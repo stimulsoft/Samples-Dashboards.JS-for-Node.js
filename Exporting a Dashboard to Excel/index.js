@@ -11,9 +11,9 @@ report.loadFile("Dashboard.mrt");
 console.log("Dashboard template loaded");
 
 // Export to Excel
-report.exportDocumentAsync((data) => {
+report.exportDocumentAsync((excelData) => {
     // Converting Array into buffer
-    var buffer = Buffer.from(data)
+    var buffer = Buffer.from(excelData)
 
     // File System module
     var fs = require('fs');
