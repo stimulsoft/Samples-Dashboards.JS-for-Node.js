@@ -26,14 +26,15 @@ Loading sample dashboard template:
 Export to Excel
 
     report.exportDocumentAsync((data) => {
-    // Converting Array into buffer
-    var buffer = Buffer.from(data)
+        // Converting Array into buffer
+        var buffer = Buffer.from(data)
 
-    // File System module
-    var fs = require('fs');
+        // File System module
+        var fs = require('fs');
 
-    //Saving to a file
-    fs.writeFileSync('./Dashboard.xlsx', buffer);
-    console.log("Dashboard saved into Excel-file.");
-}, Stimulsoft.Report.StiExportFormat.Excel2007);
+        //Saving to a file
+        fs.writeFileSync('./Dashboard.xlsx', buffer);
+        console.log("Dashboard saved into Excel-file.");
+    }, Stimulsoft.Report.StiExportFormat.Excel2007);
+
 
