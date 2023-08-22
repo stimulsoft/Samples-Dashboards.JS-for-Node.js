@@ -2,10 +2,6 @@
 var Stimulsoft = require('stimulsoft-dashboards-js');
 console.log("Stimulsoft Dashboards loaded");
 
-// Loading fonts
-Stimulsoft.Base.StiFontCollection.addOpentypeFontFile("Roboto-Black.ttf");
-console.log("Font loaded");
-
 // Creating new dashboard
 var report = Stimulsoft.Report.StiReport.createNewDashboard();
 console.log("New dashboard created");
@@ -15,9 +11,9 @@ report.loadFile("Dashboard.mrt");
 console.log("Dashboard template loaded");
 
 // Export to Excel
-report.exportDocumentAsync((pdfData) => {
+report.exportDocumentAsync((data) => {
     // Converting Array into buffer
-    var buffer = Buffer.from(pdfData)
+    var buffer = Buffer.from(data)
 
     // File System module
     var fs = require('fs');
