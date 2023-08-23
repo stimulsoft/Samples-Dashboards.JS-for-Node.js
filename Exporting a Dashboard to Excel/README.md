@@ -24,7 +24,7 @@ Loading sample dashboard template:
 
     report.loadFile("Dashboard.mrt");
 
-Export to Excel
+Export to Excel:
 
     report.exportDocumentAsync((data) => {
         // Converting Array into buffer

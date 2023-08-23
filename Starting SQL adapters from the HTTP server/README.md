@@ -48,6 +48,6 @@ Main function for work with adapter, it collect data from responce and run adapt
         });
     }
 
-Starting DataAdapter
+Starting DataAdapter:
 
     http.createServer(accept).listen(9615);

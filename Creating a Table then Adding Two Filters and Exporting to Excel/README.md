@@ -21,7 +21,7 @@ Creating new dashboard:
     var report = Stimulsoft.Report.StiReport.createNewDashboard();
     var dashboard = report.pages.getByIndex(0);
 
-Load and add reg data
+Load and add reg data:
 
     var dataSet = new Stimulsoft.System.Data.DataSet();
     dataSet.readXmlFile("Demo.xml");
@@ -29,18 +29,18 @@ Load and add reg data
     report.regData("Demo", "Demo", dataSet);
     report.dictionary.synchronize();
 
-Create new table element
+Create new table element:
 
     var tableElement = new Stimulsoft.Dashboard.Components.Table.StiTableElement();
     dashboard.components.add(tableElement);
 
-Add column to table
+Add column to table:
 
     var productIDColumns = new Stimulsoft.Dashboard.Components.Table.StiDimensionColumn();
     productIDColumns.expression = "Products.ProductID";
     tableElement.columns.add(productIDColumns);
 
-Add filter to table
+Add filter to table:
 
     var productIDFilter = new Stimulsoft.Data.Engine.StiDataFilterRule();
     productIDFilter.condition = Stimulsoft.Data.Engine.StiDataFilterCondition.BeginningWith;
@@ -48,7 +48,7 @@ Add filter to table
     productIDFilter.value = "1";
     tableElement.dataFilters.add(productIDFilter);
 
-Export to Excel
+Export to Excel:
 
     report.exportDocumentAsync((data) => {
         // Converting Array into buffer

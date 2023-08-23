@@ -25,6 +25,6 @@ Loading sample dashboard template:
 
     report.loadFile("Dashboard.mrt");
 
-Save dashboard to file
+Save dashboard to file:
 
     report.saveFile("Dashboard2.mrt");

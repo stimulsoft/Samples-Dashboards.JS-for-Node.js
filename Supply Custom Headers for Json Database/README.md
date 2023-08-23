@@ -37,7 +37,7 @@ Loading sample report template:
 
     report.loadFile("DBSsimp.mrt");
 
-Export to PDF
+Export to PDF:
 
 	report.exportDocumentAsync((pdfData) => {
         // Converting Array into buffer
