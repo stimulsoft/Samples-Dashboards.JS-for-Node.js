@@ -9,6 +9,7 @@ This example demonstrates the implementation of connections to different databas
 Use npm to install requred modules:
 
     $ npm install
+    
 Run Sample:
 
     $ node index

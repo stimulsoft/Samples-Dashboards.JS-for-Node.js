@@ -6,6 +6,7 @@ This example illustrates loading of the dashboard, data rendering and storing th
 Use npm to install requred modules:
 
     $ npm install
+    
 Run Sample:
 
     $ node index
@@ -34,7 +35,6 @@ Export to Excel
 
         //Saving to a file
         fs.writeFileSync('./Dashboard.xlsx', buffer);
-        console.log("Dashboard saved into Excel-file.");
     }, Stimulsoft.Report.StiExportFormat.Excel2007);
 
 

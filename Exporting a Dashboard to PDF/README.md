@@ -6,6 +6,7 @@ This example illustrates loading of the dashboard, data rendering and storing th
 Use npm to install requred modules:
 
     $ npm install
+    
 Run Sample:
 
     $ node index
@@ -34,5 +35,4 @@ Export to PDF
 
         // Saving string with rendered dashboard in PDF into a file
         fs.writeFileSync('./Dashboard.pdf', buffer);
-        console.log("Dashboard saved into PDF-file.");
     }, Stimulsoft.Report.StiExportFormat.Pdf);

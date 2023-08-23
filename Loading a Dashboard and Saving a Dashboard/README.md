@@ -6,6 +6,7 @@ This example illustrates loading of the dashboard, and saving to the file.
 Use npm to install requred modules:
 
     $ npm install
+    
 Run Sample:
 
     $ node index
