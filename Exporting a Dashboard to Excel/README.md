@@ -9,7 +9,7 @@ Use npm to install requred modules:
     
 Run Sample:
 
-    $ node index
+    $ node start
 
 ### Step by step
 Stimulsoft Dashboards.JS module loading:
