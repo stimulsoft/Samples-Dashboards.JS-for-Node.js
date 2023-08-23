@@ -66,81 +66,83 @@ Start the server by adding the following code at the end of the file:
 
 ### Step by step Viewer page
 Add the following code to the HTML file to include the required Stimulsoft Dashboards.js libraries and initialize the viewer:
-   ```html
-    <script src="stimulsoft.reports.js"></script>
-    <script src="stimulsoft.dashboards.js"></script>
-    <script src="stimulsoft.viewer.js"></script>
-   ```
+```html
+<script src="stimulsoft.reports.js"></script>
+<script src="stimulsoft.dashboards.js"></script>
+<script src="stimulsoft.viewer.js"></script>
+```
 
 Add the following code to the HTML file to script tag:
+
 Set full screen mode for the viewer:
-    ```javascript
-    var options = new Stimulsoft.Viewer.StiViewerOptions();
-    options.appearance.fullScreenMode = true;
-    ```
+```javascript
+var options = new Stimulsoft.Viewer.StiViewerOptions();
+options.appearance.fullScreenMode = true;
+```
 
 Create the dashboard viewer with specified options:
-    ```javascript
-    var viewer = new Stimulsoft.Viewer.StiViewer(options, "StiViewer", false);
-    ```
+```javascript
+var viewer = new Stimulsoft.Viewer.StiViewer(options, "StiViewer", false);
+```
 
 Render Viewer:
-    ```javascript    
-    viewer.renderHtml("viewer");
-    ```
+```javascript    
+viewer.renderHtml("viewer");
+```
 
 Create a new dashboard instance:
-    ```javascript
-    var report = Stimulsoft.Report.StiReport.createNewDashboard();
-    ```
+```javascript
+var report = Stimulsoft.Report.StiReport.createNewDashboard();
+```
 
 Load dashboard from url:
-    ```javascript
-    report.loadFile('/dashboard');
-    ```
+```javascript
+report.loadFile('/dashboard');
+```
 
 Show dashboard template in the viewer:
-    ```javascript
-    viewer.report = report;
-    ```
+```javascript
+viewer.report = report;
+```
 
 ### Step by step Designer page
 Add the following code to the HTML file to include the required Stimulsoft Dashboards.js libraries and initialize the viewer:
-   ```html
-    <script src="stimulsoft.reports.js"></script>
-    <script src="stimulsoft.dashboards.js"></script>
-    <script src="stimulsoft.viewer.js"></script>
-    <script src="stimulsoft.designer.js"></script>
-   ```
+```html
+<script src="stimulsoft.reports.js"></script>
+<script src="stimulsoft.dashboards.js"></script>
+<script src="stimulsoft.viewer.js"></script>
+<script src="stimulsoft.designer.js"></script>
+```
 
 Add the following code to the HTML file to script tag:
+
 Set full screen mode for the designer:
-    ```javascript
-    var options = new Stimulsoft.Designer.StiDesignerOptions();
-    options.appearance.fullScreenMode = true;
-    ```
+```javascript
+var options = new Stimulsoft.Designer.StiDesignerOptions();
+options.appearance.fullScreenMode = true;
+```
 
 Create the dashboard viewer with specified options:
-    ```javascript
-    var designer = new Stimulsoft.Designer.StiDesigner(options, 'StiDesigner', false);
-    ```
+```javascript
+var designer = new Stimulsoft.Designer.StiDesigner(options, 'StiDesigner', false);
+```
 
 Render Designer:
-    ```javascript    
-    designer.renderHtml("designer");
-    ```
+```javascript    
+designer.renderHtml("designer");
+```
 
 Create a new dashboard instance:
-    ```javascript
-    var report = Stimulsoft.Report.StiReport.createNewDashboard();
-    ```
+```javascript
+var report = Stimulsoft.Report.StiReport.createNewDashboard();
+```
 
 Load dashboard from url:
-    ```javascript
-    report.loadFile('/dashboard');
-    ```
+```javascript
+report.loadFile('/dashboard');
+```
 
 Edit dashboard template in the designer:
-    ```javascript
-    designer.report = report;
-    ```
+```javascript
+designer.report = report;
+```
