@@ -30,6 +30,10 @@ app.get('/stimulsoft.designer.js', (req, res) => {
     res.sendFile(__dirname + "/node_modules/stimulsoft-dashboards-js/Scripts/stimulsoft.designer.js");
   });
 
+app.get('/stimulsoft.blockly.editor.js', (req, res) => {
+  res.sendFile(__dirname + "/node_modules/stimulsoft-dashboards-js/Scripts/stimulsoft.blockly.editor.js");
+});
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
   console.log(`Navigate to http://localhost:${port}/viewer show Viewer`);
