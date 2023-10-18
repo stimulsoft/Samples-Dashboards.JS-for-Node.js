@@ -1,5 +1,13 @@
 
 How it works -> [link](https://github.com/stimulsoft/DataAdapters.JS).  
+
+If you need examples for other platforms, follow the links below:
+* [Node.js](https://github.com/stimulsoft/DataAdapters.JS/tree/main/NodejsDataAdapters)
+* [PHP](https://github.com/stimulsoft/DataAdapters.JS/tree/main/PHPDataAdapters)
+* [ASP.NET](https://github.com/stimulsoft/DataAdapters.JS/tree/main/NetDataAdapters)
+* [ASP.NET Core](https://github.com/stimulsoft/DataAdapters.JS/tree/main/NetCoreDataAdapters)
+* [Java](https://github.com/stimulsoft/DataAdapters.JS/tree/main/JavaDataAdapters)
+* [Python](https://github.com/stimulsoft/DataAdapters.JS/tree/main/PythonDataAdapters)
   
 # Starting SQL Adapters from the HTTP Server
 
