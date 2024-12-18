@@ -1,0 +1,696 @@
+{
+  "ReportVersion": "2025.1.2.0",
+  "ReportGuid": "defdcaff2b454641847783a5b6fd2271",
+  "ReportName": "WebsiteAnalytics",
+  "ReportAlias": "Website Analytics",
+  "ReportAuthor": "Stimulsoft",
+  "ReportCreated": "/Date(1537879754000+0200)/",
+  "ReportChanged": "/Date(1734544608073+0100)/",
+  "EngineVersion": "EngineV2",
+  "ReportUnit": "Inches",
+  "PreviewSettings": 25108991,
+  "DashboardViewerSettings": 255,
+  "Culture": "zh-CN",
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\n\r\nnamespace Reports\r\n{\r\n    public class WebsiteAnalytics : Stimulsoft.Report.StiReport\r\n    {\r\n        public WebsiteAnalytics()        {\r\n            this.InitializeComponent();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
+  "CalculationMode": "Interpretation",
+  "Styles": {
+    "0": {
+      "Ident": "StiChartStyle",
+      "Description": "Style based on formating of 'Chart1' component",
+      "Name": "Style1",
+      "Border": ";;;;;;;solid:Black",
+      "Brush": "solid:White",
+      "ChartAreaBrush": "solid:255,255,255",
+      "ChartAreaBorderColor": "Transparent",
+      "SeriesLabelsBrush": "solid:119,255,255,255",
+      "SeriesLabelsColor": "50,58,69",
+      "SeriesLabelsLineColor": "105,105,105",
+      "SeriesLabelsBorderColor": "Transparent",
+      "TrendLineColor": "105,105,105",
+      "LegendBrush": "solid:255,255,255",
+      "LegendBorderColor": "Transparent",
+      "LegendTitleColor": "105,105,105",
+      "MarkerVisible": false,
+      "InterlacingHorBrush": "solid:10,155,155,155",
+      "InterlacingVertBrush": "solid:10,155,155,155",
+      "GridLinesHorColor": "50,105,105,105",
+      "GridLinesVertColor": "50,105,105,105",
+      "StyleColors": {
+        "0": "52,152,219",
+        "1": "239,113,122",
+        "2": "109,203,179",
+        "3": "242,129,97",
+        "4": "252,205,27"
+      },
+      "BasicStyleColor": "White",
+      "ToolTipBrush": "solid:White",
+      "ToolTipTextBrush": "solid:DimGray",
+      "ToolTipCornerRadius": "8,8,8,8",
+      "ToolTipBorder": "All;140,140,140;;;",
+      "SeriesCornerRadius": "0,0,0,0",
+      "TitleFont": "Long Cang;14;;",
+      "AllowUseTitle": true,
+      "AllowUseFont": true,
+      "Font": "Long Cang;16;;"
+    },
+    "1": {
+      "Ident": "StiIndicatorStyle",
+      "Description": "Style based on formating of 'Indicator7' component",
+      "Name": "Style2",
+      "ForeColor": "DimGray",
+      "HotBackColor": "240,240,240",
+      "ToolTipBrush": "solid:White",
+      "ToolTipTextBrush": "solid:DimGray",
+      "ToolTipCornerRadius": "8,8,8,8",
+      "ToolTipBorder": "All;140,140,140;;;",
+      "AllowUseFont": true,
+      "Font": "Long Cang;12;;",
+      "TitleFont": "Long Cang;14;;",
+      "AllowUseTitle": true
+    },
+    "2": {
+      "Ident": "StiDialogStyle",
+      "Description": "Style based on formating of 'ListBox2' component",
+      "Name": "Style3",
+      "ForeColor": "DimGray",
+      "AllowUseFont": true,
+      "Font": "Long Cang;12;;",
+      "TitleFont": "Long Cang;14;;",
+      "AllowUseTitle": true
+    }
+  },
+  "ReferencedAssemblies": {
+    "0": "System.Dll",
+    "1": "System.Drawing.Dll",
+    "2": "System.Windows.Forms.Dll",
+    "3": "System.Data.Dll",
+    "4": "System.Xml.Dll",
+    "5": "Stimulsoft.Controls.Dll",
+    "6": "Stimulsoft.Base.Dll",
+    "7": "Stimulsoft.Report.Dll"
+  },
+  "Dictionary": {
+    "Resources": {
+      "0": {
+        "Name": "analytics",
+        "Alias": "analytics",
+        "Key": "22ecbb78e2f340f88f024f4653153781",
+        "Type": "Json",
+        "Image": "ONgOMIMqgoqI0EvzBiJT/iEtcEi9iR7uQaH3j4dzWopGiKeUZv2Dy3aplFD5WaJdKC+pSTVq9QRI8YIBcpUmbqer+xLNJIMFhbx67PC9Pt3GI5gC+tuDedQuRsesIgBzK08nA14mZ7mi1bmT/0dSW/ZylAWtiZg7dcieiZtZi1quBcXadnbwMxhUdMtEOnJSXAGVBnW5+tT3n7/NGumH736IWA0S/8D53lJq+BznZjuHyMKr008DpNmRvhs/vWYpunkDQ7u9cbF5YrCIFTi7InSYZAJyVkPq9EaDD5inn8ZHdpPdiI1Io1ZGgp/Yqnwr94nfCA1GHqfzxKdluwD9frIiSHrKL2tUD1+Xjjly4dGcLdInJjeks48VUolSz7ijouEQAN92rVYHZ73ZmT3vsnwFGulQlM2PSESdoy12XsF3Q/DVmDG8xmO9PPhlOmBlyxcm/RsKkcL6xb2QCfpHUVJdx8gW0i0R2ArZTjVMcFIKczsSHauAKt53vUBWELGl/VrE2Z3NRTS6YTVu7yuH1UbLs3kgE3gyIkx3y2IDrxyvv4TpyRYI13bDSRm+gEwIhJjMi+BlrEv9YoQk5GgGz5sGshKyMeD4fGpKBI4J9zKdojz/E+PsVXh3CDrXwR9EX/gFQLFNOaOgczd7apciXGRfWPZCt0sMHlpV8trv0Ej5exc40US5HhOCygnMQNOouvCLxyt7wC5IzBtBHlNIuk/7PdOxTivf7Xms4vEguSyYTzA2GUzHLTkFdDOBt9uFdV23pYnDHF/AvtJ4JU0vOZFL0qmxTUhOP7WLecu5mFVTQGsGMkb0bg64ZT5eXGmNv5JTC4qH5bSb2pIsdjgzUu0t91tUvDk7SB0hQ4inuNc6ooDD9KjsX/s9kgXQ1rHoiz33eB1Luaae7WyNIXAtK+iKqiVPn6kpvLVcJitNK7xIpAbBWm3RSzrAdECJEWgP41vWaAOYpDYjApgKJZhm+j6Tl2lc+2Wlft2KctCGsduNU5DQRJTQbYGc3Tn2TQcEyvmaMAeO35GLIC6Uy048mefONvPFHN4hO8XeMp9VfEVDq6YTzZ66Hmn/YxFzpepX1iQ2jwHUH0opP72PgU0Hz07mbdu1RaXTfbxK9MZ0BsOxObkSVUBrHjoeVm7swvum5qZqO2yDg8B6WFIgrUaCWLWj1Ix0u2byLtdj/BAWx0qJq9k9ldZwLchYTGQUwskEW4+/1GRtQ2mbQvz3gpE3UV0tdOvOjM2odNeEjvfXHbonqWRnbVz1O7TPXRq1v6Ziw5iC0Rh6kdM43bmH9TC9J9eMm58Snwl0bBGx3cQyvLuesghS0ULzC6dnavgnMCkZ8INpVa+6Tta66S8N0X2usMRAnRPzn4i5rJxpGIgXodXMEx1WEt9wFulKatu48TnnOdVxn/OqW0ewtyKzcxxWuiD3fbRuwQ14uWH5y2PikeaHDJQp96y/9qaaeL+tU6kN2tVW42iD76JR2kw/xSiYJQ3VyA=="
+      }
+    },
+    "DataSources": {
+      "0": {
+        "Ident": "StiDataTableSource",
+        "Name": "root",
+        "Alias": "root",
+        "Key": "03223047295c4fd88b6900cd3b3278c3",
+        "Columns": {
+          "0": {
+            "Name": "Month",
+            "Index": -1,
+            "NameInSource": "Month",
+            "Alias": "Month",
+            "Type": "System.String",
+            "Key": "273f4823013c457ea54f094af51143d9"
+          },
+          "1": {
+            "Name": "WeekID",
+            "Index": -1,
+            "NameInSource": "WeekID",
+            "Alias": "WeekID",
+            "Type": "System.String",
+            "Key": "d82caf3f8b19468b87e0608f73ec0d5b"
+          },
+          "2": {
+            "Name": "Week",
+            "Index": -1,
+            "NameInSource": "Week",
+            "Alias": "Week",
+            "Type": "System.String",
+            "Key": "c4da8d49e70540caae0076ca273dc0bd"
+          },
+          "3": {
+            "Name": "Date",
+            "Index": -1,
+            "NameInSource": "Date",
+            "Alias": "Date",
+            "Type": "System.DateTime",
+            "Key": "934a7b83eddc4657828e98ef6627d22a"
+          },
+          "4": {
+            "Name": "Users",
+            "Index": -1,
+            "NameInSource": "Users",
+            "Alias": "Users",
+            "Type": "System.String",
+            "Key": "48d32267439240bf84a98e21e04b05d6"
+          },
+          "5": {
+            "Name": "New Users",
+            "Index": -1,
+            "NameInSource": "New Users",
+            "Alias": "New Users",
+            "Type": "System.String",
+            "Key": "3b24e0ede10645e09d570b8d3b4ba5b5"
+          },
+          "6": {
+            "Name": "Returning Visitors",
+            "Index": -1,
+            "NameInSource": "Returning Visitors",
+            "Alias": "Returning Visitors",
+            "Type": "System.String",
+            "Key": "c09cfe33a446425b8c9c816566abd5b7"
+          },
+          "7": {
+            "Name": "Sessions",
+            "Index": -1,
+            "NameInSource": "Sessions",
+            "Alias": "Sessions",
+            "Type": "System.String",
+            "Key": "826cd184fc0e4ae0bba73e01d39ca3ef"
+          },
+          "8": {
+            "Name": "Number of Sessions per User",
+            "Index": -1,
+            "NameInSource": "Number of Sessions per User",
+            "Alias": "Number of Sessions per User",
+            "Type": "System.Decimal",
+            "Key": "20b0cdc0b1e144e28c0c1b16d79e3270"
+          },
+          "9": {
+            "Name": "Pageview",
+            "Index": -1,
+            "NameInSource": "Pageview",
+            "Alias": "Pageview",
+            "Type": "System.String",
+            "Key": "652ca49bb74242808a741e312f50e31f"
+          },
+          "10": {
+            "Name": "Page / Session",
+            "Index": -1,
+            "NameInSource": "Page / Session",
+            "Alias": "Page / Session",
+            "Type": "System.Decimal",
+            "Key": "b7e3b9d9b2594338b22738ee81fa3552"
+          },
+          "11": {
+            "Name": "Avg. Session Duration",
+            "Index": -1,
+            "NameInSource": "Avg. Session Duration",
+            "Alias": "Avg. Session Duration",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "Bounce Rate",
+            "Index": -1,
+            "NameInSource": "Bounce Rate",
+            "Alias": "Bounce Rate",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "analytics.root"
+      }
+    },
+    "Databases": {
+      "0": {
+        "Ident": "StiJsonDatabase",
+        "Name": "analytics",
+        "Alias": "analytics",
+        "Key": "0e1d0095aff646719ca1ef37717f7eee",
+        "CastToColumnType": "CastToColumnType",
+        "PathData": "resource://analytics",
+        "HeadersString": ""
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiDashboard",
+      "Name": "DashboardWebsiteAnalytics",
+      "Guid": "961143d31f4f4067a65d82ef7ac29588",
+      "Alias": "Website Analytics",
+      "Brush": "solid:",
+      "Components": {
+        "0": {
+          "Ident": "StiListBoxElement",
+          "Name": "ListBox1",
+          "Guid": "5254a6a8ca2441308e103d2098dea72e",
+          "ClientRectangle": "0,0,220,120",
+          "Linked": true,
+          "Border": ";;;;",
+          "AltClientRectangle": "0,40,240,167",
+          "AltTitleVisible": false,
+          "ParentKey": "47b0450805444290832dccc7d4894222",
+          "Font": "Long Cang;12;;",
+          "SelectionMode": "Multi",
+          "DashboardInteraction": {
+            "Ident": "Filter",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
+          "NameMeter": {
+            "Ident": "NameListBoxMeter",
+            "Key": "0803e87ea06245bbaa84ca3f759ced9e",
+            "Expression": "root.Month",
+            "Label": "Month"
+          },
+          "KeyMeter": {
+            "Ident": "KeyListBoxMeter",
+            "Key": "19123cdf40d148e5acc13424f60cc168",
+            "Expression": "root.Month",
+            "Label": "Month"
+          },
+          "Title": {
+            "Text": "Month",
+            "Visible": false
+          },
+          "Style": "Custom",
+          "CustomStyleName": "Style3",
+          "CornerRadius": "0,0,0,0",
+          "Shadow": ";;;"
+        },
+        "1": {
+          "Ident": "StiListBoxElement",
+          "Name": "ListBox2",
+          "Guid": "5e31a3d338a64e03a281ab9caf43cf58",
+          "ClientRectangle": "0,140,220,340",
+          "Linked": true,
+          "Border": ";;;;",
+          "AltClientRectangle": "240,40,240,167",
+          "AltTitleVisible": false,
+          "ParentKey": "5254a6a8ca2441308e103d2098dea72e",
+          "TransformActions": {
+            "0": {
+              "Type": "Replace",
+              "Path": "Week",
+              "ValueFrom": "First",
+              "ValueTo": "First Week",
+              "Priority": "AfterGroupingData"
+            },
+            "1": {
+              "Type": "Replace",
+              "Path": "Week",
+              "ValueFrom": "Fourth",
+              "ValueTo": "Fourth Week",
+              "Priority": "AfterGroupingData"
+            },
+            "2": {
+              "Type": "Replace",
+              "Path": "Week",
+              "ValueFrom": "Last",
+              "ValueTo": "Last Week",
+              "Priority": "AfterGroupingData"
+            },
+            "3": {
+              "Type": "Replace",
+              "Path": "Week",
+              "ValueFrom": "Second",
+              "ValueTo": "Second Week",
+              "Priority": "AfterGroupingData"
+            },
+            "4": {
+              "Type": "Replace",
+              "Path": "Week",
+              "ValueFrom": "Third",
+              "ValueTo": "Third Week",
+              "Priority": "AfterGroupingData"
+            }
+          },
+          "Font": "Long Cang;12;;",
+          "SelectionMode": "Multi",
+          "DashboardInteraction": {
+            "Ident": "Filter",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab"
+          },
+          "NameMeter": {
+            "Ident": "NameListBoxMeter",
+            "Key": "8c8ecb4ad1134eaf8d0abe2e7dbb1b5b",
+            "Expression": "root.Week",
+            "Label": "Week"
+          },
+          "KeyMeter": {
+            "Ident": "KeyListBoxMeter",
+            "Key": "028db9d8791941b9877b88bae0e475ab",
+            "Expression": "root.WeekID",
+            "Label": "Week ID"
+          },
+          "Title": {
+            "Text": "Week",
+            "Visible": false
+          },
+          "Style": "Custom",
+          "CustomStyleName": "Style3",
+          "CornerRadius": "0,0,0,0",
+          "Shadow": ";;;"
+        },
+        "2": {
+          "Ident": "StiIndicatorElement",
+          "Name": "Indicator1",
+          "Guid": "9c59ec9739b043429bffc7a234874833",
+          "ClientRectangle": "0,500,220,100",
+          "Border": ";;;;",
+          "AltClientRectangle": "0,200,240,160",
+          "DashboardInteraction": {
+            "Ident": "Indicator",
+            "OnHover": "ShowToolTip",
+            "OnClick": "None",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserSorting": false
+          },
+          "TextFormat": {
+            "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
+            "DecimalDigits": 2,
+            "GroupSeparator": ",",
+            "State": "DecimalDigits, Abbreviation"
+          },
+          "TargetFormat": {
+            "Ident": "StiPercentageFormatService",
+            "NegativePattern": 1,
+            "DecimalDigits": 2,
+            "GroupSeparator": ",",
+            "PositivePattern": 1,
+            "Symbol": "%"
+          },
+          "Value": {
+            "Ident": "ValueIndicatorMeter",
+            "Key": "3c04bd4d9a104aa9896d4619f3e9556f",
+            "Expression": "Sum(root.Users)",
+            "Label": "Users"
+          },
+          "Title": {
+            "Text": "用户"
+          },
+          "Font": "Long Cang;;;",
+          "ManuallyEnteredData": "H4sIAAAAAAAEAIvm5VJQiAYRCgpKYYk5palKOlBeSGJRemoJnBucWpSZWqwE4sXycsUCALmUbWY5AAAAWklQ",
+          "Style": "Custom",
+          "CustomStyleName": "Style2",
+          "Icon": "ManWoman",
+          "CornerRadius": "0,0,0,0",
+          "Shadow": ";;;"
+        },
+        "3": {
+          "Ident": "StiIndicatorElement",
+          "Name": "Indicator2",
+          "Guid": "29ffa70099ad44dd9a11d07560658643",
+          "ClientRectangle": "240,500,220,100",
+          "Border": ";;;;",
+          "AltClientRectangle": "240,200,240,160",
+          "DashboardInteraction": {
+            "Ident": "Indicator",
+            "OnHover": "ShowToolTip",
+            "OnClick": "None",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserSorting": false
+          },
+          "TextFormat": {
+            "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
+            "DecimalDigits": 2,
+            "GroupSeparator": ",",
+            "State": "DecimalDigits, Abbreviation"
+          },
+          "TargetFormat": {
+            "Ident": "StiPercentageFormatService",
+            "NegativePattern": 1,
+            "DecimalDigits": 2,
+            "GroupSeparator": ",",
+            "PositivePattern": 1,
+            "Symbol": "%"
+          },
+          "Value": {
+            "Ident": "ValueIndicatorMeter",
+            "Key": "678c4fab9dbe4996bd2d6c0ccf31618c",
+            "Expression": "Sum([root.New Users])",
+            "Label": "New Users"
+          },
+          "Title": {
+            "Text": "新用户"
+          },
+          "Font": "Long Cang;;;",
+          "ManuallyEnteredData": "H4sIAAAAAAAEAIvm5VJQiAYRCgpKYYk5palKOlBeSGJRemoJnBucWpSZWqwE4sXycsUCALmUbWY5AAAAWklQ",
+          "Style": "Custom",
+          "CustomStyleName": "Style2",
+          "Icon": "Man",
+          "CornerRadius": "0,0,0,0",
+          "Shadow": ";;;"
+        },
+        "4": {
+          "Ident": "StiIndicatorElement",
+          "Name": "Indicator3",
+          "Guid": "71d291e2f1b147f18f5f47b5127fbe2d",
+          "ClientRectangle": "480,500,220,100",
+          "Border": ";;;;",
+          "AltClientRectangle": "0,360,240,160",
+          "DashboardInteraction": {
+            "Ident": "Indicator",
+            "OnHover": "ShowToolTip",
+            "OnClick": "None",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserSorting": false
+          },
+          "TextFormat": {
+            "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
+            "DecimalDigits": 2,
+            "GroupSeparator": ",",
+            "State": "DecimalDigits, Abbreviation"
+          },
+          "TargetFormat": {
+            "Ident": "StiPercentageFormatService",
+            "NegativePattern": 1,
+            "DecimalDigits": 2,
+            "GroupSeparator": ",",
+            "PositivePattern": 1,
+            "Symbol": "%"
+          },
+          "Value": {
+            "Ident": "ValueIndicatorMeter",
+            "Key": "3d45953455b84113b088f726a8c1f012",
+            "Expression": "Sum(root.Sessions)",
+            "Label": "Sessions"
+          },
+          "Title": {
+            "Text": "会议"
+          },
+          "Font": "Long Cang;;;",
+          "ManuallyEnteredData": "H4sIAAAAAAAEAIvm5VJQiAYRCgpKYYk5palKOlBeSGJRemoJnBucWpSZWqwE4sXycsUCALmUbWY5AAAAWklQ",
+          "Style": "Custom",
+          "CustomStyleName": "Style2",
+          "Icon": "StarHalf",
+          "CornerRadius": "0,0,0,0",
+          "Shadow": ";;;"
+        },
+        "5": {
+          "Ident": "StiIndicatorElement",
+          "Name": "Indicator4",
+          "Guid": "f6be7d8f4eb04858b4b5d156f99d6d82",
+          "ClientRectangle": "960,500,240,100",
+          "Border": ";;;;",
+          "AltClientRectangle": "240,360,240,160",
+          "DashboardInteraction": {
+            "Ident": "Indicator",
+            "OnHover": "ShowToolTip",
+            "OnClick": "None",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserSorting": false
+          },
+          "TextFormat": {
+            "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
+            "DecimalDigits": 2,
+            "GroupSeparator": ","
+          },
+          "TargetFormat": {
+            "Ident": "StiPercentageFormatService",
+            "NegativePattern": 1,
+            "DecimalDigits": 2,
+            "GroupSeparator": ",",
+            "PositivePattern": 1,
+            "Symbol": "%"
+          },
+          "Value": {
+            "Ident": "ValueIndicatorMeter",
+            "Key": "4ce8d9d1c187412f92e2b34a8d43f337",
+            "Expression": "Avg([root.Page / Session])",
+            "Label": "Page / Session"
+          },
+          "Title": {
+            "Text": "页面/会话"
+          },
+          "Font": "Long Cang;;;",
+          "ManuallyEnteredData": "H4sIAAAAAAAEAIvm5VJQiAYRCgpKYYk5palKOlBeSGJRemoJnBucWpSZWqwE4sXycsUCALmUbWY5AAAAWklQ",
+          "Style": "Custom",
+          "CustomStyleName": "Style2",
+          "Icon": "Square2",
+          "CornerRadius": "0,0,0,0",
+          "Shadow": ";;;"
+        },
+        "6": {
+          "Ident": "StiIndicatorElement",
+          "Name": "Indicator8",
+          "Guid": "18be390cf86f4756a17d324a11941e7d",
+          "ClientRectangle": "720,500,220,100",
+          "Border": ";;;;",
+          "AltClientRectangle": "240,680,240,160",
+          "DashboardInteraction": {
+            "Ident": "Indicator",
+            "OnHover": "ShowToolTip",
+            "OnClick": "None",
+            "HyperlinkDestination": "NewTab",
+            "AllowUserSorting": false
+          },
+          "TextFormat": {
+            "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
+            "DecimalDigits": 2,
+            "GroupSeparator": ",",
+            "State": "DecimalDigits, Abbreviation"
+          },
+          "TargetFormat": {
+            "Ident": "StiPercentageFormatService",
+            "NegativePattern": 1,
+            "DecimalDigits": 2,
+            "GroupSeparator": ",",
+            "PositivePattern": 1,
+            "Symbol": "%"
+          },
+          "Value": {
+            "Ident": "ValueIndicatorMeter",
+            "Key": "8dfe656a2bc746f381f4168dbb610612",
+            "Expression": "Sum(root.Pageview)",
+            "Label": "Pageview"
+          },
+          "Title": {
+            "Text": "页面浏览量"
+          },
+          "Font": "Long Cang;;;",
+          "ManuallyEnteredData": "H4sIAAAAAAAEAIvm5VJQiAYRCgpKYYk5palKOlBeSGJRemoJnBucWpSZWqwE4sXycsUCALmUbWY5AAAAWklQ",
+          "Style": "Custom",
+          "CustomStyleName": "Style2",
+          "Icon": "Rating2",
+          "CornerRadius": "0,0,0,0",
+          "Shadow": ";;;"
+        },
+        "7": {
+          "Ident": "StiChartElement",
+          "Name": "Chart1",
+          "Guid": "d0b1ae6b338944a58fe98d62ae940a73",
+          "ClientRectangle": "240,0,960,480",
+          "Border": ";;;;",
+          "AltClientRectangle": "0,840,480,240",
+          "AltTitleVisible": false,
+          "Values": {
+            "0": {
+              "Ident": "ValueChartMeter",
+              "Key": "c7c3885f500e4dafa906552ff1d84114",
+              "Expression": "Sum(root.Users)",
+              "Label": "Users",
+              "SeriesType": "Area"
+            },
+            "1": {
+              "Ident": "ValueChartMeter",
+              "Key": "fdc316a4f0c641b3ada807d4847870a1",
+              "Expression": "Sum([root.New Users])",
+              "Label": "New Users",
+              "SeriesType": "Area"
+            },
+            "2": {
+              "Ident": "ValueChartMeter",
+              "Key": "ddf4f500220d4f829655585f04755d2e",
+              "Expression": "Sum([root.Returning Visitors])",
+              "Label": "Returning Visitors",
+              "SeriesType": "Area"
+            }
+          },
+          "Arguments": {
+            "0": {
+              "Ident": "ArgumentChartMeter",
+              "Key": "0d11d65206bd4cdcb819aac24f8c7d24",
+              "Expression": "root.Date",
+              "Label": "Date"
+            }
+          },
+          "DashboardInteraction": {
+            "Ident": "Chart",
+            "OnHover": "ShowToolTip",
+            "OnClick": "ApplyFilter",
+            "HyperlinkDestination": "NewTab",
+            "ViewsState": "OnHover"
+          },
+          "Title": {
+            "Text": "Chart",
+            "Visible": false
+          },
+          "ManuallyEnteredChartMeter": {
+            "Ident": "ValueChartMeter",
+            "Key": "d7df781ed4bc40b583d980ef63cf9441"
+          },
+          "ArgumentFormat": {
+            "Ident": "StiGeneralFormatService"
+          },
+          "ValueFormat": {
+            "Ident": "StiNumberFormatService",
+            "NegativePattern": 1,
+            "DecimalDigits": 0,
+            "GroupSeparator": ",",
+            "State": "DecimalDigits"
+          },
+          "XAxis": {
+            "Labels": {
+              "Font": "Long Cang;10;;"
+            },
+            "Title": {
+              "Visible": false
+            }
+          },
+          "YAxis": {
+            "Labels": {
+              "Font": "Long Cang;10;;"
+            },
+            "Title": {
+              "Visible": false
+            }
+          },
+          "Legend": {
+            "Labels": {
+              "Font": "Long Cang;12;;"
+            },
+            "Visibility": "False"
+          },
+          "Area": {
+            "SideBySide": true,
+            "GridLinesHor": {
+              "Visible": true
+            },
+            "GridLinesVert": {
+              "Visible": false
+            },
+            "Indicator": {
+              "Value": {
+                "Color": "Transparent"
+              },
+              "Title": {
+                "Color": "Transparent"
+              }
+            }
+          },
+          "Options3D": {
+            "Lighting": "Gradient"
+          },
+          "ManuallyEnteredData": "H4sIAAAAAAAEAIvm5VJQiAYRCgpKEUo6UFYknOWck1+cGpaYU5oKF/LJL0cV8MhMz0AVcSxKL81NzSuBC4SnAtUguKiqXfNSUAWCU4syU4uVQLxYXq5YALzbJDalAAAAWklQ",
+          "Style": "Custom",
+          "CustomStyleName": "Style1",
+          "CornerRadius": "0,0,0,0",
+          "Shadow": ";;;"
+        }
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "AltSize": "480,1080"
+    }
+  }
+}

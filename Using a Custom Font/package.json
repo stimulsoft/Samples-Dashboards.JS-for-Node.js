@@ -1,0 +1,18 @@
+{
+  "name": "using_a_custom_font",
+  "version": "1.0.0",
+  "description": "Using a Custom Font",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Stimulsoft",
+  "license": "MIT",
+  "dependencies": {
+    "stimulsoft-dashboards-js": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stimulsoft/Samples-Dashboards.JS-for-Node.js/tree/master/Using%20a%20Custom%20Font"
+  }
+}
