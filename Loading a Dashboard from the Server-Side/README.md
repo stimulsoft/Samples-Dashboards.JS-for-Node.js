@@ -1,4 +1,5 @@
 # Loading a Dashboard from the Server-Side
+This example illustrates loading of the dashboard from the server-side and saving the result to the mdc-file. 
 
 ### Installation and running
 Use npm to install requred modules:
