@@ -1,4 +1,4 @@
-# Exporting a Dashboard to PDF
+# Using a Custom Font
 
 This example demonstrates adding a custom font, loading of the dashboard, data rendering and storing the result to the PDF-document.
 
