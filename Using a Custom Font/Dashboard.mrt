@@ -1,11 +1,11 @@
 {
   "ReportVersion": "2025.1.2.0",
-  "ReportGuid": "defdcaff2b454641847783a5b6fd2271",
+  "ReportGuid": "1b6834e8419642509385c08f5a1c2233",
   "ReportName": "WebsiteAnalytics",
   "ReportAlias": "Website Analytics",
   "ReportAuthor": "Stimulsoft",
   "ReportCreated": "/Date(1537879754000+0200)/",
-  "ReportChanged": "/Date(1734544608073+0100)/",
+  "ReportChanged": "/Date(1736445247103+0100)/",
   "EngineVersion": "EngineV2",
   "ReportUnit": "Inches",
   "PreviewSettings": 25108991,
@@ -64,7 +64,7 @@
       "ToolTipCornerRadius": "8,8,8,8",
       "ToolTipBorder": "All;140,140,140;;;",
       "AllowUseFont": true,
-      "Font": "Long Cang;12;;",
+      "Font": "Microsoft Sans Serif;12;;",
       "TitleFont": "Long Cang;14;;",
       "AllowUseTitle": true
     },
@@ -275,7 +275,7 @@
           "Ident": "StiListBoxElement",
           "Name": "ListBox2",
           "Guid": "5e31a3d338a64e03a281ab9caf43cf58",
-          "ClientRectangle": "0,140,220,340",
+          "ClientRectangle": "0,140,220,460",
           "Linked": true,
           "Border": ";;;;",
           "AltClientRectangle": "240,40,240,167",
@@ -351,7 +351,7 @@
           "Ident": "StiIndicatorElement",
           "Name": "Indicator1",
           "Guid": "9c59ec9739b043429bffc7a234874833",
-          "ClientRectangle": "0,500,220,100",
+          "ClientRectangle": "240,500,320,100",
           "Border": ";;;;",
           "AltClientRectangle": "0,200,240,160",
           "DashboardInteraction": {
@@ -395,55 +395,9 @@
         },
         "3": {
           "Ident": "StiIndicatorElement",
-          "Name": "Indicator2",
-          "Guid": "29ffa70099ad44dd9a11d07560658643",
-          "ClientRectangle": "240,500,220,100",
-          "Border": ";;;;",
-          "AltClientRectangle": "240,200,240,160",
-          "DashboardInteraction": {
-            "Ident": "Indicator",
-            "OnHover": "ShowToolTip",
-            "OnClick": "None",
-            "HyperlinkDestination": "NewTab",
-            "AllowUserSorting": false
-          },
-          "TextFormat": {
-            "Ident": "StiNumberFormatService",
-            "NegativePattern": 1,
-            "DecimalDigits": 2,
-            "GroupSeparator": ",",
-            "State": "DecimalDigits, Abbreviation"
-          },
-          "TargetFormat": {
-            "Ident": "StiPercentageFormatService",
-            "NegativePattern": 1,
-            "DecimalDigits": 2,
-            "GroupSeparator": ",",
-            "PositivePattern": 1,
-            "Symbol": "%"
-          },
-          "Value": {
-            "Ident": "ValueIndicatorMeter",
-            "Key": "678c4fab9dbe4996bd2d6c0ccf31618c",
-            "Expression": "Sum([root.New Users])",
-            "Label": "New Users"
-          },
-          "Title": {
-            "Text": "新用户"
-          },
-          "Font": "Long Cang;;;",
-          "ManuallyEnteredData": "H4sIAAAAAAAEAIvm5VJQiAYRCgpKYYk5palKOlBeSGJRemoJnBucWpSZWqwE4sXycsUCALmUbWY5AAAAWklQ",
-          "Style": "Custom",
-          "CustomStyleName": "Style2",
-          "Icon": "Man",
-          "CornerRadius": "0,0,0,0",
-          "Shadow": ";;;"
-        },
-        "4": {
-          "Ident": "StiIndicatorElement",
           "Name": "Indicator3",
           "Guid": "71d291e2f1b147f18f5f47b5127fbe2d",
-          "ClientRectangle": "480,500,220,100",
+          "ClientRectangle": "560,500,320,100",
           "Border": ";;;;",
           "AltClientRectangle": "0,360,240,160",
           "DashboardInteraction": {
@@ -477,7 +431,7 @@
           "Title": {
             "Text": "会议"
           },
-          "Font": "Long Cang;;;",
+          "Font": "Microsoft Sans Serif;;;",
           "ManuallyEnteredData": "H4sIAAAAAAAEAIvm5VJQiAYRCgpKYYk5palKOlBeSGJRemoJnBucWpSZWqwE4sXycsUCALmUbWY5AAAAWklQ",
           "Style": "Custom",
           "CustomStyleName": "Style2",
@@ -485,11 +439,11 @@
           "CornerRadius": "0,0,0,0",
           "Shadow": ";;;"
         },
-        "5": {
+        "4": {
           "Ident": "StiIndicatorElement",
           "Name": "Indicator4",
           "Guid": "f6be7d8f4eb04858b4b5d156f99d6d82",
-          "ClientRectangle": "960,500,240,100",
+          "ClientRectangle": "880,500,320,100",
           "Border": ";;;;",
           "AltClientRectangle": "240,360,240,160",
           "DashboardInteraction": {
@@ -522,7 +476,7 @@
           "Title": {
             "Text": "页面/会话"
           },
-          "Font": "Long Cang;;;",
+          "Font": "Microsoft Sans Serif;;;",
           "ManuallyEnteredData": "H4sIAAAAAAAEAIvm5VJQiAYRCgpKYYk5palKOlBeSGJRemoJnBucWpSZWqwE4sXycsUCALmUbWY5AAAAWklQ",
           "Style": "Custom",
           "CustomStyleName": "Style2",
@@ -530,53 +484,7 @@
           "CornerRadius": "0,0,0,0",
           "Shadow": ";;;"
         },
-        "6": {
-          "Ident": "StiIndicatorElement",
-          "Name": "Indicator8",
-          "Guid": "18be390cf86f4756a17d324a11941e7d",
-          "ClientRectangle": "720,500,220,100",
-          "Border": ";;;;",
-          "AltClientRectangle": "240,680,240,160",
-          "DashboardInteraction": {
-            "Ident": "Indicator",
-            "OnHover": "ShowToolTip",
-            "OnClick": "None",
-            "HyperlinkDestination": "NewTab",
-            "AllowUserSorting": false
-          },
-          "TextFormat": {
-            "Ident": "StiNumberFormatService",
-            "NegativePattern": 1,
-            "DecimalDigits": 2,
-            "GroupSeparator": ",",
-            "State": "DecimalDigits, Abbreviation"
-          },
-          "TargetFormat": {
-            "Ident": "StiPercentageFormatService",
-            "NegativePattern": 1,
-            "DecimalDigits": 2,
-            "GroupSeparator": ",",
-            "PositivePattern": 1,
-            "Symbol": "%"
-          },
-          "Value": {
-            "Ident": "ValueIndicatorMeter",
-            "Key": "8dfe656a2bc746f381f4168dbb610612",
-            "Expression": "Sum(root.Pageview)",
-            "Label": "Pageview"
-          },
-          "Title": {
-            "Text": "页面浏览量"
-          },
-          "Font": "Long Cang;;;",
-          "ManuallyEnteredData": "H4sIAAAAAAAEAIvm5VJQiAYRCgpKYYk5palKOlBeSGJRemoJnBucWpSZWqwE4sXycsUCALmUbWY5AAAAWklQ",
-          "Style": "Custom",
-          "CustomStyleName": "Style2",
-          "Icon": "Rating2",
-          "CornerRadius": "0,0,0,0",
-          "Shadow": ";;;"
-        },
-        "7": {
+        "5": {
           "Ident": "StiChartElement",
           "Name": "Chart1",
           "Guid": "d0b1ae6b338944a58fe98d62ae940a73",
@@ -642,7 +550,7 @@
           },
           "XAxis": {
             "Labels": {
-              "Font": "Long Cang;10;;"
+              "Font": "Microsoft Sans Serif;10;;"
             },
             "Title": {
               "Visible": false
@@ -650,7 +558,7 @@
           },
           "YAxis": {
             "Labels": {
-              "Font": "Long Cang;10;;"
+              "Font": "Microsoft Sans Serif;10;;"
             },
             "Title": {
               "Visible": false
@@ -658,7 +566,7 @@
           },
           "Legend": {
             "Labels": {
-              "Font": "Long Cang;12;;"
+              "Font": "Microsoft Sans Serif;12;;"
             },
             "Visibility": "False"
           },
