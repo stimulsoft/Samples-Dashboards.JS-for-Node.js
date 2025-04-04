@@ -33,7 +33,6 @@ async function accept(req, res) {
 		report.loadFile("DashboardWithDataConnection.mrt");
 
 		// Saving dashboard to JSON string
-		// var dashboardJson = report.saveToJsonString();
 		var dashboardJson = await report.saveSnapshot();
 
 		//Send dashboard
