@@ -30,7 +30,7 @@ async function accept(req, res) {
 		// Creating new dashboard
 		var report = Stimulsoft.Report.StiReport.createNewDashboard();
 		// Loading dashboard template
-		report.loadFile("DashboardWithDataConnection.mrt");
+		report.loadFile("Dashboard.mrt");
 
 		// Saving dashboard to JSON string
 		var dashboardJson = await report.saveSnapshot();
