@@ -1,0 +1,745 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <CalculationMode>Interpretation</CalculationMode>
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <Demo Ref="2" type="Stimulsoft.Report.Dictionary.StiJsonDatabase" isKey="true">
+        <Alias>Demo</Alias>
+        <HeadersString />
+        <Key />
+        <Name>Demo</Name>
+        <PathData>Demo.json</PathData>
+      </Demo>
+    </Databases>
+    <DataSources isList="true" count="13">
+      <Auto Ref="3" type="DataTableSource" isKey="true">
+        <Alias>Auto</Alias>
+        <Columns isList="true" count="5">
+          <value>Rank,System.String</value>
+          <value>Country,System.String</value>
+          <value>Year2009,System.String</value>
+          <value>Year2005,System.String</value>
+          <value>Year2000,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>b77dd8e67ff6415f914f85e159f5b525</Key>
+        <Name>Auto</Name>
+        <NameInSource>Demo.Auto</NameInSource>
+      </Auto>
+      <Categories Ref="4" type="DataTableSource" isKey="true">
+        <Alias>Categories</Alias>
+        <Columns isList="true" count="4">
+          <value>CategoryID,System.Decimal</value>
+          <value>CategoryName,System.String</value>
+          <value>Description,System.String</value>
+          <value>Picture,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>6fdff8258e63449c94d86e153bce02f5</Key>
+        <Name>Categories</Name>
+        <NameInSource>Demo.Categories</NameInSource>
+      </Categories>
+      <Countries Ref="5" type="DataTableSource" isKey="true">
+        <Alias>Countries</Alias>
+        <Columns isList="true" count="3">
+          <value>CountriesID,System.Decimal</value>
+          <value>Flag,System.String</value>
+          <value>CountryName,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>d42cb35cde2a4aeab9acccfecbdb87f0</Key>
+        <Name>Countries</Name>
+        <NameInSource>Demo.Countries</NameInSource>
+      </Countries>
+      <Customers Ref="6" type="DataTableSource" isKey="true">
+        <Alias>Customers</Alias>
+        <Columns isList="true" count="11">
+          <value>CustomerID,System.String</value>
+          <value>CompanyName,System.String</value>
+          <value>ContactName,System.String</value>
+          <value>ContactTitle,System.String</value>
+          <value>Address,System.String</value>
+          <value>City,System.String</value>
+          <value>Region,System.String</value>
+          <value>PostalCode,System.String</value>
+          <value>Country,System.String</value>
+          <value>Phone,System.String</value>
+          <value>Fax,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>dfe3f061af3c4e1896913680bdb53e1a</Key>
+        <Name>Customers</Name>
+        <NameInSource>Demo.Customers</NameInSource>
+      </Customers>
+      <Employees Ref="7" type="DataTableSource" isKey="true">
+        <Alias>Employees</Alias>
+        <Columns isList="true" count="17">
+          <value>EmployeeID,System.Decimal</value>
+          <value>LastName,System.String</value>
+          <value>FirstName,System.String</value>
+          <value>Title,System.String</value>
+          <value>TitleOfCourtesy,System.String</value>
+          <value>BirthDate,System.String</value>
+          <value>HireDate,System.String</value>
+          <value>Address,System.String</value>
+          <value>City,System.String</value>
+          <value>Region,System.String</value>
+          <value>PostalCode,System.String</value>
+          <value>Country,System.String</value>
+          <value>HomePhone,System.String</value>
+          <value>Extension,System.String</value>
+          <value>Photo,System.String</value>
+          <value>Notes,System.String</value>
+          <value>ReportsTo,System.Decimal</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>f5a95f5d72f04d989ffb35462150df4b</Key>
+        <Name>Employees</Name>
+        <NameInSource>Demo.Employees</NameInSource>
+      </Employees>
+      <GlobalGrowth Ref="8" type="DataTableSource" isKey="true">
+        <Alias>GlobalGrowth</Alias>
+        <Columns isList="true" count="5">
+          <value>Region,System.String</value>
+          <value>Year2006,System.String</value>
+          <value>Year2007,System.String</value>
+          <value>Year2008,System.String</value>
+          <value>Year2009,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>84c6a681fd6a45c187fa767cb9ad8045</Key>
+        <Name>GlobalGrowth</Name>
+        <NameInSource>Demo.GlobalGrowth</NameInSource>
+      </GlobalGrowth>
+      <Opec Ref="9" type="DataTableSource" isKey="true">
+        <Alias>Opec</Alias>
+        <Columns isList="true" count="9">
+          <value>Year,System.String</value>
+          <value>Iran,System.String</value>
+          <value>Iraq,System.String</value>
+          <value>Kuwait,System.String</value>
+          <value>Saudi_x0020_Arabia,System.String</value>
+          <value>UAE,System.String</value>
+          <value>Venezuela,System.String</value>
+          <value>Libya,System.String</value>
+          <value>Nigeria,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>15722d1f807d4126b570f16e46961160</Key>
+        <Name>Opec</Name>
+        <NameInSource>Demo.Opec</NameInSource>
+      </Opec>
+      <Order_x0020_Details Ref="10" type="DataTableSource" isKey="true">
+        <Alias>Order Details</Alias>
+        <Columns isList="true" count="5">
+          <value>OrderID,System.Decimal</value>
+          <value>ProductID,System.Decimal</value>
+          <value>UnitPrice,System.String</value>
+          <value>Quantity,System.Decimal</value>
+          <value>Discount,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>027c20e6a71546e6a6b0646a789aff99</Key>
+        <Name>Order Details</Name>
+        <NameInSource>Demo.Order Details</NameInSource>
+      </Order_x0020_Details>
+      <Orders Ref="11" type="DataTableSource" isKey="true">
+        <Alias>Orders</Alias>
+        <Columns isList="true" count="14">
+          <value>OrderID,System.Decimal</value>
+          <value>CustomerID,System.String</value>
+          <value>EmployeeID,System.Decimal</value>
+          <value>OrderDate,System.String</value>
+          <value>RequiredDate,System.String</value>
+          <value>ShippedDate,System.String</value>
+          <value>ShipVia,System.Decimal</value>
+          <value>Freight,System.String</value>
+          <value>ShipName,System.String</value>
+          <value>ShipAddress,System.String</value>
+          <value>ShipCity,System.String</value>
+          <value>ShipRegion,System.String</value>
+          <value>ShipPostalCode,System.String</value>
+          <value>ShipCountry,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>3c5b330a09654de1ae3c98c458f0899a</Key>
+        <Name>Orders</Name>
+        <NameInSource>Demo.Orders</NameInSource>
+      </Orders>
+      <Products Ref="12" type="DataTableSource" isKey="true">
+        <Alias>Products</Alias>
+        <Columns isList="true" count="10">
+          <value>ProductID,System.Decimal</value>
+          <value>ProductName,System.String</value>
+          <value>SupplierID,System.Decimal</value>
+          <value>CategoryID,System.Decimal</value>
+          <value>QuantityPerUnit,System.String</value>
+          <value>UnitPrice,System.String</value>
+          <value>UnitsInStock,System.Decimal</value>
+          <value>UnitsOnOrder,System.Decimal</value>
+          <value>ReorderLevel,System.Decimal</value>
+          <value>Discontinued,System.Boolean</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>e5a7ede9bbc5403380537a699da7131b</Key>
+        <Name>Products</Name>
+        <NameInSource>Demo.Products</NameInSource>
+      </Products>
+      <Shippers Ref="13" type="DataTableSource" isKey="true">
+        <Alias>Shippers</Alias>
+        <Columns isList="true" count="3">
+          <value>ShipperID,System.Decimal</value>
+          <value>CompanyName,System.String</value>
+          <value>Phone,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>717cfbac7169484aaa08d48cab8b053b</Key>
+        <Name>Shippers</Name>
+        <NameInSource>Demo.Shippers</NameInSource>
+      </Shippers>
+      <States Ref="14" type="DataTableSource" isKey="true">
+        <Alias>States</Alias>
+        <Columns isList="true" count="4">
+          <value>Name,System.String</value>
+          <value>USPS,System.String</value>
+          <value>Population,System.Decimal</value>
+          <value>Capital,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>335f5450f0cb40dbb0c57f023999cda2</Key>
+        <Name>States</Name>
+        <NameInSource>Demo.States</NameInSource>
+      </States>
+      <Suppliers Ref="15" type="DataTableSource" isKey="true">
+        <Alias>Suppliers</Alias>
+        <Columns isList="true" count="12">
+          <value>SupplierID,System.Decimal</value>
+          <value>CompanyName,System.String</value>
+          <value>ContactName,System.String</value>
+          <value>ContactTitle,System.String</value>
+          <value>Address,System.String</value>
+          <value>City,System.String</value>
+          <value>Region,System.String</value>
+          <value>PostalCode,System.String</value>
+          <value>Country,System.String</value>
+          <value>Phone,System.String</value>
+          <value>Fax,System.String</value>
+          <value>HomePage,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>41db267f37c045c9884a606e42052ff2</Key>
+        <Name>Suppliers</Name>
+        <NameInSource>Demo.Suppliers</NameInSource>
+      </Suppliers>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Resources isList="true" count="0" />
+    <UserFunctions isList="true" count="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <Key>f18318d41618411e8bb3b0397890147b</Key>
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Dashboard1 Ref="16" type="Stimulsoft.Dashboard.Components.StiDashboard" isKey="true">
+      <Components isList="true" count="1">
+        <Table1 Ref="17" type="Stimulsoft.Dashboard.Components.Table.StiTableElement" isKey="true">
+          <ClientRectangle>0,20,960,540</ClientRectangle>
+          <Columns isList="true" count="4">
+            <Item17 Ref="18" type="Stimulsoft.Dashboard.Components.Table.StiMeasureColumn" isKey="true">
+              <Expression>Sum(Orders.OrderID)</Expression>
+              <HorAlignment>Right</HorAlignment>
+              <Key>0107bdc8728a4d0f9571af19adae6b2d</Key>
+              <Label>OrderID</Label>
+              <TextFormat Ref="19" type="NumberFormat" isKey="true">
+                <DecimalDigits>2</DecimalDigits>
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+            </Item17>
+            <Item18 Ref="20" type="Stimulsoft.Dashboard.Components.Table.StiMeasureColumn" isKey="true">
+              <Expression>Sum(Orders.ShipVia)</Expression>
+              <HorAlignment>Right</HorAlignment>
+              <Key>302b64551c0243f589638cf7777f9060</Key>
+              <Label>ShipVia</Label>
+              <TextFormat isRef="19" />
+            </Item18>
+            <Item19 Ref="21" type="Stimulsoft.Dashboard.Components.Table.StiDimensionColumn" isKey="true">
+              <Expression>Orders.ShipName</Expression>
+              <Key>e3da65921b7d45358ca998e8ad7a58ca</Key>
+              <Label>ShipName</Label>
+            </Item19>
+            <Item20 Ref="22" type="Stimulsoft.Dashboard.Components.Table.StiDimensionColumn" isKey="true">
+              <Expression>Orders.ShipAddress</Expression>
+              <Key>bb97a8686db84ba492939ae00a40b505</Key>
+              <Label>ShipAddress</Label>
+            </Item20>
+          </Columns>
+          <DataFilters isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Guid>9fd3ea5a8ee2452daec692c278d1ae6c</Guid>
+          <Name>Table1</Name>
+          <Page isRef="16" />
+          <Parent isRef="16" />
+          <TableConditions isList="true" count="0" />
+          <Title Ref="23" type="Stimulsoft.Dashboard.Components.StiTitle" isKey="true">
+            <Font>Arial,11</Font>
+            <Text>Table</Text>
+          </Title>
+          <TransformActions isList="true" count="0" />
+          <TransformFilters isList="true" count="0" />
+          <TransformSorts isList="true" count="0" />
+          <UserFilters isList="true" count="0" />
+          <UserSorts isList="true" count="0" />
+        </Table1>
+      </Components>
+      <Expressions isList="true" count="0" />
+      <Guid>00c8734a5ffa4470b56061d965f832dd</Guid>
+      <Name>Dashboard1</Name>
+      <Report isRef="0" />
+    </Dashboard1>
+  </Pages>
+  <PrinterSettings Ref="24" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>4/4/2025 3:38:15 PM</ReportChanged>
+  <ReportCreated>9/24/2018 11:00:19 AM</ReportCreated>
+  <ReportFile>D:\stimulsoft\Samples\Samples-Dashboards.JS-for-Node.js\Loading a Dashboard from the Server-Side\DashboardWithDataConnection.mrt</ReportFile>
+  <ReportGuid>b1618494c70b4670bd44583928bd45be</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2025.2.2.0</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="24">
+    <Ocher_Report_Title1 Ref="25" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[154:69:0];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Ocher</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item22 Ref="26" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <Placement>ReportTitle</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item22>
+      </Conditions>
+      <Font>Arial,14,Bold</Font>
+      <Name>Ocher_Report_Title1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[102:60:70]</TextBrush>
+    </Ocher_Report_Title1>
+    <Ocher_Report_Title2 Ref="27" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[154:69:0];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Ocher</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item24 Ref="28" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>ReportTitle</Placement>
+          <PlacementNestedLevel>2</PlacementNestedLevel>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item24>
+      </Conditions>
+      <Font>Arial,10,Bold</Font>
+      <Name>Ocher_Report_Title2</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[102:60:70]</TextBrush>
+    </Ocher_Report_Title2>
+    <Ocher_Report_Summary Ref="29" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[154:69:0];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Ocher</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item26 Ref="30" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <Placement>ReportSummary</Placement>
+          <Type>ComponentType, Placement</Type>
+        </Item26>
+      </Conditions>
+      <Font>Arial,10,Bold</Font>
+      <Name>Ocher_Report_Summary</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[204:119:34]</TextBrush>
+    </Ocher_Report_Summary>
+    <Ocher_Page_Header Ref="31" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[154:69:0];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Ocher</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item28 Ref="32" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <Placement>PageHeader</Placement>
+          <Type>ComponentType, Placement</Type>
+        </Item28>
+      </Conditions>
+      <Font>Arial,10</Font>
+      <Name>Ocher_Page_Header</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[204:119:34]</TextBrush>
+    </Ocher_Page_Header>
+    <Ocher_Page_Footer Ref="33" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[154:69:0];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Ocher</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item30 Ref="34" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <Placement>PageFooter</Placement>
+          <Type>ComponentType, Placement</Type>
+        </Item30>
+      </Conditions>
+      <Font>Arial,10</Font>
+      <Name>Ocher_Page_Footer</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[204:119:34]</TextBrush>
+    </Ocher_Page_Footer>
+    <Ocher_Group_Header1 Ref="35" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[154:69:0];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Ocher</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item32 Ref="36" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>GroupHeader</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item32>
+      </Conditions>
+      <Font>Arial,13,Bold</Font>
+      <Name>Ocher_Group_Header1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[153:90:26]</TextBrush>
+    </Ocher_Group_Header1>
+    <Ocher_Group_Footer1 Ref="37" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[154:69:0];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Ocher</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item34 Ref="38" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <Placement>GroupFooter</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item34>
+      </Conditions>
+      <Font>Arial,13,Bold</Font>
+      <Name>Ocher_Group_Footer1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[153:90:26]</TextBrush>
+    </Ocher_Group_Footer1>
+    <Ocher_Header1 Ref="39" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;White;1;Solid;False;4;Black;True</Border>
+      <Brush>[214:129:44]</Brush>
+      <CollectionName>Ocher</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item36 Ref="40" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>Header</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item36>
+      </Conditions>
+      <Font>Arial,8,Bold</Font>
+      <Name>Ocher_Header1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>White</TextBrush>
+    </Ocher_Header1>
+    <Ocher_Data1 Ref="41" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[154:69:0];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Ocher</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item38 Ref="42" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>Data</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item38>
+      </Conditions>
+      <Font>Arial,8</Font>
+      <Name>Ocher_Data1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[4:0:0]</TextBrush>
+    </Ocher_Data1>
+    <Ocher_Data1_Odd_x0020_Style Ref="43" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>All;White;1;Solid;False;4;Black</Border>
+      <Brush>[255:194:109]</Brush>
+      <CollectionName>Ocher</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item40 Ref="44" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>DataOddStyle</Placement>
+          <Type>Placement, PlacementNestedLevel</Type>
+        </Item40>
+      </Conditions>
+      <Font>Arial,8</Font>
+      <Name>Ocher_Data1_Odd Style</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[4:0:0]</TextBrush>
+    </Ocher_Data1_Odd_x0020_Style>
+    <Ocher_Data1_Even_x0020_Style Ref="45" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>All;White;1;Solid;False;4;Black</Border>
+      <Brush>[241:156:71]</Brush>
+      <CollectionName>Ocher</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item42 Ref="46" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>DataEvenStyle</Placement>
+          <Type>Placement, PlacementNestedLevel</Type>
+        </Item42>
+      </Conditions>
+      <Font>Arial,8</Font>
+      <Name>Ocher_Data1_Even Style</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[4:0:0]</TextBrush>
+    </Ocher_Data1_Even_x0020_Style>
+    <Ocher_Footer1 Ref="47" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>Top;[154:69:0];3;Solid;False;4;Black</Border>
+      <Brush>White</Brush>
+      <CollectionName>Ocher</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item44 Ref="48" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <Placement>Footer</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item44>
+      </Conditions>
+      <Font>Arial,8</Font>
+      <Name>Ocher_Footer1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[4:0:0]</TextBrush>
+    </Ocher_Footer1>
+    <Flaxen_Report_Title1 Ref="49" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[143:102:102];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Flaxen</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item46 Ref="50" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <Placement>ReportTitle</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item46>
+      </Conditions>
+      <Font>Arial,14,Bold</Font>
+      <Name>Flaxen_Report_Title1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[193:152:89]</TextBrush>
+    </Flaxen_Report_Title1>
+    <Flaxen_Report_Title2 Ref="51" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[143:102:102];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Flaxen</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item48 Ref="52" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>ReportTitle</Placement>
+          <PlacementNestedLevel>2</PlacementNestedLevel>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item48>
+      </Conditions>
+      <Font>Arial,10,Bold</Font>
+      <Name>Flaxen_Report_Title2</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[193:152:89]</TextBrush>
+    </Flaxen_Report_Title2>
+    <Flaxen_Report_Summary Ref="53" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[143:102:102];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Flaxen</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item50 Ref="54" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <Placement>ReportSummary</Placement>
+          <Type>ComponentType, Placement</Type>
+        </Item50>
+      </Conditions>
+      <Font>Arial,10,Bold</Font>
+      <Name>Flaxen_Report_Summary</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[193:152:89]</TextBrush>
+    </Flaxen_Report_Summary>
+    <Flaxen_Page_Header Ref="55" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[143:102:102];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Flaxen</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item52 Ref="56" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <Placement>PageHeader</Placement>
+          <Type>ComponentType, Placement</Type>
+        </Item52>
+      </Conditions>
+      <Font>Arial,10</Font>
+      <Name>Flaxen_Page_Header</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[193:152:89]</TextBrush>
+    </Flaxen_Page_Header>
+    <Flaxen_Page_Footer Ref="57" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[143:102:102];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Flaxen</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item54 Ref="58" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <Placement>PageFooter</Placement>
+          <Type>ComponentType, Placement</Type>
+        </Item54>
+      </Conditions>
+      <Font>Arial,10</Font>
+      <Name>Flaxen_Page_Footer</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[193:152:89]</TextBrush>
+    </Flaxen_Page_Footer>
+    <Flaxen_Group_Header1 Ref="59" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[143:102:102];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Flaxen</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item56 Ref="60" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>GroupHeader</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item56>
+      </Conditions>
+      <Font>Arial,13,Bold</Font>
+      <Name>Flaxen_Group_Header1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[193:152:89]</TextBrush>
+    </Flaxen_Group_Header1>
+    <Flaxen_Group_Footer1 Ref="61" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[143:102:102];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Flaxen</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item58 Ref="62" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <Placement>GroupFooter</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item58>
+      </Conditions>
+      <Font>Arial,13,Bold</Font>
+      <Name>Flaxen_Group_Footer1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[193:152:89]</TextBrush>
+    </Flaxen_Group_Footer1>
+    <Flaxen_Header1 Ref="63" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>All;[143:102:102];1;Solid;False;4;Black;True</Border>
+      <Brush>[242:234:221]</Brush>
+      <CollectionName>Flaxen</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item60 Ref="64" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>Header</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item60>
+      </Conditions>
+      <Font>Arial,8,Bold</Font>
+      <Name>Flaxen_Header1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[193:152:89]</TextBrush>
+    </Flaxen_Header1>
+    <Flaxen_Data1 Ref="65" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>All;[143:102:102];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Flaxen</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item62 Ref="66" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>Data</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item62>
+      </Conditions>
+      <Font>Arial,8</Font>
+      <Name>Flaxen_Data1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[193:152:89]</TextBrush>
+    </Flaxen_Data1>
+    <Flaxen_Data1_Odd_x0020_Style Ref="67" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[143:102:102];1;Solid;False;4;Black</Border>
+      <Brush>White</Brush>
+      <CollectionName>Flaxen</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item64 Ref="68" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>DataOddStyle</Placement>
+          <Type>Placement, PlacementNestedLevel</Type>
+        </Item64>
+      </Conditions>
+      <Font>Arial,8</Font>
+      <Name>Flaxen_Data1_Odd Style</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[193:152:89]</TextBrush>
+    </Flaxen_Data1_Odd_x0020_Style>
+    <Flaxen_Data1_Even_x0020_Style Ref="69" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[143:102:102];1;Solid;False;4;Black</Border>
+      <Brush>[240:237:232]</Brush>
+      <CollectionName>Flaxen</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item66 Ref="70" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>DataEvenStyle</Placement>
+          <Type>Placement, PlacementNestedLevel</Type>
+        </Item66>
+      </Conditions>
+      <Font>Arial,8</Font>
+      <Name>Flaxen_Data1_Even Style</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[193:152:89]</TextBrush>
+    </Flaxen_Data1_Even_x0020_Style>
+    <Flaxen_Footer1 Ref="71" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>All;[143:102:102];1;Solid;False;4;Black</Border>
+      <Brush>[242:234:221]</Brush>
+      <CollectionName>Flaxen</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item68 Ref="72" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <Placement>Footer</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item68>
+      </Conditions>
+      <Font>Arial,8</Font>
+      <Name>Flaxen_Footer1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[193:152:89]</TextBrush>
+    </Flaxen_Footer1>
+  </Styles>
+</StiSerializer>

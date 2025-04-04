@@ -4,7 +4,7 @@ var fs = require('fs');
 // Stimulsoft Dashboards module
 var Stimulsoft = require("stimulsoft-dashboards-js");
 
-function accept(req, res) {
+async function accept(req, res) {
 	//Send index.html
 	if (req.url == "/") {
 		res.writeHeader(200, { "Content-Type": "text/html" });
@@ -30,10 +30,11 @@ function accept(req, res) {
 		// Creating new dashboard
 		var report = Stimulsoft.Report.StiReport.createNewDashboard();
 		// Loading dashboard template
-		report.loadFile("Dashboard.mrt");
+		report.loadFile("DashboardWithDataConnection.mrt");
 
 		// Saving dashboard to JSON string
-		var dashboardJson = report.saveToJsonString();
+		// var dashboardJson = report.saveToJsonString();
+		var dashboardJson = await report.saveSnapshot();
 
 		//Send dashboard
 		res.end(dashboardJson);
