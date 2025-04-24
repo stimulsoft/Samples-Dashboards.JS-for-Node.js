@@ -1,5 +1,5 @@
 # Loading a Dashboard from the Server-Side
-This example illustrates loading of the dashboard from the server-side and saving the result to the mdc-file. 
+This example illustrates loading of the dashboard from the server-side and saving the result to the Report Snapshot. 
 
 ### Installation and running
 Use npm to install requred modules:
@@ -49,8 +49,8 @@ Define the accept() function that will process requests to the server and output
 		    // Loading dashboard template
 		    report.loadFile("Dashboard.mrt");
 
-		    // Saving dashboard to JSON string
-		    var dashboardJson = report.saveToJsonString();
+		    // Saving dashboard to Report Snapshot
+		    var dashboardJson = await report.saveSnapshot();
 
 		    //Send dashboard
 		    res.end(dashboardJson);
